@@ -1,6 +1,6 @@
-package kr.ac.jbnu.se.tetris;
+package src.kr.ac.jbnu.se.tetris;
 
-import kr.ac.jbnu.se.tetris.Tetris;
+import src.kr.ac.jbnu.se.tetris.Tetris;
 
 import javax.swing.*;
 import java.awt.*;
