@@ -1,4 +1,4 @@
-package src.kr.ac.jbnu.se.tetris;
+package kr.ac.jbnu.se.tetris;
 
 import java.awt.Color;
 import java.awt.Dimension;
