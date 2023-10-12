@@ -6,8 +6,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class SettingsFrame extends JFrame implements ActionListener {
+    private SoundManager backgroundMusic;
     JButton backButton;
-
     MainMenu mainMenu;
 
     public SettingsFrame(){
@@ -16,6 +16,10 @@ public class SettingsFrame extends JFrame implements ActionListener {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(900, 700);// window dimensions
         this.getContentPane().setBackground(Color.white);
+
+        //배경음악 setup
+        backgroundMusic = new SoundManager("src/sounds/background.wav");
+        backgroundMusic.loop();
 
         // logo setup
         ImageIcon logo = new ImageIcon(getClass().getClassLoader().getResource("images/logo.png"));
@@ -44,6 +48,7 @@ public class SettingsFrame extends JFrame implements ActionListener {
             mainMenu = new MainMenu();
             this.setVisible(false);
             mainMenu.setVisible(true);
+            backgroundMusic.stop();
         }
     }
 }

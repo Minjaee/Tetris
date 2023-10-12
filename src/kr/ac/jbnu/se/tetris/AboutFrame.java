@@ -12,7 +12,7 @@ public class AboutFrame extends JFrame implements ActionListener {
 
     AboutFrame(){
         // frame setup
-        this.setTitle("tetris"); // app title
+        this.setTitle("Tetris"); // app title
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(900, 700);// window dimensions
         this.getContentPane().setBackground(Color.white);

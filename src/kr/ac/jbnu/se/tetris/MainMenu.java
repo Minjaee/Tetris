@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 
 public class MainMenu extends JFrame implements ActionListener {
 
+    private SoundManager backgroundMusic;
     AboutFrame aboutFrame;
     SettingsFrame settingsFrame;
     JPanel buttonsPanel, aboutPanel, settingsPanel;
@@ -19,6 +20,10 @@ public class MainMenu extends JFrame implements ActionListener {
         this.setTitle("Tetris");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(900, 700);
+
+        //배경음악 setup
+        backgroundMusic = new SoundManager("src/sounds/background.wav");
+        backgroundMusic.loop();
 
         //logo setup
         ImageIcon logo = new ImageIcon(getClass().getClassLoader().getResource("images/logo.png"));
@@ -117,6 +122,7 @@ public class MainMenu extends JFrame implements ActionListener {
             this.setVisible(false);
             game.setLocationRelativeTo(null);
             game.setVisible(true);
+            backgroundMusic.stop();
         }
 
         //open about window if aboutButton is pressed
@@ -125,6 +131,7 @@ public class MainMenu extends JFrame implements ActionListener {
             this.setVisible(false);
             aboutFrame.setLocationRelativeTo(null);
             aboutFrame.setVisible(true);
+            backgroundMusic.stop();
         }
 
         //open setting window if settingsButton is pressed
@@ -133,6 +140,7 @@ public class MainMenu extends JFrame implements ActionListener {
             this.setVisible(false);
             settingsFrame.setLocationRelativeTo(null);
             settingsFrame.setVisible(true);
+            backgroundMusic.stop();
         }
 
 
