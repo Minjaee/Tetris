@@ -5,14 +5,14 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
-public class AboutFrame extends JFrame implements ActionListener {
+public class SettingsFrame extends JFrame implements ActionListener {
     JButton backButton;
+
     MainMenu mainMenu;
 
-    AboutFrame(){
-        // frame setup
-        this.setTitle("tetris"); // app title
+    public SettingsFrame(){
+        //frame setup
+        this.setTitle("Settings");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(900, 700);// window dimensions
         this.getContentPane().setBackground(Color.white);
@@ -21,22 +21,6 @@ public class AboutFrame extends JFrame implements ActionListener {
         ImageIcon logo = new ImageIcon(getClass().getClassLoader().getResource("images/logo.png"));
         this.setIconImage(logo.getImage());
 
-        //text declaration
-        JLabel text = new JLabel();
-        text.setText(
-                "<html>This game was developed by:<br>" +
-                "김민재<br>" +
-                "황주원<br>" +
-                        "and<br> " +
-                "성재현");
-
-
-        //text parameters setup
-        text.setForeground(Color.black);
-        text.setFont(new Font ("MV Boli", Font.PLAIN, 40));
-        text.setBounds(0, 0, 900, 500);
-        text.setHorizontalTextPosition(JLabel.CENTER);
-        text.setHorizontalAlignment(JLabel.CENTER);
 
         //backButton setup
         backButton = new JButton("Back to Main-Menu");
@@ -44,19 +28,19 @@ public class AboutFrame extends JFrame implements ActionListener {
         backButton.setBounds(370, 580, 150, 50);
         backButton.addActionListener(this);
 
-
-        //adding elements to the frame
         this.setLayout(null);
-        this.add(text);
         this.add(backButton);
         this.setVisible(true);
 
     }
 
+
+
     @Override
     public void actionPerformed(ActionEvent e) {
-        //go back to main-menu if backButton pressed
-        if(e.getSource() == backButton){
+
+        // goes back to MainMenu when button back is pressed
+        if (e.getSource() == backButton){
             mainMenu = new MainMenu();
             this.setVisible(false);
             mainMenu.setVisible(true);

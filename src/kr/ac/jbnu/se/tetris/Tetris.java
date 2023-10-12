@@ -20,7 +20,6 @@ public class Tetris extends JFrame {
 		setTitle("Tetris");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-
 		SoundManager backgroundMusic = new SoundManager("sounds/background.wav");
 	}
 

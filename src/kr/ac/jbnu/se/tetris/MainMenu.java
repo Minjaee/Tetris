@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 public class MainMenu extends JFrame implements ActionListener {
 
     AboutFrame aboutFrame;
-
+    SettingsFrame settingsFrame;
     JPanel buttonsPanel, aboutPanel, settingsPanel;
     JButton singlePlayerButton;
     JButton multiPlayerButton;
@@ -126,6 +126,16 @@ public class MainMenu extends JFrame implements ActionListener {
             aboutFrame.setLocationRelativeTo(null);
             aboutFrame.setVisible(true);
         }
+
+        //open setting window if settingsButton is pressed
+        if(e.getSource() == settingsButton){
+            settingsFrame = new SettingsFrame();
+            this.setVisible(false);
+            settingsFrame.setLocationRelativeTo(null);
+            settingsFrame.setVisible(true);
+        }
+
+
     }
 
 
