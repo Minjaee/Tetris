@@ -27,6 +27,15 @@ public class Board extends JPanel implements ActionListener {
 	JLabel statusbar;
 	Shape curPiece;
 	Tetrominoes[] board;
+	Shape nextPiece; // 다음 블록 미리보기 변수 생성
+
+	//preview Board 기능
+	private PreviewBoard previewBoard;
+
+	public void setPreviewBoard(PreviewBoard previewBoard) {
+		this.previewBoard = previewBoard;
+	} ///
+
 
 	public Board(Tetris parent) {
 
@@ -50,21 +59,27 @@ public class Board extends JPanel implements ActionListener {
 		}
 	}
 
-	int squareWidth() {
+	// overiding을 위해 protected로 받음
+	protected int squareWidth() {
 		return (int) getSize().getWidth() / BoardWidth;
 	}
 
-	int squareHeight() {
+	protected int squareHeight() {
 		return (int) getSize().getHeight() / BoardHeight;
 	}
+
 
 	Tetrominoes shapeAt(int x, int y) {
 		return board[(y * BoardWidth) + x];
 	}
+	//
 
 	public void start() {
 		if (isPaused)
 			return;
+
+		nextPiece = new Shape();
+		nextPiece.setRandomShape();
 
 		isStarted = true;
 		isFallingFinished = false;
@@ -89,7 +104,25 @@ public class Board extends JPanel implements ActionListener {
 		}
 		repaint();
 	}
+	// 미리보기 패널에 라우팅
+	public Shape getNextPiece() {
+		return nextPiece;
+	}
+	// 도형 미리보기 시각화
+	public void drawPreview(Graphics g, int offsetX, int offsetY) {
+		if (nextPiece.getShape() == Tetrominoes.NoShape) {
+			return;
+		}
 
+		g.setColor(Color.white);  // 글자색 변경
+		g.drawString("Next Piece:", offsetX, offsetY - 5);  // 텍스트 위치 지정
+
+		for (int i = 0; i < 4; ++i) {
+			int x = offsetX + nextPiece.x(i) * squareWidth();
+			int y = offsetY + nextPiece.y(i) * squareHeight();
+			drawSquare(g, x, y, nextPiece.getShape());
+		}
+	}
 	public void paint(Graphics g) {
 		super.paint(g);
 
@@ -110,6 +143,19 @@ public class Board extends JPanel implements ActionListener {
 				int y = curY - curPiece.y(i);
 				drawSquare(g, 0 + x * squareWidth(), boardTop + (BoardHeight - y - 1) * squareHeight(),
 						curPiece.getShape());
+			}
+		}
+		int previewOffsetX = 500;  // 도형 미리보기 x
+		int previewOffsetY = 0;   // 도형 미리보기 y
+
+		g.setColor(Color.white);
+		g.drawString("Next piece:", previewOffsetX, previewOffsetY - 5);
+
+		if (nextPiece.getShape() != Tetrominoes.NoShape) {
+			for (int i = 0; i < 4; ++i) {
+				int x = previewOffsetX + nextPiece.x(i) * squareWidth();
+				int y = previewOffsetY + nextPiece.y(i) * squareHeight();
+				drawSquare(g, x, y, nextPiece.getShape());
 			}
 		}
 	}
@@ -148,7 +194,13 @@ public class Board extends JPanel implements ActionListener {
 	}
 
 	private void newPiece() {
-		curPiece.setRandomShape();
+		curPiece.setShape(nextPiece.getShape()); // 현재 조각을 다음 조각으로 설정
+		nextPiece.setRandomShape(); // 다음 조각을 랜덤으로 생성
+
+		if (previewBoard != null) {
+			previewBoard.repaint(); // PreviewBoard의 paintComponent를 호출하여 그리기 업데이트
+		}
+
 		curX = BoardWidth / 2 + 1;
 		curY = BoardHeight - 1 + curPiece.minY();
 
