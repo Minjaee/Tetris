@@ -11,6 +11,7 @@ import java.awt.event.KeyEvent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.Timer;
+import java.awt.Font;
 
 public class Board extends JPanel implements ActionListener {
 
@@ -113,9 +114,11 @@ public class Board extends JPanel implements ActionListener {
 		if (nextPiece.getShape() == Tetrominoes.NoShape) {
 			return;
 		}
+		Font newFont = new Font("SansSerif", Font.BOLD, 18); // 폰트명, 스타일, 크기 지정
+		g.setFont(newFont);
 
 		g.setColor(Color.white);  // 글자색 변경
-		g.drawString("Next Piece:", offsetX, offsetY - 5);  // 텍스트 위치 지정
+		g.drawString("다음 블럭:", offsetX + -150, offsetY + 10);  // 텍스트 위치 지정
 
 		for (int i = 0; i < 4; ++i) {
 			int x = offsetX + nextPiece.x(i) * squareWidth();
@@ -145,18 +148,20 @@ public class Board extends JPanel implements ActionListener {
 						curPiece.getShape());
 			}
 		}
-		int previewOffsetX = 500;  // 도형 미리보기 x
-		int previewOffsetY = 0;   // 도형 미리보기 y
 
-		g.setColor(Color.white);
-		g.drawString("Next piece:", previewOffsetX, previewOffsetY - 5);
+		// 격자 무늬 그리기
+		g.setColor(Color.GRAY);  // 격자 선의 색상 설정
 
-		if (nextPiece.getShape() != Tetrominoes.NoShape) {
-			for (int i = 0; i < 4; ++i) {
-				int x = previewOffsetX + nextPiece.x(i) * squareWidth();
-				int y = previewOffsetY + nextPiece.y(i) * squareHeight();
-				drawSquare(g, x, y, nextPiece.getShape());
-			}
+		// 가로선 그리기
+		for (int i = 0; i < BoardHeight; i++) {
+			g.drawLine(0, boardTop + i * squareHeight(),
+					BoardWidth * squareWidth(), boardTop + i * squareHeight());
+		}
+
+		// 세로선 그리기
+		for (int j = 0; j < BoardWidth; j++) {
+			g.drawLine(j * squareWidth(), boardTop,
+					j * squareWidth(), boardTop + BoardHeight * squareHeight());
 		}
 	}
 
