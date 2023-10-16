@@ -29,7 +29,7 @@ public class Board extends JPanel implements ActionListener {
 	Shape curPiece;
 	Tetrominoes[] board;
 	Shape nextPiece; // 다음 블록 미리보기 변수 생성
-
+	int rotationCount = 0; // 도형의 회전 횟수를 저장할 변수 추가
 	//preview Board 기능
 	private PreviewBoard previewBoard;
 
@@ -132,6 +132,7 @@ public class Board extends JPanel implements ActionListener {
 		Dimension size = getSize();
 		int boardTop = (int) size.getHeight() - BoardHeight * squareHeight();
 
+
 		for (int i = 0; i < BoardHeight; ++i) {
 			for (int j = 0; j < BoardWidth; ++j) {
 				Tetrominoes shape = shapeAt(j, BoardHeight - i - 1);
@@ -145,6 +146,24 @@ public class Board extends JPanel implements ActionListener {
 				int x = curX + curPiece.x(i);
 				int y = curY - curPiece.y(i);
 				drawSquare(g, 0 + x * squareWidth(), boardTop + (BoardHeight - y - 1) * squareHeight(),
+						curPiece.getShape());
+			}
+		}
+
+		// 고스트 블록 그리기
+		if (isStarted && !isPaused) {
+			int ghostY = curY;
+			while (ghostY > 0) {
+				if (!tryMove(curPiece, curX, ghostY - 1, false))
+					break;
+				--ghostY;
+			}
+
+			for (int i = 0; i < 4; ++i) {
+				int x = curX + curPiece.x(i);
+				int y = ghostY - curPiece.y(i);
+				drawGhostSquare(g, 0 + x * squareWidth(),
+						boardTop + (BoardHeight - y - 1) * squareHeight(),
 						curPiece.getShape());
 			}
 		}
@@ -164,6 +183,18 @@ public class Board extends JPanel implements ActionListener {
 					j * squareWidth(), boardTop + BoardHeight * squareHeight());
 		}
 	}
+
+	// 고스트 블록을 그리기 위한 메서드
+	private void drawGhostSquare(Graphics g, int x, int y, Tetrominoes shape) {
+		Color colors[] = { new Color(0, 0, 0), new Color(204, 102, 102, 255),
+				new Color(102, 204, 102, 255), new Color(102, 102, 204, 255),
+				new Color(204, 204, 102, 255), new Color(204, 102, 204, 255),
+				new Color(102, 204, 204, 255), new Color(218, 170, 0, 255) };
+		Color color = colors[shape.ordinal()];
+		g.setColor(color);
+		g.drawRect(x + 1, y + 1, squareWidth() - 2, squareHeight() - 2);
+	}
+
 
 	private void dropDown() {
 		int newY = curY;
@@ -201,6 +232,7 @@ public class Board extends JPanel implements ActionListener {
 	private void newPiece() {
 		curPiece.setShape(nextPiece.getShape()); // 현재 조각을 다음 조각으로 설정
 		nextPiece.setRandomShape(); // 다음 조각을 랜덤으로 생성
+		rotationCount = 0; // 도형이 생성될 때 회전 횟수를 0으로 초기화
 
 		if (previewBoard != null) {
 			previewBoard.repaint(); // PreviewBoard의 paintComponent를 호출하여 그리기 업데이트
@@ -218,6 +250,10 @@ public class Board extends JPanel implements ActionListener {
 	}
 
 	private boolean tryMove(Shape newPiece, int newX, int newY) {
+		return tryMove(newPiece, newX, newY, true);
+	}
+
+	private boolean tryMove(Shape newPiece, int newX, int newY, boolean actualMove) {
 		for (int i = 0; i < 4; ++i) {
 			int x = newX + newPiece.x(i);
 			int y = newY - newPiece.y(i);
@@ -227,13 +263,14 @@ public class Board extends JPanel implements ActionListener {
 				return false;
 		}
 
-		curPiece = newPiece;
-		curX = newX;
-		curY = newY;
-		repaint();
+		if (actualMove) {
+			curPiece = newPiece;
+			curX = newX;
+			curY = newY;
+			repaint();
+		}
 		return true;
 	}
-
 	private void removeFullLines() {
 		int numFullLines = 0;
 
@@ -302,25 +339,32 @@ public class Board extends JPanel implements ActionListener {
 				return;
 
 			switch (keycode) {
-			case KeyEvent.VK_LEFT:
+			    case KeyEvent.VK_LEFT:
 				tryMove(curPiece, curX - 1, curY);
 				break;
-			case KeyEvent.VK_RIGHT:
+			    case KeyEvent.VK_RIGHT:
 				tryMove(curPiece, curX + 1, curY);
 				break;
-			case KeyEvent.VK_DOWN:
-				tryMove(curPiece.rotateRight(), curX, curY);
-				break;
-			case KeyEvent.VK_UP:
-				tryMove(curPiece.rotateLeft(), curX, curY);
-				break;
-			case KeyEvent.VK_SPACE:
+				// 도형 횟수 제한 (현재 4번 0회~3회)
+				case KeyEvent.VK_DOWN:
+					if (rotationCount < 3) {   // 횟수제한 변경
+						tryMove(curPiece.rotateRight(), curX, curY);
+						rotationCount++;
+					}
+					break;
+				case KeyEvent.VK_UP:
+					if (rotationCount < 3) {   // 횟수제한 변경
+						tryMove(curPiece.rotateLeft(), curX, curY);
+						rotationCount++;
+					}
+					break;
+			    case KeyEvent.VK_SPACE:
 				dropDown();
 				break;
-			case 'd':
+			    case 'd':
 				oneLineDown();
 				break;
-			case 'D':
+			    case 'D':
 				oneLineDown();
 				break;
 			}

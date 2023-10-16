@@ -124,7 +124,15 @@ public class MainMenu extends JFrame implements ActionListener {
             game.setVisible(true);
             backgroundMusic.stop();
         }
-
+        //open 2P game mode
+        if(e.getSource() == multiPlayerButton) {
+            SwingUtilities.invokeLater(() -> {
+                TwoPlayer twoPlayer = new TwoPlayer();
+                twoPlayer.setVisible(true);
+            });
+            this.setVisible(false);
+            backgroundMusic.stop();
+        }
         //open about window if aboutButton is pressed
         if(e.getSource() == aboutButton){
             aboutFrame = new AboutFrame();
