@@ -1,4 +1,4 @@
-package kr.ac.jbnu.se.tetris;
+package src.kr.ac.jbnu.se.tetris;
 
 import java.awt.BorderLayout;
 import javax.swing.*;

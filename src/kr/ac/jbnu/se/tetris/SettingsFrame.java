@@ -1,4 +1,4 @@
-package kr.ac.jbnu.se.tetris;
+package src.kr.ac.jbnu.se.tetris;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
@@ -25,7 +25,7 @@ public class SettingsFrame extends JFrame implements ActionListener {
         backgroundMusic.loop();
 
         // logo setup
-        ImageIcon logo = new ImageIcon(getClass().getClassLoader().getResource("images/logo.png"));
+        ImageIcon logo = new ImageIcon(getClass().getClassLoader().getResource("src/images/logo.png"));
         this.setIconImage(logo.getImage());
 
         //backButton setup

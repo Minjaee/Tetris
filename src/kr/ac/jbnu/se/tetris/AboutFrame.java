@@ -1,4 +1,4 @@
-package kr.ac.jbnu.se.tetris;
+package src.kr.ac.jbnu.se.tetris;
 
 import javax.swing.*;
 import java.awt.*;
@@ -18,7 +18,7 @@ public class AboutFrame extends JFrame implements ActionListener {
         this.getContentPane().setBackground(Color.white);
 
         // logo setup
-        ImageIcon logo = new ImageIcon(getClass().getClassLoader().getResource("images/logo.png"));
+        ImageIcon logo = new ImageIcon(getClass().getClassLoader().getResource("src/images/logo.png"));
         this.setIconImage(logo.getImage());
 
         //text declaration

@@ -1,4 +1,4 @@
-package kr.ac.jbnu.se.tetris;
+package src.kr.ac.jbnu.se.tetris;
 
 public class User {
     private String id;

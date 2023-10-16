@@ -24,34 +24,10 @@
       <change beforePath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/Tetrominoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/Tetrominoes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/TwoPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/TwoPlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/TwoPlayerBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/TwoPlayerBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/about.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/settings.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/kr/ac/jbnu/se/tetris/AboutFrame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/kr/ac/jbnu/se/tetris/Board$TAdapter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/kr/ac/jbnu/se/tetris/Board.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/kr/ac/jbnu/se/tetris/FirebaseUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/kr/ac/jbnu/se/tetris/LoginFrame$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/kr/ac/jbnu/se/tetris/LoginFrame$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/kr/ac/jbnu/se/tetris/LoginFrame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/kr/ac/jbnu/se/tetris/MainMenu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/kr/ac/jbnu/se/tetris/PreviewBoard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/kr/ac/jbnu/se/tetris/RegisterFrame$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/kr/ac/jbnu/se/tetris/RegisterFrame$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/kr/ac/jbnu/se/tetris/RegisterFrame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/kr/ac/jbnu/se/tetris/SettingsFrame$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/kr/ac/jbnu/se/tetris/SettingsFrame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/kr/ac/jbnu/se/tetris/Shape.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/kr/ac/jbnu/se/tetris/SoundManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/kr/ac/jbnu/se/tetris/Tetris.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/kr/ac/jbnu/se/tetris/Tetrominoes.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/kr/ac/jbnu/se/tetris/TwoPlayer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/kr/ac/jbnu/se/tetris/TwoPlayerBoard$TAdapter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/kr/ac/jbnu/se/tetris/TwoPlayerBoard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/kr/ac/jbnu/se/tetris/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sounds/background.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/kr/ac/jbnu/se/tetris/Board$TAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/kr/ac/jbnu/se/tetris/Board$TAdapter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/kr/ac/jbnu/se/tetris/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/kr/ac/jbnu/se/tetris/Board.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/kr/ac/jbnu/se/tetris/Tetris.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/kr/ac/jbnu/se/tetris/Tetris.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/kr/ac/jbnu/se/tetris/Tetrominoes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/kr/ac/jbnu/se/tetris/Tetrominoes.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +68,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1697469680646</updated>
-      <workItem from="1697469682824" duration="253000" />
+      <workItem from="1697469682824" duration="146000" />
     </task>
     <servers />
   </component>

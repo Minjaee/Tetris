@@ -1,4 +1,4 @@
-package kr.ac.jbnu.se.tetris;
+package src.kr.ac.jbnu.se.tetris;
 
 import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.WriteResult;

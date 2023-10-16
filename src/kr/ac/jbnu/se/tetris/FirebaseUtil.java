@@ -1,4 +1,4 @@
-package kr.ac.jbnu.se.tetris;
+package src.kr.ac.jbnu.se.tetris;
 
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.firestore.*;

@@ -1,4 +1,4 @@
-package kr.ac.jbnu.se.tetris;
+package src.kr.ac.jbnu.se.tetris;
 
 import java.awt.*;
 
@@ -34,6 +34,10 @@ public class Tetris extends JFrame {
 		setSize(800, 800); // 프레임 사이즈 조정
 		setTitle("Tetris");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
+	}
+
+	public void closeFrame() {
+		this.dispose();
 	}
 
 	public JLabel getStatusBar() {

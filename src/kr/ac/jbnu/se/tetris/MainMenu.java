@@ -1,4 +1,4 @@
-package kr.ac.jbnu.se.tetris;
+package src.kr.ac.jbnu.se.tetris;
 
 import javax.swing.*;
 import java.awt.*;
@@ -26,17 +26,17 @@ public class MainMenu extends JFrame implements ActionListener {
         backgroundMusic.loop();
 
         //logo setup
-        ImageIcon logo = new ImageIcon(getClass().getClassLoader().getResource("images/logo.png"));
+        ImageIcon logo = new ImageIcon(getClass().getClassLoader().getResource("src/images/logo.png"));
         this.setIconImage(logo.getImage());
 
         // background image setup
-        ImageIcon image = new ImageIcon(getClass().getClassLoader().getResource("images/background.png"));
+        ImageIcon image = new ImageIcon(getClass().getClassLoader().getResource("src/images/background.png"));
 
         // settings image setup
-        ImageIcon settings = new ImageIcon(getClass().getClassLoader().getResource("images/settings.png"));
+        ImageIcon settings = new ImageIcon(getClass().getClassLoader().getResource("src/images/settings.png"));
 
         // about image setup
-        ImageIcon about = new ImageIcon(getClass().getClassLoader().getResource("images/about.png"));
+        ImageIcon about = new ImageIcon(getClass().getClassLoader().getResource("src/images/about.png"));
 
         JLabel background_image = new JLabel(image);
         background_image.setBounds(0, 0, 900, 700);
