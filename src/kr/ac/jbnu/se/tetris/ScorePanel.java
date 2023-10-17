@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.concurrent.ExecutionException;
+import java.util.ArrayList;
 
 
 public class ScorePanel extends JFrame implements ActionListener {
@@ -15,9 +15,13 @@ public class ScorePanel extends JFrame implements ActionListener {
     private JLabel scoreLabel;
     private JTextField userIdField;
     private int userScore;
+    private JTable scoreTable;
+    private ArrayList<User> topScores = new ArrayList<>(); // 초기화된 ArrayList
+
 
     ScorePanel(String id){
         // frame setup
+        this.id = id;
         this.setTitle("Tetris"); // app title
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(900, 700);// window dimensions
@@ -73,6 +77,30 @@ public class ScorePanel extends JFrame implements ActionListener {
         // 스코어 레이블 업데이트
         updateScoreLabel();
 
+
+        fetchTopScores(); // 최고 점수 순위 정보 가져오기
+        // JTable을 사용하여 최고 점수 순위와 스코어 표시
+        String[] columnNames = {"순위", "사용자 ID", "스코어"};
+        // Reinitialize topScores
+        topScores = FirebaseUtil.getTopScores(10);
+
+        // JTable 설정
+        Object[][] data = new Object[topScores.size()][3];
+        for (int i = 0; i < topScores.size(); i++) {
+            data[i][0] = i + 1; // 순위
+            data[i][1] = topScores.get(i).getId(); // 사용자 ID
+            data[i][2] = topScores.get(i).getScore(); // 스코어
+        }
+
+        scoreTable = new JTable(data, columnNames);
+        scoreTable.setBounds(400, 200, 400, 180);
+
+        // JScrollPane로 JTable 래핑
+        JScrollPane scrollPane = new JScrollPane(scoreTable);
+        scrollPane.setBounds(400, 200, 400, 180);
+
+        this.add(scrollPane);
+
     }
 
     // Firebase에서 사용자 스코어 가져오기
@@ -87,12 +115,18 @@ public class ScorePanel extends JFrame implements ActionListener {
     private void updateScoreLabel() {
         scoreLabel.setText("스코어: " + userScore);
     }
+    private void fetchTopScores() {
+        // FirebaseUtil 클래스를 사용하여 최고 점수 순위 정보 가져오기
+        topScores = FirebaseUtil.getTopScores(10);
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         //go back to main-menu if backButton pressed
         if(e.getSource() == backButton){
+            mainMenu = new MainMenu(id);
             this.setVisible(false);
+            mainMenu.setVisible(true);
         }
     }
 }

@@ -9,13 +9,14 @@ import com.google.firebase.cloud.FirestoreClient;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ExecutionException;
 
 public class FirebaseUtil {
 
     private static Firestore db;
+
+
 
     public static void initialize() {
         try {
@@ -83,4 +84,39 @@ public class FirebaseUtil {
             return 0; // 예외 발생 시 기본값 0 반환
         }
     }
+    public static ArrayList<User> getTopScores(int limit) {
+        ArrayList<User> allScores = getAllUserScores(); // 모든 사용자의 스코어 가져오기
+
+        // 내림차순으로 정렬
+        allScores.sort(Comparator.comparing(User::getScore).reversed());
+
+        // 최고 점수 순위에서 10위까지 반환
+        return new ArrayList<>(allScores.subList(0, Math.min(limit, allScores.size())));
+    }
+    public static ArrayList<User> getAllUserScores() {
+        ArrayList<User> allScores = new ArrayList<>();
+        CollectionReference usersCollection = db.collection("users");
+
+        ApiFuture<QuerySnapshot> query = usersCollection.get();
+        try {
+            QuerySnapshot querySnapshot = query.get();
+            List<QueryDocumentSnapshot> documents = querySnapshot.getDocuments();
+
+            for (QueryDocumentSnapshot document : documents) {
+                String id = document.getString("id");
+                Long score = document.getLong("score");
+
+                if (id != null && score != null) {
+                    // 이 부분을 수정
+                    User user = new User(id, "password", score.intValue());
+                    allScores.add(user);
+                }
+            }
+        } catch (InterruptedException | ExecutionException ex) {
+            ex.printStackTrace();
+        }
+
+        return allScores;
+    }
+
 }
