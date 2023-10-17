@@ -6,9 +6,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.Timer;
+import javax.swing.*;
+
 public class TwoPlayerBoard extends JPanel implements ActionListener {
     final int BoardWidth = 10;
     final int BoardHeight = 22;
@@ -63,6 +62,21 @@ public class TwoPlayerBoard extends JPanel implements ActionListener {
         } else {
             oneLineDown(2);
         }
+        if (score >= 2) {
+            timer.stop();
+            isStarted = false;
+            statusbar.setText("1p wins!"); // 게임 종료 메시지 설정
+        }
+
+        // 2p가 스코어 20점에 도달하면 게임 종료
+        if (score2 >= 2) {
+            timer.stop();
+            isStarted = false;
+            statusbar.setText("2p wins!"); // 게임 종료 메시지 설정
+        }
+
+        statusbar.setFont(new Font("Arial", Font.BOLD, 48)); // 폰트 크기를 48로 변경
+        statusbar.setHorizontalAlignment(SwingConstants.CENTER); // 중앙 정렬
     }
     private void initializeGame() {
                 score = 0;
@@ -171,14 +185,43 @@ public class TwoPlayerBoard extends JPanel implements ActionListener {
                         curPiece2.getShape());
             }
         }
+
+        // 격자 무늬 그리기
+        g.setColor(Color.GRAY);  // 격자 선의 색상 설정
+
+        // 가로선 그리기
+        for (int i = 0; i < BoardHeight; i++) {
+            g.drawLine(80, boardTop + i * squareHeight(),
+                    80 + BoardWidth * squareWidth(), boardTop + i * squareHeight());
+        }
+
+        // 세로선 그리기
+        for (int j = 0; j < BoardWidth; j++) {
+            g.drawLine(80 + j * squareWidth(), boardTop,
+                    80 + j * squareWidth(), boardTop + BoardHeight * squareHeight());
+        }
+
+        // 가로선 그리기
+        for (int i = 0; i < BoardHeight; i++) {
+            g.drawLine(440, boardTop + i * squareHeight(),
+                    440 + BoardWidth * squareWidth(), boardTop + i * squareHeight());
+        }
+
+        // 세로선 그리기
+        for (int j = 0; j < BoardWidth; j++) {
+            g.drawLine(440 + j * squareWidth(), boardTop,
+                    440 + j * squareWidth(), boardTop + BoardHeight * squareHeight());
+        }
+
         g.setColor(Color.BLACK);
         g.setFont(new Font("Arial", Font.BOLD, 16));
         g.drawString("Score: " + score, 10, 40);
-
+        g.drawString("1p", 10, 60);
 
         g.setColor(Color.BLACK);
         g.setFont(new Font("Arial", Font.BOLD, 16));
         g.drawString("Score: " + score2, 350, 40);
+        g.drawString("2p", 350, 60);
     }
 
 
@@ -357,10 +400,10 @@ public class TwoPlayerBoard extends JPanel implements ActionListener {
 
                 if (numFullLines > 0) {
                     numLinesRemoved += numFullLines;
-                    statusbar.setText(String.valueOf(numLinesRemoved));
                     isFallingFinished = true;
                     curPiece.setShape(Tetrominoes.NoShape);
                     repaint();
+                    score++;
                 }
             case 2:
                 for (int i = BoardHeight - 1; i >= 0; --i) {
@@ -385,10 +428,10 @@ public class TwoPlayerBoard extends JPanel implements ActionListener {
 
                 if (numFullLines2 > 0) {
                     numLinesRemoved += numFullLines2;
-                    statusbar.setText(String.valueOf(numLinesRemoved));
                     isFallingFinished2 = true;
                     curPiece2.setShape(Tetrominoes.NoShape);
                     repaint();
+                    score2++;
                 }
         }
     }

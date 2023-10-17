@@ -8,7 +8,7 @@ public class TwoPlayer extends JFrame {
     JLabel statusbar;
 
     public TwoPlayer() {
-        statusbar = new JLabel(" 0");
+        statusbar = new JLabel(" ");
         add(statusbar, BorderLayout.SOUTH);
         TwoPlayerBoard board = new TwoPlayerBoard(this);
         add(board);
