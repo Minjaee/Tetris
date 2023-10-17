@@ -25,6 +25,7 @@ public class Board extends JPanel implements ActionListener {
 	int numLinesRemoved = 0;
 	int curX = 0;
 	int curY = 0;
+
 	JLabel statusbar;
 	Shape curPiece;
 	Tetrominoes[] board;
@@ -129,6 +130,8 @@ public class Board extends JPanel implements ActionListener {
 
 		g.setColor(Color.white);  // 글자색 변경
 		g.drawString("다음 블럭:", offsetX + -150, offsetY + 10);  // 텍스트 위치 지정
+
+		g.drawString("score:" + "     " + numLinesRemoved, offsetX + -150, offsetY +140);  // 텍스트 위치 지정
 
 		for (int i = 0; i < 4; ++i) {
 			int x = offsetX + nextPiece.x(i) * squareWidth();

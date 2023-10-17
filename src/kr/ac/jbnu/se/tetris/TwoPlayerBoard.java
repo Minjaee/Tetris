@@ -155,7 +155,7 @@ public class TwoPlayerBoard extends JPanel implements ActionListener {
             statusbar.setText("paused");
         } else {
             timer.start();
-            statusbar.setText(String.valueOf(numLinesRemoved));
+            statusbar.setText(" ");
         }
         repaint();
     }
@@ -241,8 +241,8 @@ public class TwoPlayerBoard extends JPanel implements ActionListener {
         int option = JOptionPane.showOptionDialog(this, "게임이 종료되었습니다. 다시 시작하시겠습니까?", "게임 종료",
                 JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, new String[]{"다시 시작", "메인 메뉴"}, "default");
         if (option == JOptionPane.YES_OPTION) {
-            int var = 0;
-            start(var);  // 게임 재시작
+            start(2);
+            start(1);  // 게임 재시작
         } else {
             openMainFrame();// 메인 메뉴로 돌아가게 하는 메서드.
         }
@@ -343,7 +343,6 @@ public class TwoPlayerBoard extends JPanel implements ActionListener {
                     curPiece.setShape(Tetrominoes.NoShape);
                     timer.stop();
                     isStarted = false;
-                    statusbar.setText("game over");
                     isGameOver = true; // 게임 오버 시 isGameOver변수를 false에서 true로 변경
                     gameOverAction();  // 게임 오버 액션 추가
 
@@ -358,7 +357,6 @@ public class TwoPlayerBoard extends JPanel implements ActionListener {
                     curPiece2.setShape(Tetrominoes.NoShape);
                     timer.stop();
                     isStarted = false;
-                    statusbar.setText("game over");
                     isGameOver = true; // 게임 오버 시 isGameOver변수를 false에서 true로 변경
                     gameOverAction();  // 게임 오버 액션 추가
                 }
@@ -436,7 +434,7 @@ public class TwoPlayerBoard extends JPanel implements ActionListener {
                     isFallingFinished = true;
                     curPiece.setShape(Tetrominoes.NoShape);
                     repaint();
-                    score++;
+                    score += numFullLines;
                 }
             case 2:
                 for (int i = BoardHeight - 1; i >= 0; --i) {
@@ -464,7 +462,7 @@ public class TwoPlayerBoard extends JPanel implements ActionListener {
                     isFallingFinished2 = true;
                     curPiece2.setShape(Tetrominoes.NoShape);
                     repaint();
-                    score2++;
+                    score2 += numFullLines2;
                 }
         }
     }
