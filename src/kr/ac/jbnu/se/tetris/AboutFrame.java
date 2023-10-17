@@ -11,7 +11,9 @@ public class AboutFrame extends JFrame implements ActionListener {
     MainMenu mainMenu;
     private String id;
 
-    AboutFrame(){
+    AboutFrame(String id){
+        this.id = id;
+
         // frame setup
         this.setTitle("Tetris"); // app title
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

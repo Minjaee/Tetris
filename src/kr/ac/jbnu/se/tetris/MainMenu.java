@@ -125,6 +125,16 @@ public class MainMenu extends JFrame implements ActionListener {
             }
         });
 
+        aboutButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {aboutFrameOpen(id);}
+        });
+
+        settingsButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {settingsOpen(id);}
+        });
+
     }
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -138,24 +148,7 @@ public class MainMenu extends JFrame implements ActionListener {
             this.setVisible(false);
             backgroundMusic.stop();
         }
-
-        //open about window if aboutButton is pressed
-        if(e.getSource() == aboutButton){
-            aboutFrame = new AboutFrame();
-            this.setVisible(false);
-            aboutFrame.setLocationRelativeTo(null);
-            aboutFrame.setVisible(true);
-            backgroundMusic.stop();
-        }
-
         //open setting window if settingsButton is pressed
-        if(e.getSource() == settingsButton){
-            settingsFrame = new SettingsFrame();
-            this.setVisible(false);
-            settingsFrame.setLocationRelativeTo(null);
-            settingsFrame.setVisible(true);
-            backgroundMusic.stop();
-        }
 
 
     }
@@ -175,6 +168,19 @@ public class MainMenu extends JFrame implements ActionListener {
         ScorePanel.setVisible(true);
         backgroundMusic.stop();
     }
-
+    public void aboutFrameOpen(String id){
+        AboutFrame AboutFrame = new AboutFrame(id);
+        this.setVisible(false);
+        AboutFrame.setLocationRelativeTo(null);
+        AboutFrame.setVisible(true);
+        backgroundMusic.stop();
+    }
+    public void settingsOpen(String id){
+        SettingsFrame settingsFrame = new SettingsFrame(id);
+        this.setVisible(false);
+        settingsFrame.setLocationRelativeTo(null);
+        settingsFrame.setVisible(true);
+        backgroundMusic.stop();
+    }
 
 }

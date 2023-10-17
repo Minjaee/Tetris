@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="6b029d8b-ace6-4372-9def-23555e6ebe41" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/FirebaseUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/FirebaseUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/AboutFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/AboutFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/MainMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/ScorePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/ScorePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/SettingsFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/SettingsFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +77,7 @@
       <workItem from="1697510417415" duration="4204000" />
       <workItem from="1697520523553" duration="4052000" />
       <workItem from="1697525142163" duration="7130000" />
-      <workItem from="1697553071669" duration="4088000" />
+      <workItem from="1697553071669" duration="5919000" />
     </task>
     <servers />
   </component>

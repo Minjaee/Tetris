@@ -34,22 +34,22 @@ public class ScorePanel extends JFrame implements ActionListener {
 
         // 사용자 ID 레이블
         userIdLabel = new JLabel("사용자 ID:");
-        userIdLabel.setBounds(100, 100, 100, 30);
+        userIdLabel.setBounds(100, 200, 100, 30);
         this.add(userIdLabel);
 
         // 사용자 ID 입력 필드
         userIdField = new JTextField(id);
-        userIdField.setBounds(200, 100, 150, 30);
+        userIdField.setBounds(200, 200, 150, 30);
         this.add(userIdField);
 
         // 스코어 레이블
         scoreLabel = new JLabel("스코어: " + userScore);
-        scoreLabel.setBounds(100, 150, 100, 30);
+        scoreLabel.setBounds(100, 250, 100, 30);
         this.add(scoreLabel);
 
         // 스코어 불러오기 버튼
         JButton loadScoreButton = new JButton("Enter");
-        loadScoreButton.setBounds(280, 150, 70, 30);
+        loadScoreButton.setBounds(280, 250, 70, 30);
         loadScoreButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -82,7 +82,7 @@ public class ScorePanel extends JFrame implements ActionListener {
         // JTable을 사용하여 최고 점수 순위와 스코어 표시
         String[] columnNames = {"순위", "사용자 ID", "스코어"};
         // Reinitialize topScores
-        topScores = FirebaseUtil.getTopScores(10);
+        topScores = FirebaseUtil.getTopScores(50);
 
         // JTable 설정
         Object[][] data = new Object[topScores.size()][3];
@@ -99,6 +99,13 @@ public class ScorePanel extends JFrame implements ActionListener {
         JScrollPane scrollPane = new JScrollPane(scoreTable);
         scrollPane.setBounds(400, 200, 400, 180);
 
+        //글자
+        JLabel header = new JLabel("Rangking!");
+        header.setBounds(400, 100, 400, 100);
+        header.setForeground(Color.black);
+        header.setFont(new Font("MV Boli", Font.PLAIN, 80));
+
+        this.add(header);
         this.add(scrollPane);
 
     }
@@ -117,7 +124,7 @@ public class ScorePanel extends JFrame implements ActionListener {
     }
     private void fetchTopScores() {
         // FirebaseUtil 클래스를 사용하여 최고 점수 순위 정보 가져오기
-        topScores = FirebaseUtil.getTopScores(10);
+        topScores = FirebaseUtil.getTopScores(50);
     }
 
     @Override

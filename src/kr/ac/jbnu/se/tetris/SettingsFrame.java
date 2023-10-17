@@ -14,7 +14,8 @@ public class SettingsFrame extends JFrame implements ActionListener {
     private JSlider volumeSlider; // 볼륨 조절 슬라이더 추가
     private String id;
 
-    public SettingsFrame(){
+    public SettingsFrame(String id){
+        this.id = id;
         //frame setup
         this.setTitle("Settings");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -29,6 +30,12 @@ public class SettingsFrame extends JFrame implements ActionListener {
         ImageIcon logo = new ImageIcon(getClass().getClassLoader().getResource("src/images/logo.png"));
         this.setIconImage(logo.getImage());
 
+        JLabel text = new JLabel();
+        text.setText("Volume Setting");
+        text.setForeground(Color.black);
+        text.setFont(new Font ("MV Boli", Font.PLAIN, 40));
+        text.setBounds(300, 100, 900, 100);
+
         //backButton setup
         backButton = new JButton("Back to Main-Menu");
         backButton.setFocusable(false);
@@ -37,10 +44,11 @@ public class SettingsFrame extends JFrame implements ActionListener {
 
         // 볼륨 조절 슬라이더 초기화
         volumeSlider = new JSlider(JSlider.HORIZONTAL, 0, 100, 100); // 볼륨 범위 설정
-        volumeSlider.setBounds(300, 200, 200, 50);
+        volumeSlider.setBounds(345, 280, 200, 50);
 
         this.add(backButton);
         this.add(volumeSlider);
+        this.add(text);
         this.setLayout(null);
         this.setVisible(true);
 
