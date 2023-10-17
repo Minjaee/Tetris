@@ -9,8 +9,13 @@ import java.awt.event.KeyEvent;
 import javax.swing.*;
 
 public class TwoPlayerBoard extends JPanel implements ActionListener {
+
+    private boolean isGameOver = false; // 게임오버상태인지 아닌지 확인할 변수 추가
     final int BoardWidth = 10;
     final int BoardHeight = 22;
+
+    private String id;
+    private String pw;
 
     Timer timer;
     boolean isFallingFinished = false;
@@ -66,6 +71,9 @@ public class TwoPlayerBoard extends JPanel implements ActionListener {
             timer.stop();
             isStarted = false;
             statusbar.setText("1p wins!"); // 게임 종료 메시지 설정
+
+            gameOverAction();  // 게임 오버 액션 추가
+
         }
 
         // 2p가 스코어 20점에 도달하면 게임 종료
@@ -73,6 +81,8 @@ public class TwoPlayerBoard extends JPanel implements ActionListener {
             timer.stop();
             isStarted = false;
             statusbar.setText("2p wins!"); // 게임 종료 메시지 설정
+
+            gameOverAction();  // 게임 오버 액션 추가
         }
 
         statusbar.setFont(new Font("Arial", Font.BOLD, 48)); // 폰트 크기를 48로 변경
@@ -117,6 +127,7 @@ public class TwoPlayerBoard extends JPanel implements ActionListener {
                 newPiece(1);
                 timer.start();
                 initializeGame();
+                isGameOver = false;   // 게임을 다시 시작할 때 isGameOver를 false로 초기화
                 break;
             case 2:
                 if (isPaused)
@@ -129,6 +140,7 @@ public class TwoPlayerBoard extends JPanel implements ActionListener {
                 newPiece(2);
                 timer.start();
                 initializeGame();
+                isGameOver = false;   // 게임을 다시 시작할 때 isGameOver를 false로 초기화
                 break;
         }
     }
@@ -224,6 +236,23 @@ public class TwoPlayerBoard extends JPanel implements ActionListener {
         g.drawString("2p", 350, 60);
     }
 
+    // 게임오버 상황에서의 액션
+    private void gameOverAction() {
+        int option = JOptionPane.showOptionDialog(this, "게임이 종료되었습니다. 다시 시작하시겠습니까?", "게임 종료",
+                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, new String[]{"다시 시작", "메인 메뉴"}, "default");
+        if (option == JOptionPane.YES_OPTION) {
+            int var = 0;
+            start(var);  // 게임 재시작
+        } else {
+            openMainFrame();// 메인 메뉴로 돌아가게 하는 메서드.
+        }
+    }
+
+    private void openMainFrame() {
+        MainMenu mainMenu = new MainMenu(id);  // 메인 메뉴 인스턴스 생성
+        mainMenu.setLocationRelativeTo(null);
+        mainMenu.setVisible(true);
+    }
 
     private void dropDown(int var) {
         int newY = curY;
@@ -315,6 +344,8 @@ public class TwoPlayerBoard extends JPanel implements ActionListener {
                     timer.stop();
                     isStarted = false;
                     statusbar.setText("game over");
+                    isGameOver = true; // 게임 오버 시 isGameOver변수를 false에서 true로 변경
+                    gameOverAction();  // 게임 오버 액션 추가
 
                 }
                 break;
@@ -328,6 +359,8 @@ public class TwoPlayerBoard extends JPanel implements ActionListener {
                     timer.stop();
                     isStarted = false;
                     statusbar.setText("game over");
+                    isGameOver = true; // 게임 오버 시 isGameOver변수를 false에서 true로 변경
+                    gameOverAction();  // 게임 오버 액션 추가
                 }
                 break;
         }
