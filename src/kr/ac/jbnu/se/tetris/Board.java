@@ -13,6 +13,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 import java.awt.Font;
+import java.util.logging.Level;
 import javax.swing.JOptionPane; // 게임 종료 시 재시작 혹은 메뉴로 돌아갈 것인지 물어보게 하기 위한 모듈
 public class Board extends JPanel implements ActionListener {
 
@@ -52,8 +53,8 @@ public class Board extends JPanel implements ActionListener {
 	} ///
 
 
-	public Board(Tetris parent) {
-
+	public Board(Tetris parent, String id) {
+		this.id = id;
 		this.tetrisParent = parent; // 멤버 추가
 
 		setFocusable(true);
@@ -106,6 +107,8 @@ public class Board extends JPanel implements ActionListener {
 
 		newPiece();
 		timer.start();
+		resetLevel();
+		resetScore();
 	}
 
 	private void pause() {
@@ -294,6 +297,12 @@ public class Board extends JPanel implements ActionListener {
 		}
 	}
 
+	private void resetScore(){
+		score = 0;
+	}
+	private void resetLevel(){
+		level = 1;
+	}
 	private void openMainFrame() {
 
 		tetrisParent.closeFrame(id); // Tetris 닫아버리기

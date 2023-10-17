@@ -14,7 +14,7 @@ public class Tetris extends JFrame {
 		add(statusbar, BorderLayout.SOUTH);
 
 		// 메인 게임 보드 생성 및 추가
-		Board mainBoard = new Board(this);
+		Board mainBoard = new Board(this, id);
 
 		// 추가로 생성된 미리보기 보드의 레이아웃 및 속성 설정
 		PreviewBoard previewBoard = new PreviewBoard(mainBoard);
