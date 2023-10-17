@@ -245,6 +245,7 @@ public class TwoPlayerBoard extends JPanel implements ActionListener {
             start(1);  // 게임 재시작
         } else {
             openMainFrame();// 메인 메뉴로 돌아가게 하는 메서드.
+            SwingUtilities.windowForComponent(this).dispose();
         }
     }
 

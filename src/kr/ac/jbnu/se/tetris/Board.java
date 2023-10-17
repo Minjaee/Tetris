@@ -23,6 +23,8 @@ public class Board extends JPanel implements ActionListener {
 	boolean isStarted = false;
 	boolean isPaused = false;
 	int numLinesRemoved = 0;
+
+	int score = 0; // 스코어 점수
 	int curX = 0;
 	int curY = 0;
 
@@ -131,7 +133,7 @@ public class Board extends JPanel implements ActionListener {
 		g.setColor(Color.white);  // 글자색 변경
 		g.drawString("다음 블럭:", offsetX + -150, offsetY + 10);  // 텍스트 위치 지정
 
-		g.drawString("score:" + "     " + numLinesRemoved, offsetX + -150, offsetY +140);  // 텍스트 위치 지정
+		g.drawString("score:" + "     " + score, offsetX + -150, offsetY +140);  // 텍스트 위치 지정
 
 		for (int i = 0; i < 4; ++i) {
 			int x = offsetX + nextPiece.x(i) * squareWidth();
@@ -342,6 +344,7 @@ public class Board extends JPanel implements ActionListener {
 			isFallingFinished = true;
 			curPiece.setShape(Tetrominoes.NoShape);
 			repaint();
+			score += numFullLines;  // 라인 한줄 제거당 1점 획득
 		}
 	}
 
