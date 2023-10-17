@@ -1,5 +1,6 @@
 package src.kr.ac.jbnu.se.tetris;
 
+import com.google.api.core.ApiFuture;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.firestore.*;
 import com.google.firebase.FirebaseApp;
@@ -40,7 +41,6 @@ public class FirebaseUtil {
         userMap.put("password", user.getPassword());
         userMap.put("score", user.getScore());
 
-
         db.collection("users").document(user.getId()).set(userMap).get();
     }
     public static void addScore(String userId, int newScore) throws ExecutionException, InterruptedException {
@@ -68,13 +68,19 @@ public class FirebaseUtil {
             return null;
         }
     }
-    public static int getUserScore(String id) throws ExecutionException, InterruptedException {
-        DocumentSnapshot documentSnapshot = db.collection("users").document(id).get().get();
-        if(documentSnapshot.exists()){
-            Integer score = documentSnapshot.getLong("score").intValue();
-            return score != null ? score : 0;
-        } else {
-            return 0;
+    public static int getUserScore(String id) {
+        try {
+            ApiFuture<DocumentSnapshot> future = db.collection("users").document(id).get();
+            DocumentSnapshot documentSnapshot = future.get(); // get() 메서드로 결과를 동기적으로 기다림
+            if (documentSnapshot.exists()) {
+                Long score = documentSnapshot.getLong("score");
+                return score != null ? score.intValue() : 0;
+            } else {
+                return 0;
+            }
+        } catch (InterruptedException | ExecutionException ex) {
+            ex.printStackTrace();
+            return 0; // 예외 발생 시 기본값 0 반환
         }
     }
 }

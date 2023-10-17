@@ -43,7 +43,6 @@ public class RegisterFrame extends JFrame {
         buttonPanel.add(registerButton);
         buttonPanel.add(cancelButton);
 
-        // In RegisterFrame class
         registerButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -52,10 +51,16 @@ public class RegisterFrame extends JFrame {
                 int score = 0;
 
                 try {
-                    FirebaseUtil.addUser(new User(id, pw, score));
-                    JOptionPane.showMessageDialog(null, "회원 가입이 완료되었습니다.");
-                    loginFrame.setVisible(true);
-                    dispose();
+                    String validPassword = FirebaseUtil.validateUserId(id);
+                    if (id.equals(validPassword)) {
+                        JOptionPane.showMessageDialog(null, "이미 사용중인 아이디입니다.");
+                    } else {
+                        FirebaseUtil.addUser(new User(id, pw, score));
+
+                        JOptionPane.showMessageDialog(null, "회원 가입이 완료되었습니다.");
+                        loginFrame.setVisible(true);
+                        dispose();
+                    }
                 } catch (ExecutionException | InterruptedException ex) {
                     ex.printStackTrace();
                 }

@@ -8,7 +8,7 @@ public class Tetris extends JFrame {
 
 	JLabel statusbar;
 
-	public Tetris() {
+	public Tetris(String id) {
 
 		statusbar = new JLabel(" 0");
 		add(statusbar, BorderLayout.SOUTH);
@@ -36,11 +36,11 @@ public class Tetris extends JFrame {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
 
-	public void closeFrame() {
+	public void closeFrame(String id) {
 		this.dispose();
 	}
 
-	public JLabel getStatusBar() {
+	public JLabel getStatusBar(String id) {
 		return statusbar;
 	}
 

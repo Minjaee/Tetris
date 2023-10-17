@@ -78,13 +78,10 @@ public class ScorePanel extends JFrame implements ActionListener {
     // Firebase에서 사용자 스코어 가져오기
     private void fetchUserScore() {
         id = userIdField.getText(); // 사용자가 입력한 ID를 가져옴
-        try {
             userScore = FirebaseUtil.getUserScore(id);
             updateScoreLabel();
-        } catch (ExecutionException | InterruptedException e) {
-            e.printStackTrace();
         }
-    }
+
 
     // 가져온 사용자 스코어로 스코어 레이블 업데이트
     private void updateScoreLabel() {

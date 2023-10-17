@@ -28,7 +28,6 @@ public class AboutFrame extends JFrame implements ActionListener {
                 "<html>This game was developed by:<br>" +
                 "김민재<br>" +
                 "황주원<br>" +
-                        "and<br> " +
                 "성재현");
 
 

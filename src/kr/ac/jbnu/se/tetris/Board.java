@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.util.concurrent.ExecutionException;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -23,6 +24,10 @@ public class Board extends JPanel implements ActionListener {
 	boolean isStarted = false;
 	boolean isPaused = false;
 	int numLinesRemoved = 0;
+
+	int level = 1;
+	int delay = 400;
+
 
 	int score = 0; // 스코어 점수
 	int curX = 0;
@@ -42,7 +47,6 @@ public class Board extends JPanel implements ActionListener {
 
 	private Tetris tetrisParent; // Board 클래스가 Tetris 클래스에 접근할 수 있도록 멤버 변수 생성
 
-
 	public void setPreviewBoard(PreviewBoard previewBoard) {
 		this.previewBoard = previewBoard;
 	} ///
@@ -57,7 +61,7 @@ public class Board extends JPanel implements ActionListener {
 		timer = new Timer(400, this);
 		timer.start();
 
-		statusbar = parent.getStatusBar();
+		statusbar = parent.getStatusBar(id);
 		board = new Tetrominoes[BoardWidth * BoardHeight];
 		addKeyListener(new TAdapter());
 		clearBoard();
@@ -134,6 +138,7 @@ public class Board extends JPanel implements ActionListener {
 		g.drawString("다음 블럭:", offsetX + -150, offsetY + 10);  // 텍스트 위치 지정
 
 		g.drawString("score:" + "     " + score, offsetX + -150, offsetY +140);  // 텍스트 위치 지정
+		g.drawString("Level:" + "     " + level, offsetX + -150, offsetY +270);  // 텍스트 위치 지정
 
 		for (int i = 0; i < 4; ++i) {
 			int x = offsetX + nextPiece.x(i) * squareWidth();
@@ -263,15 +268,19 @@ public class Board extends JPanel implements ActionListener {
 		curY = BoardHeight - 1 + curPiece.minY();
 
 		if (!tryMove(curPiece, curX, curY)) {
-			curPiece.setShape(Tetrominoes.NoShape);
-			timer.stop();
-			isStarted = false;
-			isGameOver = true; // 게임 오버 시 isGameOver변수를 false에서 true로 변경
-			statusbar.setText("game over");
-			repaint(); // gameover시 회색으로 변경
-
-			gameOverAction();  // 게임 오버 액션 추가
+			gameOver();
 		}
+	}
+
+	public void gameOver(){
+		curPiece.setShape(Tetrominoes.NoShape);
+		timer.stop();
+		isStarted = false;
+		isGameOver = true; // 게임 오버 시 isGameOver변수를 false에서 true로 변경
+		statusbar.setText("game over");
+		repaint(); // gameover시 회색으로 변경
+		updateScore();
+		gameOverAction();  // 게임 오버 액션 추가
 	}
 
 	// 게임오버 상황에서의 액션
@@ -287,7 +296,7 @@ public class Board extends JPanel implements ActionListener {
 
 	private void openMainFrame() {
 
-		tetrisParent.closeFrame(); // Tetris 닫아버리기
+		tetrisParent.closeFrame(id); // Tetris 닫아버리기
 
 		MainMenu mainMenu = new MainMenu(id);  // 메인 메뉴 인스턴스 생성
 		mainMenu.setLocationRelativeTo(null);
@@ -316,7 +325,7 @@ public class Board extends JPanel implements ActionListener {
 		}
 		return true;
 	}
-	private void removeFullLines() {
+	public void removeFullLines() {
 		int numFullLines = 0;
 
 		for (int i = BoardHeight - 1; i >= 0; --i) {
@@ -344,7 +353,11 @@ public class Board extends JPanel implements ActionListener {
 			isFallingFinished = true;
 			curPiece.setShape(Tetrominoes.NoShape);
 			repaint();
-			score += numFullLines;  // 라인 한줄 제거당 1점 획득
+			score++;  // 라인 한줄 제거당 1점 획득
+
+			level = (score / 3) + 1;  // Increase level every 3 points
+			delay = 400 - (level * 60);  // Decrease delay with level
+			timer.setDelay(delay); // Update the timer delay
 		}
 	}
 
@@ -354,6 +367,7 @@ public class Board extends JPanel implements ActionListener {
 				new Color(218, 170, 0), new Color(128, 128, 128)}; //gray색 추가
 
 		Color color = colors[shape.ordinal()];
+
 
 		if (shape == Tetrominoes.GrayShape) {
 			color = new Color(128, 128, 128); // Gray Shape를 회색으로 정의
@@ -420,4 +434,14 @@ public class Board extends JPanel implements ActionListener {
 
 			}
 		}
+	public void setId(String id) {this.id = id;}
+	public void updateScore() {
+		try {
+			if (id != null && score > FirebaseUtil.getUserScore(id)) {
+				FirebaseUtil.addScore(id, score);
+			}
+		} catch (ExecutionException | InterruptedException ex) {
+			ex.printStackTrace();
+		}
+	}
 	}
