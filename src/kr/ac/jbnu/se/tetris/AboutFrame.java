@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 public class AboutFrame extends JFrame implements ActionListener {
     JButton backButton;
     MainMenu mainMenu;
+    private String id;
 
     AboutFrame(){
         // frame setup
@@ -57,7 +58,7 @@ public class AboutFrame extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         //go back to main-menu if backButton pressed
         if(e.getSource() == backButton){
-            mainMenu = new MainMenu();
+            mainMenu = new MainMenu(id);
             this.setVisible(false);
             mainMenu.setVisible(true);
         }

@@ -30,6 +30,8 @@ public class Board extends JPanel implements ActionListener {
 	Tetrominoes[] board;
 	Shape nextPiece; // 다음 블록 미리 보기 변수 생성
 	int rotationCount = 0; // 도형의 회전 횟수를 저장할 변수 추가
+	private String id;
+	private String pw;
 
 	private boolean isGameOver = false; // 게임오버상태인지 아닌지 확인할 변수 추가
 	//preview Board 기능
@@ -282,7 +284,7 @@ public class Board extends JPanel implements ActionListener {
 
 		tetrisParent.closeFrame(); // Tetris 닫아버리기
 
-		MainMenu mainMenu = new MainMenu();  // 메인 메뉴 인스턴스 생성
+		MainMenu mainMenu = new MainMenu(id);  // 메인 메뉴 인스턴스 생성
 		mainMenu.setLocationRelativeTo(null);
 		mainMenu.setVisible(true);
 	}

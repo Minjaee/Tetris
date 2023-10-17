@@ -49,9 +49,10 @@ public class RegisterFrame extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 String id = idField.getText();
                 String pw = String.valueOf(pwField.getPassword());
+                int score = 0;
 
                 try {
-                    FirebaseUtil.addUser(new User(id, pw));
+                    FirebaseUtil.addUser(new User(id, pw, score));
                     JOptionPane.showMessageDialog(null, "회원 가입이 완료되었습니다.");
                     loginFrame.setVisible(true);
                     dispose();

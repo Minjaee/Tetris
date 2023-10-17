@@ -38,17 +38,43 @@ public class FirebaseUtil {
         Map<String, Object> userMap = new HashMap<>();
         userMap.put("id", user.getId());
         userMap.put("password", user.getPassword());
+        userMap.put("score", user.getScore());
+
 
         db.collection("users").document(user.getId()).set(userMap).get();
     }
+    public static void addScore(String userId, int newScore) throws ExecutionException, InterruptedException {
+        Map<String, Object> updateData = new HashMap<>();
+        updateData.put("score", newScore);
 
-    public static String validateUser(String id) throws ExecutionException, InterruptedException {
+        db.collection("users").document(userId).update(updateData).get();
+    }
+
+    public static String validateUserPassword(String id) throws ExecutionException, InterruptedException {
         DocumentSnapshot documentSnapshot = db.collection("users").document(id).get().get();
         if(documentSnapshot.exists()){
             return documentSnapshot.getString("password");
         }
         else{
             return null;
+        }
+    }
+    public static String validateUserId(String id) throws ExecutionException, InterruptedException {
+        DocumentSnapshot documentSnapshot = db.collection("users").document(id).get().get();
+        if(documentSnapshot.exists()){
+            return documentSnapshot.getString("id");
+        }
+        else{
+            return null;
+        }
+    }
+    public static int getUserScore(String id) throws ExecutionException, InterruptedException {
+        DocumentSnapshot documentSnapshot = db.collection("users").document(id).get().get();
+        if(documentSnapshot.exists()){
+            Integer score = documentSnapshot.getLong("score").intValue();
+            return score != null ? score : 0;
+        } else {
+            return 0;
         }
     }
 }

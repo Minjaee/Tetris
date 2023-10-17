@@ -44,9 +44,9 @@ public class LoginFrame extends JFrame {
                 String pw = String.valueOf(pwField.getPassword());
 
                 try {
-                    String validPassword = FirebaseUtil.validateUser(id);
+                    String validPassword = FirebaseUtil.validateUserPassword(id);
                     if (pw.equals(validPassword)) {
-                        openMainFrame();
+                        openMainFrame(id);
                     } else {
                         JOptionPane.showMessageDialog(null, "로그인 실패");
                     }
@@ -67,14 +67,8 @@ public class LoginFrame extends JFrame {
         add(pwPanel, BorderLayout.CENTER);
         add(buttonPanel, BorderLayout.SOUTH);
     }
-
-    /*private void openMypageFrame() {
-        MypageFrame mypageFrame = new MypageFrame(new MainFrame());
-        setVisible(false);
-        mypageFrame.setVisible(true);
-    }*/
-    private void openMainFrame() {
-        MainMenu mainFrame = new MainMenu();
+    private void openMainFrame(String id) {
+        MainMenu mainFrame = new MainMenu(id);
         setVisible(false);
         mainFrame.setVisible(true);
     }
@@ -84,13 +78,4 @@ public class LoginFrame extends JFrame {
         setVisible(false);
         registerFrame.setVisible(true);
     }
-
-
-
-//    public static void main(String[] args) {
-//        FirebaseUtil.initialize(); //db 시자크
-//
-//        LoginFrame loginFrame = new LoginFrame();
-//        loginFrame.setVisible(true);
-//    }
 }

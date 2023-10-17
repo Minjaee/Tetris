@@ -16,7 +16,7 @@ public class MainMenu extends JFrame implements ActionListener {
     JButton scoreboardButton;
     JButton aboutButton, settingsButton;
 
-    public MainMenu() {
+    public MainMenu(String id) {
         this.setTitle("Tetris");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(900, 700);
@@ -132,6 +132,13 @@ public class MainMenu extends JFrame implements ActionListener {
             });
             this.setVisible(false);
             backgroundMusic.stop();
+        }
+        // open ScorePanel window if scoreboardButton is pressed
+        if(e.getSource() == scoreboardButton){
+            ScorePanel ScorePanel = new ScorePanel();
+            this.setVisible(false);
+            ScorePanel.setLocationRelativeTo(null);
+            ScorePanel.setVisible(true);
         }
         //open about window if aboutButton is pressed
         if(e.getSource() == aboutButton){
