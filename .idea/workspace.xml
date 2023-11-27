@@ -5,137 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b029d8b-ace6-4372-9def-23555e6ebe41" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tetris.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/about.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/settings.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/AboutFrame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/Board.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/FirebaseUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/LoginFrame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/MainMenu.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/PreviewBoard.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/RegisterFrame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/ScorePanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/SettingsFrame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/Shape.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/SoundManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/Tetris.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/Tetrominoes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/TwoPlayer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/TwoPlayerBoard.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sounds/background.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Tetris-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Tetris.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/images/about.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/images/background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/images/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/images/settings.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/AboutFrame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/Board$TAdapter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/Board.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/FirebaseUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/LoginFrame$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/LoginFrame$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/LoginFrame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/MainMenu$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/MainMenu$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/MainMenu$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/MainMenu$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/MainMenu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/PreviewBoard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/RegisterFrame$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/RegisterFrame$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/RegisterFrame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/ScorePanel$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/ScorePanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/SettingsFrame$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/SettingsFrame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/Shape.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/SoundManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/Tetris.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/Tetrominoes.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/TwoPlayer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/TwoPlayerBoard$TAdapter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/TwoPlayerBoard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/sounds/background.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/Tetris-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/Tetris.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/src/images/about.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/src/images/background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/src/images/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/src/images/settings.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/src/sounds/background.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/Tetris-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/Tetris.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/src/images/about.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/src/images/background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/src/images/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/src/images/settings.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/src/sounds/background.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/Tetris-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/Tetris.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/src/images/about.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/src/images/background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/src/images/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/src/images/settings.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/src/sounds/background.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/target/Tetris-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/target/project-local-repo/Tetris/Tetris/1.0-SNAPSHOT/Tetris-1.0-SNAPSHOT-consumer.pom" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/target/project-local-repo/Tetris/Tetris/1.0-SNAPSHOT/Tetris-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/target/project-local-repo/Tetris/Tetris/1.0-SNAPSHOT/Tetris-1.0-SNAPSHOT.pom" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/tetris-8565c-firebase-adminsdk-ip0mc-025475196a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/project-local-repo/Tetris/Tetris/1.0-SNAPSHOT/Tetris-1.0-SNAPSHOT-consumer.pom" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/project-local-repo/Tetris/Tetris/1.0-SNAPSHOT/Tetris-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/project-local-repo/Tetris/Tetris/1.0-SNAPSHOT/Tetris-1.0-SNAPSHOT.pom" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/tetris-8565c-firebase-adminsdk-ip0mc-025475196a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/project-local-repo/Tetris/Tetris/1.0-SNAPSHOT/Tetris-1.0-SNAPSHOT-consumer.pom" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/project-local-repo/Tetris/Tetris/1.0-SNAPSHOT/Tetris-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/project-local-repo/Tetris/Tetris/1.0-SNAPSHOT/Tetris-1.0-SNAPSHOT.pom" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/tetris-8565c-firebase-adminsdk-ip0mc-025475196a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/project-local-repo/Tetris/Tetris/1.0-SNAPSHOT/Tetris-1.0-SNAPSHOT-consumer.pom" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/project-local-repo/Tetris/Tetris/1.0-SNAPSHOT/Tetris-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/project-local-repo/Tetris/Tetris/1.0-SNAPSHOT/Tetris-1.0-SNAPSHOT.pom" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tetris-8565c-firebase-adminsdk-ip0mc-025475196a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/project-local-repo/Tetris/Tetris/1.0-SNAPSHOT/Tetris-1.0-SNAPSHOT-consumer.pom" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/project-local-repo/Tetris/Tetris/1.0-SNAPSHOT/Tetris-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/project-local-repo/Tetris/Tetris/1.0-SNAPSHOT/Tetris-1.0-SNAPSHOT.pom" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tetris-8565c-firebase-adminsdk-ip0mc-025475196a.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/PreviewBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/PreviewBoard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,26 +31,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "jdk.selected.JAVA_MODULE": "19",
-    "last_opened_file_path": "C:/Users/min_j/Desktop/BCTET/Tetris",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "모듈",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.importing",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;19&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/min_j/Desktop/BCTET/Tetris&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;모듈&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="디폴트 작업">
@@ -205,6 +76,7 @@
       <workItem from="1697525142163" duration="7130000" />
       <workItem from="1697553071669" duration="5919000" />
       <workItem from="1701044305940" duration="6857000" />
+      <workItem from="1701052023597" duration="377000" />
     </task>
     <servers />
   </component>

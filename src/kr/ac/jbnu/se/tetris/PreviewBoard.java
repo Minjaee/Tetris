@@ -29,13 +29,11 @@ public class PreviewBoard extends JPanel {
         updatePreview();
     }
 
-    // ... 이전 코드 생략 ...
-
     public void drawHoldPiece(Graphics g, int offsetX, int offsetY) {
         if (holdPiece != null) {
             for (int i = 0; i < 4; ++i) {
-                int x = offsetX + i % 2 * mainBoard.squareWidth();
-                int y = offsetY + i / 2 * mainBoard.squareHeight();
+                int x = offsetX + holdPiece.x(i) * mainBoard.squareWidth();
+                int y = offsetY + holdPiece.y(i) * mainBoard.squareHeight();
                 mainBoard.drawSquare(g, x, y, holdPiece.getShape());
             }
         }
