@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6b029d8b-ace6-4372-9def-23555e6ebe41" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/PreviewBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/PreviewBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/Board.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +76,7 @@
       <workItem from="1697525142163" duration="7130000" />
       <workItem from="1697553071669" duration="5919000" />
       <workItem from="1701044305940" duration="6857000" />
-      <workItem from="1701052023597" duration="377000" />
+      <workItem from="1701052023597" duration="1188000" />
     </task>
     <servers />
   </component>

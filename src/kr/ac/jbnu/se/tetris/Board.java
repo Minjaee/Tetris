@@ -446,9 +446,6 @@ public class Board extends JPanel implements ActionListener {
 		}
 	}
 
-	public Shape getHoldPiece() {
-		return holdPiece;
-	}
 	public void holdPiece() {
 		if (holdPiece == null) {
 			holdPiece = curPiece;
@@ -458,8 +455,6 @@ public class Board extends JPanel implements ActionListener {
 			Shape temp = holdPiece;
 			holdPiece = curPiece;
 			curPiece = temp.rotateRight(); // 블록을 회전시켜 교체
-			curX = BoardWidth / 2 + 1;
-			curY = BoardHeight - 1 + curPiece.minY();
 			rotationCount = 0; // 도형이 생성될 때 회전 횟수를 0으로 초기화
 		}
 
