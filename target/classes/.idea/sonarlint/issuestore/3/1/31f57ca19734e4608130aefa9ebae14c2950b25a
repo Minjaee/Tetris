@@ -1,0 +1,17 @@
+
+a
+java:S1192+"FDefine a constant instead of duplicating this literal "score" 4 times.(¶Ìõèúÿÿÿÿ
+_
+java:S1192*"IDefine a constant instead of duplicating this literal "password" 3 times.(ı™»ü
+\
+java:S1192-"FDefine a constant instead of duplicating this literal "users" 6 times.(í¢û
+†
+java:S1319W"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Òë Ô
+†
+java:S1319`"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(‹­ÏÉ
+U
+java:S1118":Add a private constructor to hide the implicit public one.(²ÌùØüÿÿÿÿ
+t
+java:S2142R"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(‰éÕ
+t
+java:S2142s"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(‰éÕ
