@@ -101,6 +101,7 @@ public class Board extends JPanel implements ActionListener {
 		timer.start();
 		resetLevel();
 		resetScore();
+		resetHoldPiece();
 	}
 
 	private void pause() {
@@ -295,6 +296,12 @@ public class Board extends JPanel implements ActionListener {
 	private void resetLevel(){
 		level = 1;
 	}
+	private void resetHoldPiece() {
+		holdPiece = null;
+		if (previewBoard != null) {
+			previewBoard.setHoldPiece(null);
+		}
+	}
 	private void openMainFrame() {
 
 		tetrisParent.closeFrame(id); // Tetris 닫아버리기
@@ -449,7 +456,8 @@ public class Board extends JPanel implements ActionListener {
 	public void holdPiece() {
 		if (holdPiece == null) {
 			holdPiece = curPiece;
-			newPiece(); // 새로운 블록 생성
+			curPiece = nextPiece;
+			nextPiece.setRandomShape();
 		} else {
 			// HOLD 블록과 현재 블록 교체
 			Shape temp = holdPiece;
