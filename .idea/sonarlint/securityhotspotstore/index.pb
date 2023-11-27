@@ -186,3 +186,7 @@ Q.idea/sonarlint/securityhotspotstore/e/d/ed4f0de59291413b86401adfd9916e81b38f52
 Q.idea/sonarlint/securityhotspotstore/3/1/31f57ca19734e4608130aefa9ebae14c2950b25a,e\e\ee7b8af9820d358b681832952174480a40bbb248
 ]
 -.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e
+Z
+*src/kr/ac/jbnu/se/tetris/PreviewBoard.java,e\9\e95088beb3db63f07957547a3e73b83b1419768b
+X
+(src/kr/ac/jbnu/se/tetris/LoginFrame.java,4\5\4550db7c9e20ab61b5a4122f7418a89b8cb6b637

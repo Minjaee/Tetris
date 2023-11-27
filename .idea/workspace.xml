@@ -1,11 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="9acf2728-ea99-43c5-bb2e-438419e21564" name="Changes" comment="" />
+    <list default="true" id="9acf2728-ea99-43c5-bb2e-438419e21564" name="Changes" comment="메인화면 변경">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/d/ed4f0de59291413b86401adfd9916e81b38f52af" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/d/ed4f0de59291413b86401adfd9916e81b38f52af" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/LoginFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/LoginFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/LoginFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/LoginFrame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/LoginFrame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/LoginFrame$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/LoginFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/LoginFrame.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectId" id="2YkhIKQTauApBd3ignDu3nxOTA2" />
   <component name="ProjectViewState">
@@ -15,7 +40,9 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -27,6 +54,29 @@
       <option name="presentableId" value="Default" />
       <updated>1701075405286</updated>
     </task>
+    <task id="LOCAL-00001" summary="메인화면 변경">
+      <created>1701075568054</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1701075568054</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="메인화면 변경" />
+    <option name="LAST_COMMIT_MESSAGE" value="메인화면 변경" />
   </component>
 </project>
