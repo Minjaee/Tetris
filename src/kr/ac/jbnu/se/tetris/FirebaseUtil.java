@@ -20,7 +20,7 @@ public class FirebaseUtil {
 
     public static void initialize() {
         try {
-            FileInputStream serviceAccount = new FileInputStream("tetris-8565c-firebase-adminsdk-ip0mc-025475196a.json");
+            FileInputStream serviceAccount = new FileInputStream("tetris-28f0f-firebase-adminsdk-rladg-0763c4b60f.json");
 
             FirebaseOptions options = new FirebaseOptions.Builder()
                     .setCredentials(GoogleCredentials.fromStream(serviceAccount))

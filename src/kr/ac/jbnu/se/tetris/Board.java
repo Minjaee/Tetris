@@ -25,29 +25,21 @@ public class Board extends JPanel implements ActionListener {
 	boolean isStarted = false;
 	boolean isPaused = false;
 	int numLinesRemoved = 0;
-
 	int level = 1;
 	int delay = 400;
-
-
 	int score = 0; // 스코어 점수
 	int curX = 0;
 	int curY = 0;
-
 	JLabel statusbar;
 	Shape curPiece;
 	Tetrominoes[] board;
 	Shape nextPiece; // 다음 블록 미리 보기 변수 생성
 	int rotationCount = 0; // 도형의 회전 횟수를 저장할 변수 추가
 	private String id;
-	private String pw;
-
 	private boolean isGameOver = false; // 게임오버상태인지 아닌지 확인할 변수 추가
-	//preview Board 기능
 	private PreviewBoard previewBoard;
-
 	private Tetris tetrisParent; // Board 클래스가 Tetris 클래스에 접근할 수 있도록 멤버 변수 생성
-
+	private Shape holdPiece; // HOLD 기능
 	public void setPreviewBoard(PreviewBoard previewBoard) {
 		this.previewBoard = previewBoard;
 	} ///
@@ -370,7 +362,7 @@ public class Board extends JPanel implements ActionListener {
 		}
 	}
 
-	private void drawSquare(Graphics g, int x, int y, Tetrominoes shape) {
+	void drawSquare(Graphics g, int x, int y, Tetrominoes shape) {
 		Color colors[] = {new Color(0, 0, 0), new Color(204, 102, 102), new Color(102, 204, 102),
 				new Color(102, 102, 204), new Color(204, 204, 102), new Color(204, 102, 204), new Color(102, 204, 204),
 				new Color(218, 170, 0), new Color(128, 128, 128)}; //gray색 추가
@@ -433,11 +425,11 @@ public class Board extends JPanel implements ActionListener {
 					case KeyEvent.VK_SPACE:
 						dropDown();
 						break;
-					case 'd':
+					case KeyEvent.VK_D:
 						oneLineDown();
 						break;
-					case 'D':
-						oneLineDown();
+					case KeyEvent.VK_C:
+						holdPiece();
 						break;
 				}
 
@@ -453,4 +445,29 @@ public class Board extends JPanel implements ActionListener {
 			ex.printStackTrace();
 		}
 	}
+
+	public Shape getHoldPiece() {
+		return holdPiece;
+	}
+	public void holdPiece() {
+		if (holdPiece == null) {
+			holdPiece = curPiece;
+			newPiece(); // 새로운 블록 생성
+		} else {
+			// HOLD 블록과 현재 블록 교체
+			Shape temp = holdPiece;
+			holdPiece = curPiece;
+			curPiece = temp.rotateRight(); // 블록을 회전시켜 교체
+			curX = BoardWidth / 2 + 1;
+			curY = BoardHeight - 1 + curPiece.minY();
+			rotationCount = 0; // 도형이 생성될 때 회전 횟수를 0으로 초기화
+		}
+
+		if (previewBoard != null) {
+			previewBoard.setHoldPiece(holdPiece);
+		}
+
+		repaint();
+		}
+
 	}
