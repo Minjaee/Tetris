@@ -435,7 +435,7 @@ public class Board extends JPanel implements ActionListener {
 					case KeyEvent.VK_D:
 						oneLineDown();
 						break;
-					case KeyEvent.VK_C:
+					case KeyEvent.VK_H:
 						holdPiece();
 						break;
 				}

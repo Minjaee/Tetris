@@ -30,7 +30,7 @@ public class MainMenu extends JFrame implements ActionListener {
         this.setIconImage(logo.getImage());
 
         // background image setup
-        ImageIcon image = new ImageIcon(getClass().getClassLoader().getResource("src/images/Background7.png"));
+        ImageIcon image = new ImageIcon(getClass().getClassLoader().getResource("src/images/Background.png"));
 
         // settings image setup
         ImageIcon settings = new ImageIcon(getClass().getClassLoader().getResource("src/images/settings.png"));
