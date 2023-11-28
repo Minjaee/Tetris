@@ -435,7 +435,7 @@ public class Board extends JPanel implements ActionListener {
 					case KeyEvent.VK_D:
 						oneLineDown();
 						break;
-					case KeyEvent.VK_C:
+					case KeyEvent.VK_H:
 						holdPiece();
 						break;
 				}
@@ -457,7 +457,6 @@ public class Board extends JPanel implements ActionListener {
 		if (holdPiece == null) {
 			holdPiece = curPiece;
 			curPiece = nextPiece;
-			nextPiece.setRandomShape();
 		} else {
 			// HOLD 블록과 현재 블록 교체
 			Shape temp = holdPiece;
