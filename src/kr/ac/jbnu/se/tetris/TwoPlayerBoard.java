@@ -162,6 +162,8 @@ public class TwoPlayerBoard extends JPanel implements ActionListener {
 
     public void paint(Graphics g) {
         super.paint(g);
+        ImageIcon background = new ImageIcon("src/images/Basebackground.png");
+        g.drawImage(background.getImage(), 0, 0, getWidth(), getHeight(), this);
 
         Dimension size = getSize();
         int boardTop = (int) size.getHeight() - BoardHeight * squareHeight();

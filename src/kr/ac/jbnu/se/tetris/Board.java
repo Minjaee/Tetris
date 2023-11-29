@@ -127,14 +127,14 @@ public class Board extends JPanel implements ActionListener {
 		if (nextPiece.getShape() == Tetrominoes.NoShape) {
 			return;
 		}
-		Font newFont = new Font("SansSerif", Font.BOLD, 18); // 폰트명, 스타일, 크기 지정
+		Font newFont = new Font("SansSerif", Font.BOLD, 30); // 폰트명, 스타일, 크기 지정
 		g.setFont(newFont);
 
-		g.setColor(Color.white);  // 글자색 변경
-		g.drawString("다음 블럭:", offsetX + -150, offsetY + 10);  // 텍스트 위치 지정
+		g.setColor(new Color(128, 0, 128));  // 글자색 변경
+		g.drawString(" ", offsetX + -165, offsetY + 30);  // 텍스트 위치 지정
 
-		g.drawString("score:" + "     " + score, offsetX + -150, offsetY +140);  // 텍스트 위치 지정
-		g.drawString("Level:" + "     " + level, offsetX + -150, offsetY +270);  // 텍스트 위치 지정
+		g.drawString(String.valueOf(score), offsetX + 0, offsetY +280);  // 텍스트 위치 지정
+		g.drawString(String.valueOf(level), offsetX + 0, offsetY +380);  // 텍스트 위치 지정
 
 		for (int i = 0; i < 4; ++i) {
 			int x = offsetX + nextPiece.x(i) * squareWidth();
@@ -380,68 +380,68 @@ public class Board extends JPanel implements ActionListener {
 		if (shape == Tetrominoes.GrayShape) {
 			color = new Color(128, 128, 128); // Gray Shape를 회색으로 정의
 		}
-			g.setColor(color);
-			g.fillRect(x + 1, y + 1, squareWidth() - 2, squareHeight() - 2);
+		g.setColor(color);
+		g.fillRect(x + 1, y + 1, squareWidth() - 2, squareHeight() - 2);
 
-			g.setColor(color.brighter());
-			g.drawLine(x, y + squareHeight() - 1, x, y);
-			g.drawLine(x, y, x + squareWidth() - 1, y);
+		g.setColor(color.brighter());
+		g.drawLine(x, y + squareHeight() - 1, x, y);
+		g.drawLine(x, y, x + squareWidth() - 1, y);
 
-			g.setColor(color.darker());
-			g.drawLine(x + 1, y + squareHeight() - 1, x + squareWidth() - 1, y + squareHeight() - 1);
-			g.drawLine(x + squareWidth() - 1, y + squareHeight() - 1, x + squareWidth() - 1, y + 1);
-		}
+		g.setColor(color.darker());
+		g.drawLine(x + 1, y + squareHeight() - 1, x + squareWidth() - 1, y + squareHeight() - 1);
+		g.drawLine(x + squareWidth() - 1, y + squareHeight() - 1, x + squareWidth() - 1, y + 1);
+	}
 
-		class TAdapter extends KeyAdapter {
-			public void keyPressed(KeyEvent e) {
+	class TAdapter extends KeyAdapter {
+		public void keyPressed(KeyEvent e) {
 
-				if (!isStarted || curPiece.getShape() == Tetrominoes.NoShape) {
-					return;
-				}
-
-				int keycode = e.getKeyCode();
-
-				if (keycode == 'p' || keycode == 'P') {
-					pause();
-					return;
-				}
-
-				if (isPaused)
-					return;
-
-				switch (keycode) {
-					case KeyEvent.VK_LEFT:
-						tryMove(curPiece, curX - 1, curY);
-						break;
-					case KeyEvent.VK_RIGHT:
-						tryMove(curPiece, curX + 1, curY);
-						break;
-					// 도형 횟수 제한 (현재 4번 0회~3회)
-					case KeyEvent.VK_DOWN:
-						if (rotationCount < 3) {   // 횟수제한 변경
-							tryMove(curPiece.rotateRight(), curX, curY);
-							rotationCount++;
-						}
-						break;
-					case KeyEvent.VK_UP:
-						if (rotationCount < 3) {   // 횟수제한 변경
-							tryMove(curPiece.rotateLeft(), curX, curY);
-							rotationCount++;
-						}
-						break;
-					case KeyEvent.VK_SPACE:
-						dropDown();
-						break;
-					case KeyEvent.VK_D:
-						oneLineDown();
-						break;
-					case KeyEvent.VK_H:
-						holdPiece();
-						break;
-				}
-
+			if (!isStarted || curPiece.getShape() == Tetrominoes.NoShape) {
+				return;
 			}
+
+			int keycode = e.getKeyCode();
+
+			if (keycode == 'p' || keycode == 'P') {
+				pause();
+				return;
+			}
+
+			if (isPaused)
+				return;
+
+			switch (keycode) {
+				case KeyEvent.VK_LEFT:
+					tryMove(curPiece, curX - 1, curY);
+					break;
+				case KeyEvent.VK_RIGHT:
+					tryMove(curPiece, curX + 1, curY);
+					break;
+				// 도형 횟수 제한 (현재 4번 0회~3회)
+				case KeyEvent.VK_DOWN:
+					if (rotationCount < 3) {   // 횟수제한 변경
+						tryMove(curPiece.rotateRight(), curX, curY);
+						rotationCount++;
+					}
+					break;
+				case KeyEvent.VK_UP:
+					if (rotationCount < 3) {   // 횟수제한 변경
+						tryMove(curPiece.rotateLeft(), curX, curY);
+						rotationCount++;
+					}
+					break;
+				case KeyEvent.VK_SPACE:
+					dropDown();
+					break;
+				case KeyEvent.VK_D:
+					oneLineDown();
+					break;
+				case KeyEvent.VK_H:
+					holdPiece();
+					break;
+			}
+
 		}
+	}
 	public void setId(String id) {this.id = id;}
 	public void updateScore() {
 		try {
@@ -471,6 +471,6 @@ public class Board extends JPanel implements ActionListener {
 		}
 
 		repaint();
-		}
-
 	}
+
+}

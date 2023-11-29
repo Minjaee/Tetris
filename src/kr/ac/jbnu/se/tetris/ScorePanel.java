@@ -19,7 +19,11 @@ public class ScorePanel extends JFrame implements ActionListener {
     private ArrayList<User> topScores = new ArrayList<>(); // 초기화된 ArrayList
 
 
+
     ScorePanel(String id){
+
+
+
         // frame setup
         this.id = id;
         this.setTitle("Tetris"); // app title

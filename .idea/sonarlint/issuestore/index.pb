@@ -103,8 +103,6 @@ m
 =.idea/libraries/Maven__io_netty_netty_buffer_4_1_84_Final.xml,6\f\6fdd0625b806e608d109f4144ec4610eb5a07050
 m
 =.idea/libraries/Maven__io_netty_netty_common_4_1_84_Final.xml,1\0\10764888e01527899e08bd26574e3ecc0910d1fd
-Å
-Q.idea/sonarlint/securityhotspotstore/1/6/163e39b83f7634bd145625578d594a2c792c8adc,e\3\e3ad7eb475d83256b84f6acb8f3b4486838677b1
 q
 A.idea/libraries/Maven__io_netty_netty_codec_http_4_1_84_Final.xml,1\c\1ce6b87b1bbc08cb1692770cb78f5fca873fa75b
 o
@@ -139,8 +137,6 @@ d
 4.idea/libraries/Maven__org_slf4j_slf4j_api_2_0_3.xml,b\1\b10b5d540cb66a8470747b937adda0288465b0fe
 u
 E.idea/libraries/Maven__org_conscrypt_conscrypt_openjdk_uber_2_5_2.xml,9\4\9425814475db48dd0c3a397d84b9768abd261b74
-Å
-Q.idea/sonarlint/securityhotspotstore/e/9/e95088beb3db63f07957547a3e73b83b1419768b,a\8\a889d979fa7412bc3b357c527af8086a9db49373
 h
 8.idea/libraries/Maven__org_threeten_threetenbp_1_6_5.xml,8\5\85a4510af2faf8a9e0d4ecaad0bf28d9b90d5f70
 :
@@ -186,3 +182,13 @@ n
 T.idea/libraries/Maven__com_google_api_grpc_proto_google_cloud_firestore_v1_3_9_1.xml,3\1\310a328300e595b7d02e9a75f690bc3b23408dc1
 à
 X.idea/libraries/Maven__com_google_api_grpc_grpc_google_cloud_storage_v2_2_20_1_alpha.xml,9\d\9de2ec60eb9c52abef99d53cf031f50ab681b93f
+X
+(src/kr/ac/jbnu/se/tetris/LoginFrame.java,4\5\4550db7c9e20ab61b5a4122f7418a89b8cb6b637
+[
++src/kr/ac/jbnu/se/tetris/RegisterFrame.java,a\a\aaa64bca72b5d30fe2400128db6f625741f191a5
+S
+#src/kr/ac/jbnu/se/tetris/Board.java,2\8\287723a1d19a7195e41cf23fa21864c78daff7f1
+\
+,src/kr/ac/jbnu/se/tetris/TwoPlayerBoard.java,d\b\db5bff957d74016cdc2549387e3beef5b3053065
+X
+(src/kr/ac/jbnu/se/tetris/ScorePanel.java,d\1\d184d53c39e5916adb50eb005ba0beb25ec16e39

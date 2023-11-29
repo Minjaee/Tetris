@@ -19,8 +19,8 @@ java:S1659",Declare "settingsButton" on a separate line.(­‡Ü§üÿÿÿÿ
 G
 java:S1948
 "1Make "backgroundMusic" transient or serializable.(±âÄÅ
-^
-java:S3252"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(ºÀœx
+e
+java:S3252"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(ºÀœx8ÿ±£Á1
 Q	java:S125@"<This block of commented-out lines of code should be removed.(ÅÿËÙ
 i	java:S100œ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½ŠÆµÿÿÿÿÿ
 ]

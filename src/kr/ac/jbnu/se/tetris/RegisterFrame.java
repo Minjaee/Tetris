@@ -3,10 +3,13 @@ package src.kr.ac.jbnu.se.tetris;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.WriteResult;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
@@ -30,18 +33,40 @@ public class RegisterFrame extends JFrame {
         idField = new JTextField(10);
         idPanel.add(idLabel);
         idPanel.add(idField);
+        idPanel.setOpaque(false); // 배경 투명 설정
 
         JPanel pwPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
         JLabel pwLabel = new JLabel("PW: ");
         pwField = new JPasswordField(10);
         pwPanel.add(pwLabel);
         pwPanel.add(pwField);
+        pwPanel.setOpaque(false); // 배경 투명 설정
+
 
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
         JButton registerButton = new JButton("Register");
         JButton cancelButton = new JButton("Cancel");
         buttonPanel.add(registerButton);
         buttonPanel.add(cancelButton);
+        buttonPanel.setOpaque(false); // 배경 투명 설정
+
+        try {
+            // 이미지 파일 경로에 맞게 수정
+            Image backgroundImage = ImageIO.read(new File("src/images/Register2.png"));
+
+            setContentPane(new JPanel() {
+                @Override
+                protected void paintComponent(Graphics g) {
+                    super.paintComponent(g);
+                    g.drawImage(backgroundImage, 0, 0, getWidth(), getHeight(), this);
+                }
+            });
+        } catch (IOException e) {
+            e.printStackTrace();
+            // 이미지를 불러오지 못했을 때 대체할 기본 설정
+            getContentPane().setBackground(Color.LIGHT_GRAY);
+        }
+
 
         registerButton.addActionListener(new ActionListener() {
             @Override
