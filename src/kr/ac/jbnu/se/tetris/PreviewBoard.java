@@ -7,7 +7,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class PreviewBoard extends JPanel {
-
+//test
     private Board mainBoard;
     private Image backgroundImage; // 이미지를 저장할 변수 추가
 

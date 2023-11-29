@@ -1,9 +1,12 @@
 package src.kr.ac.jbnu.se.tetris;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 
@@ -18,11 +21,30 @@ public class ScorePanel extends JFrame implements ActionListener {
     private JTable scoreTable;
     private ArrayList<User> topScores = new ArrayList<>(); // 초기화된 ArrayList
 
+    private Image backgroundImage; // 이미지를 저장할 변수 추가
 
 
     ScorePanel(String id){
 
+        try {
+            // 이미지 파일 경로 설정
+            File imgFile = new File("src/images/Ranking.png"); // 이미지 파일 경로로 변경해야 함
 
+            // 이미지 파일을 읽어와 배경 이미지로 설정
+            backgroundImage = ImageIO.read(imgFile);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        this.setContentPane(new JPanel() {
+            @Override
+            protected void paintComponent(Graphics g) {
+                super.paintComponent(g);
+                g.drawImage(backgroundImage, 0, 0, getWidth(), getHeight(), this);
+            }
+        });
+        this.revalidate();
+        this.repaint();
 
         // frame setup
         this.id = id;
@@ -39,6 +61,7 @@ public class ScorePanel extends JFrame implements ActionListener {
         // 사용자 ID 레이블
         userIdLabel = new JLabel("사용자 ID:");
         userIdLabel.setBounds(100, 200, 100, 30);
+        userIdLabel.setForeground(Color.WHITE); // 텍스트 색상을 흰색으로 설정
         this.add(userIdLabel);
 
         // 사용자 ID 입력 필드
@@ -49,11 +72,14 @@ public class ScorePanel extends JFrame implements ActionListener {
         // 스코어 레이블
         scoreLabel = new JLabel("스코어: " + userScore);
         scoreLabel.setBounds(100, 250, 100, 30);
+        scoreLabel.setForeground(Color.WHITE); // 텍스트 색상을 흰색으로 설정
         this.add(scoreLabel);
 
         // 스코어 불러오기 버튼
         JButton loadScoreButton = new JButton("Enter");
         loadScoreButton.setBounds(280, 250, 70, 30);
+        Color goldColor1 = new Color(255, 215, 0); // RGB 값으로 금색 만들기
+        loadScoreButton.setBackground(goldColor1); // 버튼 색상을 금색으로 설정
         loadScoreButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -65,7 +91,9 @@ public class ScorePanel extends JFrame implements ActionListener {
         //backButton setup
         backButton = new JButton("Back to Main-Menu");
         backButton.setFocusable(false);
-        backButton.setBounds(370, 580, 150, 50);
+        backButton.setBounds(370, 500, 150, 50);
+        Color goldColor = new Color(255, 215, 0); // RGB 값으로 금색 만들기
+        backButton.setBackground(goldColor); // 버튼 색상을 금색으로 설정
         backButton.addActionListener(this);
 
 
@@ -97,14 +125,14 @@ public class ScorePanel extends JFrame implements ActionListener {
         }
 
         scoreTable = new JTable(data, columnNames);
-        scoreTable.setBounds(400, 200, 400, 180);
+        scoreTable.setBounds(450, 200, 400, 180);
 
         // JScrollPane로 JTable 래핑
         JScrollPane scrollPane = new JScrollPane(scoreTable);
         scrollPane.setBounds(400, 200, 400, 180);
 
         //글자
-        JLabel header = new JLabel("Rangking!");
+        JLabel header = new JLabel();
         header.setBounds(400, 100, 400, 100);
         header.setForeground(Color.black);
         header.setFont(new Font("MV Boli", Font.PLAIN, 80));
@@ -140,4 +168,5 @@ public class ScorePanel extends JFrame implements ActionListener {
             mainMenu.setVisible(true);
         }
     }
+
 }

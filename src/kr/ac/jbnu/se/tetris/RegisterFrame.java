@@ -15,7 +15,7 @@ import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
 public class RegisterFrame extends JFrame {
-
+//tset
     private LoginFrame loginFrame;
     private JTextField idField;
     private JPasswordField pwField;

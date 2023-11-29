@@ -16,7 +16,7 @@ import java.awt.Font;
 import java.util.logging.Level;
 import javax.swing.JOptionPane; // 게임 종료 시 재시작 혹은 메뉴로 돌아갈 것인지 물어보게 하기 위한 모듈
 public class Board extends JPanel implements ActionListener {
-
+//test
 	final int BoardWidth = 10;
 	final int BoardHeight = 22;
 
