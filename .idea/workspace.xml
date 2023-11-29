@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ffd0c174-486b-4296-aa9e-5017e28a2f95" name="Changes" comment="test">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/1/d184d53c39e5916adb50eb005ba0beb25ec16e39" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/1/d184d53c39e5916adb50eb005ba0beb25ec16e39" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/ScorePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/ScorePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/Tetris.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/Tetris.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/ScorePanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/ScorePanel$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/ScorePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/ScorePanel.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +47,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -68,6 +74,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test" />

@@ -7,9 +7,7 @@ import javax.swing.*;
 public class Tetris extends JFrame {
 
 	JLabel statusbar;
-	//test
-	// hihi
- 	//test2
+	//testTTTTTTT
 	public Tetris(String id) {
 
 		statusbar = new JLabel(" 0");
