@@ -9,7 +9,7 @@ public class Tetris extends JFrame {
 	JLabel statusbar;
 	//test
 	// hihi
-
+ 	//test2
 	public Tetris(String id) {
 
 		statusbar = new JLabel(" 0");
