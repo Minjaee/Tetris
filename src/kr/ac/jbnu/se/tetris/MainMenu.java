@@ -62,12 +62,6 @@ public class MainMenu extends JFrame implements ActionListener {
         settingsPanel.setBounds(780, 550, 50, 50);
 
         //main menu header setup
-        /*
-        JLabel header = new JLabel("Tetris");
-        header.setBounds(310, 100, 900, 100);
-        header.setForeground(Color.yellow);
-        header.setFont(new Font("MV Boli", Font.PLAIN, 80));
-        */
 
         //buttons
         singlePlayerButton = new JButton("Single-Player");

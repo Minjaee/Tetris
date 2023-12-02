@@ -14,11 +14,9 @@ public class ScorePanel extends JFrame implements ActionListener {
     JButton backButton;
     MainMenu mainMenu;
     private String id;
-    private JLabel userIdLabel;
     private JLabel scoreLabel;
     private JTextField userIdField;
     private int userScore;
-    private JTable scoreTable;
     private ArrayList<User> topScores = new ArrayList<>(); // 초기화된 ArrayList
     private SoundManager buttonClickSound; // 버튼 클릭시 효과음을 위한 인스턴스
 
@@ -62,7 +60,7 @@ public class ScorePanel extends JFrame implements ActionListener {
         this.setIconImage(logo.getImage());
 
         // 사용자 ID 레이블
-        userIdLabel = new JLabel("사용자 ID:");
+        JLabel userIdLabel = new JLabel("사용자 ID:");
         userIdLabel.setBounds(100, 200, 100, 30);
         userIdLabel.setForeground(Color.WHITE); // 텍스트 색상을 흰색으로 설정
         this.add(userIdLabel);
@@ -117,7 +115,7 @@ public class ScorePanel extends JFrame implements ActionListener {
             data[i][2] = topScores.get(i).getScore(); // 스코어
         }
 
-        scoreTable = new JTable(data, columnNames);
+        JTable scoreTable = new JTable(data, columnNames);
         scoreTable.setBounds(450, 200, 400, 180);
 
         // JScrollPane로 JTable 래핑

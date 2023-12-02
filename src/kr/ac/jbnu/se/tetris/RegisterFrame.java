@@ -15,14 +15,12 @@ import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
 public class RegisterFrame extends JFrame {
-    private LoginFrame loginFrame;
     private JTextField idField;
     private JPasswordField pwField;
     private SoundManager buttonClickSound; // 버튼 클릭시 효과음을 위한 인스턴스
 
     public RegisterFrame(LoginFrame loginFrame) {
         buttonClickSound = new SoundManager("src/sounds/button_click.wav"); // 버튼 클릭 초기화
-        this.loginFrame = loginFrame;
 
         setSize(500, 500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
