@@ -15,7 +15,6 @@ public class TwoPlayerBoard extends JPanel implements ActionListener {
     final int BoardHeight = 22;
 
     private String id;
-    private String pw;
 
     Timer timer;
     boolean isFallingFinished = false;
@@ -28,9 +27,7 @@ public class TwoPlayerBoard extends JPanel implements ActionListener {
     int curY = 0;
     int curY2 = 0;
     private int score = 0; // 현재 스코어
-    private int linesCleared; // 현재 제거한 줄 수
     private int score2 = 0; // 현재 스코어
-    private int linesCleared2; // 현재 제거한 줄 수
 
     JLabel statusbar;
     Shape curPiece;
@@ -90,9 +87,11 @@ public class TwoPlayerBoard extends JPanel implements ActionListener {
     }
     private void initializeGame() {
                 score = 0;
-                linesCleared = 0;
+        // 현재 제거한 줄 수
+        int linesCleared = 0;
                 score2 = 0;
-                linesCleared2 = 0;
+        // 현재 제거한 줄 수
+        int linesCleared2 = 0;
         }
 
     int squareWidth() {

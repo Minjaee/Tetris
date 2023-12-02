@@ -1,9 +1,5 @@
 
-p
-java:S1450	"ZRemove the "coordsTable" field and declare it as a local variable in the relevant methods.(–±ì´
-{
-java:S3012"YUse "Arrays.copyOf", "Arrays.asList", "Collections.addAll" or "System.arraycopy" instead.(õóÕêÿÿÿÿÿ8ú¹¸ÉÂ1
 4
-java:S21196"Save and re-use this "Random".(¡Å”¦
+java:S21193"Save and re-use this "Random".(¡Å”¦
 4
-java:S26767"Use the original value instead.(ž†¤
+java:S26764"Use the original value instead.(ž†¤

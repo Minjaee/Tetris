@@ -9,19 +9,62 @@
   <component name="ChangeListManager">
     <list default="true" id="ffd0c174-486b-4296-aa9e-5017e28a2f95" name="Changes" comment="testTEST">
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/8/287723a1d19a7195e41cf23fa21864c78daff7f1" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/8/287723a1d19a7195e41cf23fa21864c78daff7f1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/7/871ecfeeb490d18808a9228061462b59b770a47d" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/7/871ecfeeb490d18808a9228061462b59b770a47d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/a/aaa64bca72b5d30fe2400128db6f625741f191a5" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/a/aaa64bca72b5d30fe2400128db6f625741f191a5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/1/d184d53c39e5916adb50eb005ba0beb25ec16e39" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/1/d184d53c39e5916adb50eb005ba0beb25ec16e39" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/b/db5bff957d74016cdc2549387e3beef5b3053065" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/b/db5bff957d74016cdc2549387e3beef5b3053065" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/RegisterFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/RegisterFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/ScorePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/ScorePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/Shape.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/TwoPlayerBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/TwoPlayerBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/.idea/sonarlint/issuestore/e/d/ed4f0de59291413b86401adfd9916e81b38f52af" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/.idea/sonarlint/issuestore/e/d/ed4f0de59291413b86401adfd9916e81b38f52af" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/.idea/sonarlint/issuestore/2/8/287723a1d19a7195e41cf23fa21864c78daff7f1" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/.idea/sonarlint/issuestore/2/8/287723a1d19a7195e41cf23fa21864c78daff7f1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/.idea/sonarlint/issuestore/8/7/871ecfeeb490d18808a9228061462b59b770a47d" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/.idea/sonarlint/issuestore/8/7/871ecfeeb490d18808a9228061462b59b770a47d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/.idea/sonarlint/issuestore/a/a/aaa64bca72b5d30fe2400128db6f625741f191a5" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/.idea/sonarlint/issuestore/a/a/aaa64bca72b5d30fe2400128db6f625741f191a5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/.idea/sonarlint/issuestore/d/1/d184d53c39e5916adb50eb005ba0beb25ec16e39" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/.idea/sonarlint/issuestore/d/1/d184d53c39e5916adb50eb005ba0beb25ec16e39" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/.idea/sonarlint/issuestore/d/b/db5bff957d74016cdc2549387e3beef5b3053065" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/.idea/sonarlint/issuestore/d/b/db5bff957d74016cdc2549387e3beef5b3053065" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/.idea/sonarlint/issuestore/1/6/163e39b83f7634bd145625578d594a2c792c8adc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/.idea/sonarlint/issuestore/e/9/e95088beb3db63f07957547a3e73b83b1419768b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/.idea/sonarlint/securityhotspotstore/1/6/163e39b83f7634bd145625578d594a2c792c8adc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/.idea/sonarlint/securityhotspotstore/e/9/e95088beb3db63f07957547a3e73b83b1419768b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/target/classes/.idea/sonarlint/issuestore/1/6/163e39b83f7634bd145625578d594a2c792c8adc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/target/classes/.idea/sonarlint/issuestore/e/9/e95088beb3db63f07957547a3e73b83b1419768b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/target/classes/.idea/sonarlint/securityhotspotstore/1/6/163e39b83f7634bd145625578d594a2c792c8adc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/target/classes/.idea/sonarlint/securityhotspotstore/e/9/e95088beb3db63f07957547a3e73b83b1419768b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/Board$TAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/Board$TAdapter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/Board.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/RegisterFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/RegisterFrame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/RegisterFrame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/RegisterFrame$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/RegisterFrame$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/RegisterFrame$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/RegisterFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/RegisterFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/ScorePanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/ScorePanel$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/ScorePanel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/ScorePanel$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/ScorePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/ScorePanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/Shape.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/Shape.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/TwoPlayerBoard$TAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/TwoPlayerBoard$TAdapter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/TwoPlayerBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/kr/ac/jbnu/se/tetris/TwoPlayerBoard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/.idea/sonarlint/issuestore/4/5/4550db7c9e20ab61b5a4122f7418a89b8cb6b637" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/.idea/sonarlint/securityhotspotstore/4/5/4550db7c9e20ab61b5a4122f7418a89b8cb6b637" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/.idea/sonarlint/issuestore/4/5/4550db7c9e20ab61b5a4122f7418a89b8cb6b637" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/.idea/sonarlint/securityhotspotstore/4/5/4550db7c9e20ab61b5a4122f7418a89b8cb6b637" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/.idea/sonarlint/securityhotspotstore/d/1/d184d53c39e5916adb50eb005ba0beb25ec16e39" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/.idea/sonarlint/issuestore/2/8/287723a1d19a7195e41cf23fa21864c78daff7f1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/.idea/sonarlint/issuestore/a/a/aaa64bca72b5d30fe2400128db6f625741f191a5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/.idea/sonarlint/issuestore/d/1/d184d53c39e5916adb50eb005ba0beb25ec16e39" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/.idea/sonarlint/issuestore/d/b/db5bff957d74016cdc2549387e3beef5b3053065" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/.idea/sonarlint/securityhotspotstore/2/8/287723a1d19a7195e41cf23fa21864c78daff7f1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/.idea/sonarlint/securityhotspotstore/a/a/aaa64bca72b5d30fe2400128db6f625741f191a5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/.idea/sonarlint/securityhotspotstore/d/1/d184d53c39e5916adb50eb005ba0beb25ec16e39" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/.idea/sonarlint/securityhotspotstore/d/b/db5bff957d74016cdc2549387e3beef5b3053065" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/target/classes/.idea/sonarlint/issuestore/2/8/287723a1d19a7195e41cf23fa21864c78daff7f1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/target/classes/.idea/sonarlint/issuestore/a/a/aaa64bca72b5d30fe2400128db6f625741f191a5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/target/classes/.idea/sonarlint/issuestore/d/1/d184d53c39e5916adb50eb005ba0beb25ec16e39" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/target/classes/.idea/sonarlint/issuestore/d/b/db5bff957d74016cdc2549387e3beef5b3053065" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/target/classes/.idea/sonarlint/securityhotspotstore/2/8/287723a1d19a7195e41cf23fa21864c78daff7f1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/target/classes/.idea/sonarlint/securityhotspotstore/a/a/aaa64bca72b5d30fe2400128db6f625741f191a5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/target/classes/.idea/sonarlint/securityhotspotstore/d/b/db5bff957d74016cdc2549387e3beef5b3053065" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/target/classes/target/classes/target/classes/.idea/sonarlint/issuestore/1/6/163e39b83f7634bd145625578d594a2c792c8adc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/target/classes/target/classes/target/classes/.idea/sonarlint/issuestore/e/9/e95088beb3db63f07957547a3e73b83b1419768b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/target/classes/target/classes/target/classes/.idea/sonarlint/securityhotspotstore/1/6/163e39b83f7634bd145625578d594a2c792c8adc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/target/classes/target/classes/target/classes/.idea/sonarlint/securityhotspotstore/e/9/e95088beb3db63f07957547a3e73b83b1419768b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/target/classes/target/classes/target/classes/target/classes/.idea/sonarlint/issuestore/1/6/163e39b83f7634bd145625578d594a2c792c8adc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/target/classes/target/classes/target/classes/target/classes/.idea/sonarlint/issuestore/e/9/e95088beb3db63f07957547a3e73b83b1419768b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/target/classes/target/classes/target/classes/target/classes/.idea/sonarlint/securityhotspotstore/1/6/163e39b83f7634bd145625578d594a2c792c8adc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/target/classes/target/classes/target/classes/target/classes/target/classes/target/classes/.idea/sonarlint/securityhotspotstore/e/9/e95088beb3db63f07957547a3e73b83b1419768b" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +120,7 @@
       <workItem from="1701132182967" duration="730000" />
       <workItem from="1701133327896" duration="137000" />
       <workItem from="1701489351309" duration="1185000" />
-      <workItem from="1701490651960" duration="2282000" />
+      <workItem from="1701490651960" duration="4545000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1701135286857</created>
@@ -114,16 +157,5 @@
     <MESSAGE value="test" />
     <MESSAGE value="testTEST" />
     <option name="LAST_COMMIT_MESSAGE" value="testTEST" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/Tetris.java</url>
-          <line>22</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

@@ -13,7 +13,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 import java.awt.Font;
-import java.util.logging.Level;
 import javax.swing.JOptionPane; // 게임 종료 시 재시작 혹은 메뉴로 돌아갈 것인지 물어보게 하기 위한 모듈
 public class Board extends JPanel implements ActionListener {
 //test
@@ -130,7 +129,7 @@ public class Board extends JPanel implements ActionListener {
 		g.setColor(new Color(128, 0, 128));  // 글자색 변경
 		g.drawString(" ", offsetX - 165, offsetY + 30);  // 텍스트 위치 지정
 
-		g.drawString(String.valueOf(score), offsetX + 0, offsetY +280);  // 텍스트 위치 지정
+		g.drawString(String.valueOf(score), offsetX, offsetY +280);  // 텍스트 위치 지정
 		g.drawString(String.valueOf(level), offsetX, offsetY +380);  // 텍스트 위치 지정
 
 		for (int i = 0; i < 4; ++i) {
@@ -204,7 +203,7 @@ public class Board extends JPanel implements ActionListener {
 
 	// 고스트 블록을 그리기 위한 메서드
 	private void drawGhostSquare(Graphics g, int x, int y, Tetrominoes shape) {
-		Color colors[] = { new Color(0, 0, 0), new Color(204, 102, 102, 255),
+		Color[] colors = { new Color(0, 0, 0), new Color(204, 102, 102, 255),
 				new Color(102, 204, 102, 255), new Color(102, 102, 204, 255),
 				new Color(204, 204, 102, 255), new Color(204, 102, 204, 255),
 				new Color(102, 204, 204, 255), new Color(218, 170, 0, 255),

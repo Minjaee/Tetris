@@ -1,8 +1,5 @@
 package src.kr.ac.jbnu.se.tetris;
 
-import com.google.api.core.ApiFuture;
-import com.google.cloud.firestore.WriteResult;
-
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -10,17 +7,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
 public class RegisterFrame extends JFrame {
-    private LoginFrame loginFrame;
     private JTextField idField;
     private JPasswordField pwField;
 
     public RegisterFrame(LoginFrame loginFrame) {
-        this.loginFrame = loginFrame;
 
         setSize(500, 500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

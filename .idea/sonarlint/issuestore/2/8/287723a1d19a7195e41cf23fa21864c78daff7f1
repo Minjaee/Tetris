@@ -1,36 +1,30 @@
 
 6
-java:S1700#"Rename field "board"(¦§ùßûÿÿÿÿ8§Ÿò£Á1
-q	java:S116"URename this field "BoardWidth" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(š¬×Æ8é ò£Á1
-w	java:S116"VRename this field "BoardHeight" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼ñ¡òøÿÿÿÿ8é ò£Á1
+java:S1700""Rename field "board"(¦§ùßûÿÿÿÿ8§Ÿò£Á1
+q	java:S116"URename this field "BoardWidth" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(š¬×Æ8é ò£Á1
+w	java:S116"VRename this field "BoardHeight" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼ñ¡òøÿÿÿÿ8é ò£Á1
 >
-java:S1170"!Make this final field static too.(š¬×Æ8ë ò£Á1
+java:S1170"!Make this final field static too.(š¬×Æ8ë ò£Á1
 C
-java:S1170"!Make this final field static too.(¼ñ¡òøÿÿÿÿ8ë ò£Á1
+java:S1170"!Make this final field static too.(¼ñ¡òøÿÿÿÿ8ë ò£Á1
 L
-java:S1948""*Make "curPiece" transient or serializable.(ãÈñåøÿÿÿÿ8ì ò£Á1
+java:S1948!"*Make "curPiece" transient or serializable.(ãÈñåøÿÿÿÿ8ì ò£Á1
 M
-java:S1948$"+Make "nextPiece" transient or serializable.(¼”•¿ÿÿÿÿÿ8ì ò£Á1
+java:S1948#"+Make "nextPiece" transient or serializable.(¼”•¿ÿÿÿÿÿ8ì ò£Á1
 H
-java:S1948*"+Make "holdPiece" transient or serializable.(µÔœ¨8ì ò£Á1
+java:S1948)"+Make "holdPiece" transient or serializable.(µÔœ¨8ì ò£Á1
 p
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 25 to the 15 allowed.(¶øÂÁ8õ ò£Á1
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 25 to the 15 allowed.(¶øÂÁ8õ ò£Á1
 X
-java:S1161":Add the "@Override" annotation above this method signature(¶øÂÁ8ö ò£Á1
-M
-java:S1197Ï"*Move the array designators [] to the type.(¼òÊùÿÿÿÿ8ù ò£Á1
+java:S1161":Add the "@Override" annotation above this method signature(¶øÂÁ8ö ò£Á1
 u
-java:S3776Í"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(İşä¬ıÿÿÿÿ8¡ò£Á1
-M
-java:S1197ò"*Move the array designators [] to the type.(á“õÙüÿÿÿÿ8„¡ò£Á1
+java:S3776Ì"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(İşä¬ıÿÿÿÿ8¡ò£Á1
 W
-java:S1161‰":Add the "@Override" annotation above this method signature(İ¼õA8ê¿¤ÉÂ1
-?	java:S131™""Add a default case to this switch.(ÖÅ«Á8ì¿¤ÉÂ1
+java:S1161ˆ":Add the "@Override" annotation above this method signature(İ¼õA8ê¿¤ÉÂ1
+?	java:S131˜""Add a default case to this switch.(ÖÅ«Á8ì¿¤ÉÂ1
 |
-java:S2142¿"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(æ¹Áä8î¿¤ÉÂ1
-Q
-java:S1128"4Remove this unused import 'java.util.logging.Level'.(…µÛ¶8èŒ‹¥Á1
+java:S2142¾"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(æ¹Áä8î¿¤ÉÂ1
 C
-java:S3398k"!Move this method into "TAdapter".(¦ñ“üÿÿÿÿ8Š¡ò£Á1
+java:S3398j"!Move this method into "TAdapter".(¦ñ“üÿÿÿÿ8Š¡ò£Á1
 D
-java:S3398Ú"!Move this method into "TAdapter".(“¹ü÷ûÿÿÿÿ8Š¡ò£Á1
+java:S3398Ù"!Move this method into "TAdapter".(“¹ü÷ûÿÿÿÿ8Š¡ò£Á1
