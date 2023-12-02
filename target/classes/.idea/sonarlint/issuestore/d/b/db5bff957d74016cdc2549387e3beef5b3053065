@@ -58,8 +58,6 @@ Q
 java:S6213˜":Rename this variable to not match a restricted identifier.(Ô™Ş²
 g	java:S128"LEnd this switch case with an unconditional break, return or throw statement.(ªëÅŞúÿÿÿÿ
 7	java:S131›""Add a default case to this switch.(°Âò8
-F
-java:S1197Ú"*Move the array designators [] to the type.(á“õÙüÿÿÿÿ
 P
 java:S1161í":Add the "@Override" annotation above this method signature(İ¼õA
 8	java:S131ı""Add a default case to this switch.(ÖÅ«Á
@@ -69,8 +67,8 @@ java:S3398„"!Move this method into "TAdapter".(Üìâñ
 java:S3398”"!Move this method into "TAdapter".(¦ñ“üÿÿÿÿ
 D
 java:S1068".Remove this unused "isGameOver" private field.(¾á¬£
-A
-java:S1068"&Remove this unused "pw" private field.(ıÀƒÙûÿÿÿÿ
+H
+java:S1068"&Remove this unused "pw" private field.(ıÀƒÙûÿÿÿÿ8ÍªµÉÂ1
 F
 java:S1068"0Remove this unused "linesCleared" private field.(µàìà
 L

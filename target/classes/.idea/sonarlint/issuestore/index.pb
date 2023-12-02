@@ -192,3 +192,15 @@ S
 ,src/kr/ac/jbnu/se/tetris/TwoPlayerBoard.java,d\b\db5bff957d74016cdc2549387e3beef5b3053065
 X
 (src/kr/ac/jbnu/se/tetris/ScorePanel.java,d\1\d184d53c39e5916adb50eb005ba0beb25ec16e39
+[
++src/kr/ac/jbnu/se/tetris/SettingsFrame.java,6\2\6210d4c2f6ee461836c3c842dc91438c07ef757f
+Z
+*src/kr/ac/jbnu/se/tetris/SoundManager.java,f\8\f8d4e0f99eb1c1aa8949dbc4b20b88430f2e0fe6
+Y
+)src/kr/ac/jbnu/se/tetris/Tetrominoes.java,f\c\fc0837765e23f195ef8580cdfea973baee12b1b5
+S
+#src/kr/ac/jbnu/se/tetris/Shape.java,8\7\871ecfeeb490d18808a9228061462b59b770a47d
+Z
+*src/kr/ac/jbnu/se/tetris/FirebaseUtil.java,3\1\31f57ca19734e4608130aefa9ebae14c2950b25a
+X
+(src/kr/ac/jbnu/se/tetris/AboutFrame.java,e\4\e4b83e4e9431d181e753918042802e77d793afe3

@@ -15,6 +15,7 @@ public class TwoPlayerBoard extends JPanel implements ActionListener {
     final int BoardHeight = 22;
 
     private String id;
+    private String pw;
 
     Timer timer;
     boolean isFallingFinished = false;
@@ -470,7 +471,7 @@ public class TwoPlayerBoard extends JPanel implements ActionListener {
     }
 
     private void drawSquare(Graphics g, int x, int y, Tetrominoes shape) {
-        Color colors[] = { new Color(0, 0, 0), new Color(204, 102, 102), new Color(102, 204, 102),
+        Color[] colors = { new Color(0, 0, 0), new Color(204, 102, 102), new Color(102, 204, 102),
                 new Color(102, 102, 204), new Color(204, 204, 102), new Color(204, 102, 204), new Color(102, 204, 204),
                 new Color(218, 170, 0) };
 

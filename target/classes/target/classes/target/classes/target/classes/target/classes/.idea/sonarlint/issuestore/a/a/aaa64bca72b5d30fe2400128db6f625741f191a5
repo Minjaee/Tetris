@@ -1,0 +1,19 @@
+
+C
+java:S1604G"(Make this anonymous inner class a lambda(¢’–ìúÿÿÿÿ
+>
+java:S1604`"(Make this anonymous inner class a lambda(™¬ÞÔ
+d
+java:S3252"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(Õû»öþÿÿÿÿ
+t
+java:S2142Y"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(æ¹Áä
+P
+java:S1128":Remove this unused import 'com.google.api.core.ApiFuture'.(ÁÙÈ÷
+^
+java:S1128"CRemove this unused import 'com.google.cloud.firestore.WriteResult'.(žÞÎÝùÿÿÿÿ
+I
+java:S1128".Remove this unused import 'java.util.HashMap'.(™˜”€ùÿÿÿÿ
+E
+java:S1128"*Remove this unused import 'java.util.Map'.(¼è½Òþÿÿÿÿ
+D
+java:S1068".Remove this unused "loginFrame" private field.(‰ëîé

@@ -128,10 +128,10 @@ public class Board extends JPanel implements ActionListener {
 		g.setFont(newFont);
 
 		g.setColor(new Color(128, 0, 128));  // 글자색 변경
-		g.drawString(" ", offsetX + -165, offsetY + 30);  // 텍스트 위치 지정
+		g.drawString(" ", offsetX - 165, offsetY + 30);  // 텍스트 위치 지정
 
 		g.drawString(String.valueOf(score), offsetX + 0, offsetY +280);  // 텍스트 위치 지정
-		g.drawString(String.valueOf(level), offsetX + 0, offsetY +380);  // 텍스트 위치 지정
+		g.drawString(String.valueOf(level), offsetX, offsetY +380);  // 텍스트 위치 지정
 
 		for (int i = 0; i < 4; ++i) {
 			int x = offsetX + nextPiece.x(i) * squareWidth();
@@ -151,9 +151,9 @@ public class Board extends JPanel implements ActionListener {
 				Tetrominoes shape = shapeAt(j, BoardHeight - i - 1);
 				if (shape != Tetrominoes.NoShape){
 					if (isGameOver) { // isGameOver 가 true일 때, 색상이 변경되도록 함수 수정
-						drawSquare(g, 0 + j * squareWidth(), boardTop + i * squareHeight(), Tetrominoes.GrayShape);
+						drawSquare(g, j * squareWidth(), boardTop + i * squareHeight(), Tetrominoes.GrayShape);
 					} else {
-						drawSquare(g, 0 + j * squareWidth(), boardTop + i * squareHeight(), shape);
+						drawSquare(g, j * squareWidth(), boardTop + i * squareHeight(), shape);
 					}
 				}
 			}
@@ -163,7 +163,7 @@ public class Board extends JPanel implements ActionListener {
 			for (int i = 0; i < 4; ++i) {
 				int x = curX + curPiece.x(i);
 				int y = curY - curPiece.y(i);
-				drawSquare(g, 0 + x * squareWidth(), boardTop + (BoardHeight - y - 1) * squareHeight(),
+				drawSquare(g, x * squareWidth(), boardTop + (BoardHeight - y - 1) * squareHeight(),
 						curPiece.getShape());
 			}
 		}
@@ -180,7 +180,7 @@ public class Board extends JPanel implements ActionListener {
 			for (int i = 0; i < 4; ++i) {
 				int x = curX + curPiece.x(i);
 				int y = ghostY - curPiece.y(i);
-				drawGhostSquare(g, 0 + x * squareWidth(),
+				drawGhostSquare(g, x * squareWidth(),
 						boardTop + (BoardHeight - y - 1) * squareHeight(),
 						curPiece.getShape());
 			}
@@ -367,7 +367,7 @@ public class Board extends JPanel implements ActionListener {
 	}
 
 	void drawSquare(Graphics g, int x, int y, Tetrominoes shape) {
-		Color colors[] = {new Color(0, 0, 0), new Color(204, 102, 102), new Color(102, 204, 102),
+		Color[] colors = {new Color(0, 0, 0), new Color(204, 102, 102), new Color(102, 204, 102),
 				new Color(102, 102, 204), new Color(204, 204, 102), new Color(204, 102, 204), new Color(102, 204, 204),
 				new Color(218, 170, 0), new Color(128, 128, 128)}; //gray색 추가
 
@@ -439,7 +439,6 @@ public class Board extends JPanel implements ActionListener {
 
 		}
 	}
-
 	public void updateScore() {
 		try {
 			if (id != null && score > FirebaseUtil.getUserScore(id)) {
