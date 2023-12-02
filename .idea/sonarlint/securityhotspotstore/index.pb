@@ -206,3 +206,5 @@ Y
 )src/kr/ac/jbnu/se/tetris/Tetrominoes.java,f\c\fc0837765e23f195ef8580cdfea973baee12b1b5
 W
 'src/kr/ac/jbnu/se/tetris/TwoPlayer.java,5\8\5808179f1d312458c265dd581375e8a65283fe00
+R
+"src/kr/ac/jbnu/se/tetris/User.java,8\d\8dc6881c0a8194925e4e41e845c7b94e8d5a591c

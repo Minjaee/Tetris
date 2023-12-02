@@ -4,13 +4,14 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Objects;
 
 
 public class AboutFrame extends JFrame implements ActionListener {
     JButton backButton;
     MainMenu mainMenu;
-    private String id;
-    private SoundManager buttonClickSound; // 버튼 클릭시 효과음을 위한 인스턴스
+    private final String id;
+    private final SoundManager buttonClickSound; // 버튼 클릭시 효과음을 위한 인스턴스
 
 
     AboutFrame(String id){
@@ -25,7 +26,7 @@ public class AboutFrame extends JFrame implements ActionListener {
         this.getContentPane().setBackground(Color.white);
 
         // logo setup
-        ImageIcon logo = new ImageIcon(getClass().getClassLoader().getResource("src/images/logo.png"));
+        ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getClassLoader().getResource("src/images/logo.png")));
         this.setIconImage(logo.getImage());
 
         //text declaration

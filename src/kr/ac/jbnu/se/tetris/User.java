@@ -1,9 +1,9 @@
 package src.kr.ac.jbnu.se.tetris;
 
 public class User {
-    private String id;
-    private String password;
-    private int score;
+    private final String id;
+    private final String password;
+    private final int score;
 
     public User(String id, String password, int score) {
         this.id = id;

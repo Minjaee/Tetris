@@ -3,16 +3,14 @@ package src.kr.ac.jbnu.se.tetris;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 
 public class RegisterFrame extends JFrame {
-    private JTextField idField;
-    private JPasswordField pwField;
-    private SoundManager buttonClickSound; // 버튼 클릭시 효과음을 위한 인스턴스
+    private final JTextField idField;
+    private final JPasswordField pwField;
+    private final SoundManager buttonClickSound; // 버튼 클릭시 효과음을 위한 인스턴스
 
     public RegisterFrame(LoginFrame loginFrame) {
         buttonClickSound = new SoundManager("src/sounds/button_click.wav"); // 버튼 클릭 초기화

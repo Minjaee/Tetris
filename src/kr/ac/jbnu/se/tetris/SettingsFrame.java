@@ -1,19 +1,18 @@
 package src.kr.ac.jbnu.se.tetris;
 
 import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Objects;
 
 public class SettingsFrame extends JFrame implements ActionListener {
     JButton backButton;
     MainMenu mainMenu;
-    private SoundManager backgroundMusic;
-    private JSlider volumeSlider; // 볼륨 조절 슬라이더 추가
-    private String id;
-    private SoundManager buttonClickSound; // 버튼 클릭시 효과음을 위한 인스턴스
+    private final SoundManager backgroundMusic;
+    private final JSlider volumeSlider; // 볼륨 조절 슬라이더 추가
+    private final String id;
+    private final SoundManager buttonClickSound; // 버튼 클릭시 효과음을 위한 인스턴스
 
     public SettingsFrame(String id){
         buttonClickSound = new SoundManager("src/sounds/button_click.wav"); // 버튼 클릭 초기화
@@ -29,7 +28,7 @@ public class SettingsFrame extends JFrame implements ActionListener {
         backgroundMusic.loop();
 
         // logo setup
-        ImageIcon logo = new ImageIcon(getClass().getClassLoader().getResource("src/images/logo.png"));
+        ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getClassLoader().getResource("src/images/logo.png")));
         this.setIconImage(logo.getImage());
 
         JLabel text = new JLabel();

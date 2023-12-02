@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class PreviewBoard extends JPanel {
 //test
-    private Board mainBoard;
+    private final Board mainBoard;
     private Image backgroundImage; // 이미지를 저장할 변수 추가
 
     private Shape holdPiece; // HOLD된 블록을 저장하는 필드 추가

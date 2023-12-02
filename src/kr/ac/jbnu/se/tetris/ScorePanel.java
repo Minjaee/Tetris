@@ -8,17 +8,18 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Objects;
 
 
 public class ScorePanel extends JFrame implements ActionListener {
     JButton backButton;
     MainMenu mainMenu;
     private String id;
-    private JLabel scoreLabel;
-    private JTextField userIdField;
+    private final JLabel scoreLabel;
+    private final JTextField userIdField;
     private int userScore;
     private ArrayList<User> topScores = new ArrayList<>(); // 초기화된 ArrayList
-    private SoundManager buttonClickSound; // 버튼 클릭시 효과음을 위한 인스턴스
+    private final SoundManager buttonClickSound; // 버튼 클릭시 효과음을 위한 인스턴스
 
     private Image backgroundImage; // 이미지를 저장할 변수 추가
 
@@ -56,7 +57,7 @@ public class ScorePanel extends JFrame implements ActionListener {
         this.setLocationRelativeTo(null);
 
         // logo setup
-        ImageIcon logo = new ImageIcon(getClass().getClassLoader().getResource("src/images/logo.png"));
+        ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getClassLoader().getResource("src/images/logo.png")));
         this.setIconImage(logo.getImage());
 
         // 사용자 ID 레이블

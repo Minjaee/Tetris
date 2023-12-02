@@ -4,11 +4,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Objects;
 
 public class MainMenu extends JFrame implements ActionListener {
 
-    private SoundManager backgroundMusic;
-    private SoundManager buttonClickSound; // 버튼 클릭시 효과음을 위한 인스턴스
+    private final SoundManager backgroundMusic;
+    private final SoundManager buttonClickSound; // 버튼 클릭시 효과음을 위한 인스턴스
 
     JPanel buttonsPanel, aboutPanel, settingsPanel;
     JButton singlePlayerButton;
@@ -28,17 +29,17 @@ public class MainMenu extends JFrame implements ActionListener {
         backgroundMusic.loop();
 
         //logo setup
-        ImageIcon logo = new ImageIcon(getClass().getClassLoader().getResource("src/images/logo.png"));
+        ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getClassLoader().getResource("src/images/logo.png")));
         this.setIconImage(logo.getImage());
 
         // background image setup
-        ImageIcon image = new ImageIcon(getClass().getClassLoader().getResource("src/images/Background.png"));
+        ImageIcon image = new ImageIcon(Objects.requireNonNull(getClass().getClassLoader().getResource("src/images/Background.png")));
 
         // settings image setup
-        ImageIcon settings = new ImageIcon(getClass().getClassLoader().getResource("src/images/settings.png"));
+        ImageIcon settings = new ImageIcon(Objects.requireNonNull(getClass().getClassLoader().getResource("src/images/settings.png")));
 
         // about image setup
-        ImageIcon about = new ImageIcon(getClass().getClassLoader().getResource("src/images/about.png"));
+        ImageIcon about = new ImageIcon(Objects.requireNonNull(getClass().getClassLoader().getResource("src/images/about.png")));
 
         JLabel background_image = new JLabel(image);
         background_image.setBounds(0, 0, 900, 700);
