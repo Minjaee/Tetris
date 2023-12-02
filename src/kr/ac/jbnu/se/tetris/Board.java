@@ -19,7 +19,7 @@ public class Board extends JPanel implements ActionListener {
 	final int BoardWidth = 10;
 	final int BoardHeight = 22;
 
-	Timer timer;
+	final Timer timer;
 	boolean isFallingFinished = false;
 	boolean isStarted = false;
 	boolean isPaused = false;
@@ -29,9 +29,9 @@ public class Board extends JPanel implements ActionListener {
 	int score = 0; // 스코어 점수
 	int curX = 0;
 	int curY = 0;
-	JLabel statusbar;
+	final JLabel statusbar;
 	Shape curPiece;
-	Tetrominoes[] board;
+	final Tetrominoes[] board;
 	Shape nextPiece; // 다음 블록 미리 보기 변수 생성
 	int rotationCount = 0; // 도형의 회전 횟수를 저장할 변수 추가
 	private final String id;

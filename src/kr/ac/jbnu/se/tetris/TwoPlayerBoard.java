@@ -16,7 +16,7 @@ public class TwoPlayerBoard extends JPanel implements ActionListener {
 
     private String id;
 
-    Timer timer;
+    final Timer timer;
     boolean isFallingFinished = false;
     boolean isFallingFinished2 = false;
     boolean isStarted = false;
@@ -29,11 +29,11 @@ public class TwoPlayerBoard extends JPanel implements ActionListener {
     private int score = 0; // 현재 스코어
     private int score2 = 0; // 현재 스코어
 
-    JLabel statusbar;
+    final JLabel statusbar;
     Shape curPiece;
     Shape curPiece2;
-    Tetrominoes[] board;
-    Tetrominoes[] board2;
+    final Tetrominoes[] board;
+    final Tetrominoes[] board2;
 
     public TwoPlayerBoard(TwoPlayer parent) {
 

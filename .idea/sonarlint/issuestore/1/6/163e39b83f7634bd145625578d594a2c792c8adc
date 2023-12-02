@@ -1,17 +1,13 @@
 
 e
-java:S1192E"HDefine a constant instead of duplicating this literal "MV Boli" 3 times.(¿¨‹§8Ë¥êØÂ1
-m	java:S117,"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ã¡¹Å8Ğ¥êØÂ1
-l	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ûÿƒüÿÿÿÿ
-l	java:S117¤"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(§ûôıÿÿÿÿ
-i
-java:S1659"GDeclare "aboutPanel" and all following declarations on a separate line.(æóÌÿÿÿÿÿ8¤¦êØÂ1
-N
-java:S1659",Declare "settingsButton" on a separate line.(­‡Ü§üÿÿÿÿ8¥¦êØÂ1
+java:S1192H"HDefine a constant instead of duplicating this literal "MV Boli" 3 times.(¿¨‹§8Ë¥êØÂ1
+m	java:S117/"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ã¡¹Å8Ğ¥êØÂ1
+l	java:S117 "QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ûÿƒüÿÿÿÿ
+l	java:S117§"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(§ûôıÿÿÿÿ
 G
-java:S1948"1Make "backgroundMusic" transient or serializable.(±âÄÅ
-O
-java:S1948"2Make "buttonClickSound" transient or serializable.(íÆüÀ8¬¦êØÂ1
+java:S1948"1Make "backgroundMusic" transient or serializable.(¢¬ÎŠ
+T
+java:S1948"2Make "buttonClickSound" transient or serializable.(—´©úÿÿÿÿ8¬¦êØÂ1
 e
-java:S3252"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(ºÀœx8¹¦êØÂ1
-i	java:S100”"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½ŠÆµÿÿÿÿÿ
+java:S3252"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(ºÀœx8¹¦êØÂ1
+i	java:S100—"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½ŠÆµÿÿÿÿÿ

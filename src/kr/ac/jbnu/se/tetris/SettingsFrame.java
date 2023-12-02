@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 import java.util.Objects;
 
 public class SettingsFrame extends JFrame implements ActionListener {
-    JButton backButton;
+    final JButton backButton;
     MainMenu mainMenu;
     private final SoundManager backgroundMusic;
     private final JSlider volumeSlider; // 볼륨 조절 슬라이더 추가

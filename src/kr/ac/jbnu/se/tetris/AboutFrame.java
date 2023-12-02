@@ -8,7 +8,7 @@ import java.util.Objects;
 
 
 public class AboutFrame extends JFrame implements ActionListener {
-    JButton backButton;
+    final JButton backButton;
     MainMenu mainMenu;
     private final String id;
     private final SoundManager buttonClickSound; // 버튼 클릭시 효과음을 위한 인스턴스

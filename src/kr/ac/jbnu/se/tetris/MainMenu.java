@@ -11,11 +11,14 @@ public class MainMenu extends JFrame implements ActionListener {
     private final SoundManager backgroundMusic;
     private final SoundManager buttonClickSound; // 버튼 클릭시 효과음을 위한 인스턴스
 
-    JPanel buttonsPanel, aboutPanel, settingsPanel;
-    JButton singlePlayerButton;
-    JButton multiPlayerButton;
-    JButton scoreboardButton;
-    JButton aboutButton, settingsButton;
+    final JPanel buttonsPanel;
+    final JPanel aboutPanel;
+    final JPanel settingsPanel;
+    final JButton singlePlayerButton;
+    final JButton multiPlayerButton;
+    final JButton scoreboardButton;
+    final JButton aboutButton;
+    final JButton settingsButton;
 
     public MainMenu(String id) {
         this.setTitle("Tetris");

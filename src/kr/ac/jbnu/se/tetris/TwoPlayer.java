@@ -5,7 +5,7 @@ import javax.swing.*;
 
 
 public class TwoPlayer extends JFrame {
-    JLabel statusbar;
+    final JLabel statusbar;
 
     public TwoPlayer() {
         statusbar = new JLabel(" ");

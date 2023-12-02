@@ -34,11 +34,11 @@ public class FirebaseUtil {
 
     public static void addUser(User user) throws ExecutionException, InterruptedException {
         Map<String, Object> userMap = new HashMap<>();
-        userMap.put("id", user.getId());
-        userMap.put("password", user.getPassword());
-        userMap.put("score", user.getScore());
+        userMap.put("id", user.id());
+        userMap.put("password", user.password());
+        userMap.put("score", user.score());
 
-        db.collection("users").document(user.getId()).set(userMap).get();
+        db.collection("users").document(user.id()).set(userMap).get();
     }
     public static void addScore(String userId, int newScore) throws ExecutionException, InterruptedException {
         Map<String, Object> updateData = new HashMap<>();
@@ -84,7 +84,7 @@ public class FirebaseUtil {
         ArrayList<User> allScores = getAllUserScores(); // 모든 사용자의 스코어 가져오기
 
         // 내림차순으로 정렬
-        allScores.sort(Comparator.comparing(User::getScore).reversed());
+        allScores.sort(Comparator.comparing(User::score).reversed());
 
         // 최고 점수 순위에서 10위까지 반환
         return new ArrayList<>(allScores.subList(0, Math.min(limit, allScores.size())));

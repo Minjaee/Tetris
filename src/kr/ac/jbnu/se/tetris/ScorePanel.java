@@ -12,7 +12,7 @@ import java.util.Objects;
 
 
 public class ScorePanel extends JFrame implements ActionListener {
-    JButton backButton;
+    final JButton backButton;
     MainMenu mainMenu;
     private String id;
     private final JLabel scoreLabel;
@@ -112,8 +112,8 @@ public class ScorePanel extends JFrame implements ActionListener {
         Object[][] data = new Object[topScores.size()][3];
         for (int i = 0; i < topScores.size(); i++) {
             data[i][0] = i + 1; // 순위
-            data[i][1] = topScores.get(i).getId(); // 사용자 ID
-            data[i][2] = topScores.get(i).getScore(); // 스코어
+            data[i][1] = topScores.get(i).id(); // 사용자 ID
+            data[i][2] = topScores.get(i).score(); // 스코어
         }
 
         JTable scoreTable = new JTable(data, columnNames);
