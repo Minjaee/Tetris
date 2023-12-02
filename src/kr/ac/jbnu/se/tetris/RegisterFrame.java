@@ -1,8 +1,5 @@
 package src.kr.ac.jbnu.se.tetris;
 
-import com.google.api.core.ApiFuture;
-import com.google.cloud.firestore.WriteResult;
-
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -10,8 +7,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
 public class RegisterFrame extends JFrame {
@@ -67,39 +62,33 @@ public class RegisterFrame extends JFrame {
         }
 
 
-        registerButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                buttonClickSound.play(); // 효과음 재생
-                String id = idField.getText();
-                String pw = String.valueOf(pwField.getPassword());
-                int score = 0;
+        registerButton.addActionListener(e -> {
+            buttonClickSound.play(); // 효과음 재생
+            String id = idField.getText();
+            String pw = String.valueOf(pwField.getPassword());
+            int score = 0;
 
-                try {
-                    String validPassword = FirebaseUtil.validateUserId(id);
-                    if (id.equals(validPassword)) {
-                        JOptionPane.showMessageDialog(null, "이미 사용중인 아이디입니다.");
-                    } else {
-                        FirebaseUtil.addUser(new User(id, pw, score));
+            try {
+                String validPassword = FirebaseUtil.validateUserId(id);
+                if (id.equals(validPassword)) {
+                    JOptionPane.showMessageDialog(null, "이미 사용중인 아이디입니다.");
+                } else {
+                    FirebaseUtil.addUser(new User(id, pw, score));
 
-                        JOptionPane.showMessageDialog(null, "회원 가입이 완료되었습니다.");
-                        loginFrame.setVisible(true);
-                        dispose();
-                    }
-                } catch (ExecutionException | InterruptedException ex) {
-                    ex.printStackTrace();
+                    JOptionPane.showMessageDialog(null, "회원 가입이 완료되었습니다.");
+                    loginFrame.setVisible(true);
+                    dispose();
                 }
+            } catch (ExecutionException | InterruptedException ex) {
+                ex.printStackTrace();
             }
         });
 
 
-        cancelButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                buttonClickSound.play(); // 효과음 재생
-                loginFrame.setVisible(true);
-                dispose();
-            }
+        cancelButton.addActionListener(e -> {
+            buttonClickSound.play(); // 효과음 재생
+            loginFrame.setVisible(true);
+            dispose();
         });
 
         add(idPanel, BorderLayout.NORTH);

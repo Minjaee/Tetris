@@ -54,13 +54,10 @@ public class SettingsFrame extends JFrame implements ActionListener {
         this.setLayout(null);
         this.setVisible(true);
 
-        volumeSlider.addChangeListener(new ChangeListener() {
-            @Override
-            public void stateChanged(ChangeEvent e) {
-                int sliderValue = volumeSlider.getValue(); // 1부터 10까지의 값
-                float volume = (float) sliderValue / 100.0f; // 슬라이더 값을 0.1부터 1.0까지의 범위로 변환
-                backgroundMusic.setVolume(volume);
-            }
+        volumeSlider.addChangeListener(e -> {
+            int sliderValue = volumeSlider.getValue(); // 1부터 10까지의 값
+            float volume = (float) sliderValue / 100.0f; // 슬라이더 값을 0.1부터 1.0까지의 범위로 변환
+            backgroundMusic.setVolume(volume);
         });
 
     }

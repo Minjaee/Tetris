@@ -62,32 +62,26 @@ public class LoginFrame extends JFrame {
         }
 
 
-        loginButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                buttonClickSound.play(); // 효과음 재생
-                String id = idField.getText();
-                String pw = String.valueOf(pwField.getPassword());
+        loginButton.addActionListener(e -> {
+            buttonClickSound.play(); // 효과음 재생
+            String id = idField.getText();
+            String pw = String.valueOf(pwField.getPassword());
 
-                try {
-                    String validPassword = FirebaseUtil.validateUserPassword(id);
-                    if (pw.equals(validPassword)) {
-                        openMainFrame(id);
-                    } else {
-                        JOptionPane.showMessageDialog(null, "로그인 실패");
-                    }
-                } catch (ExecutionException | InterruptedException ex) {
-                    ex.printStackTrace();
+            try {
+                String validPassword = FirebaseUtil.validateUserPassword(id);
+                if (pw.equals(validPassword)) {
+                    openMainFrame(id);
+                } else {
+                    JOptionPane.showMessageDialog(null, "로그인 실패");
                 }
+            } catch (ExecutionException | InterruptedException ex) {
+                ex.printStackTrace();
             }
         });
 
-        registerButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                buttonClickSound.play(); // 효과음 재생
-                openRegisterFrame();
-            }
+        registerButton.addActionListener(e -> {
+            buttonClickSound.play(); // 효과음 재생
+            openRegisterFrame();
         });
 
         add(idPanel, BorderLayout.NORTH);

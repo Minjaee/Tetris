@@ -107,35 +107,23 @@ public class MainMenu extends JFrame implements ActionListener {
         this.setLocationRelativeTo(null);
         this.setVisible(true);
 
-        singlePlayerButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                buttonClickSound.play(); // 효과음 재생
-                Gamestart(id);
-        }
+        singlePlayerButton.addActionListener(e -> {
+            buttonClickSound.play(); // 효과음 재생
+            Gamestart(id);
+    });
+
+        scoreboardButton.addActionListener(e -> {
+            buttonClickSound.play(); // 효과음 재생
+            scoreboardOpen(id);
         });
 
-        scoreboardButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                buttonClickSound.play(); // 효과음 재생
-                scoreboardOpen(id);
-            }
-        });
+        aboutButton.addActionListener(e -> {
+            buttonClickSound.play(); // 효과음 재생
+            aboutFrameOpen(id);});
 
-        aboutButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                buttonClickSound.play(); // 효과음 재생
-                aboutFrameOpen(id);}
-        });
-
-        settingsButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                buttonClickSound.play(); // 효과음 재생
-                settingsOpen(id);}
-        });
+        settingsButton.addActionListener(e -> {
+            buttonClickSound.play(); // 효과음 재생
+            settingsOpen(id);});
 
     }
     @Override

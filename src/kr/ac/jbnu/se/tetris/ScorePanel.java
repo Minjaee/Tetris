@@ -138,13 +138,10 @@ public class ScorePanel extends JFrame implements ActionListener {
         loadScoreButton.setBounds(280, 250, 70, 30);
         Color goldColor1 = new Color(255, 215, 0); // RGB 값으로 금색 만들기
         loadScoreButton.setBackground(goldColor1); // 버튼 색상을 금색으로 설정
-        loadScoreButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                buttonClickSound.play(); // 효과음 재생
-                fetchUserScore(); // 사용자 스코어 불러오기
-                updateScoreLabel(); // 스코어 레이블 업데이트
-            }
+        loadScoreButton.addActionListener(e -> {
+            buttonClickSound.play(); // 효과음 재생
+            fetchUserScore(); // 사용자 스코어 불러오기
+            updateScoreLabel(); // 스코어 레이블 업데이트
         });
         return loadScoreButton;
     }
