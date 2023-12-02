@@ -15,7 +15,6 @@ public class TwoPlayerBoard extends JPanel implements ActionListener {
     final int BoardHeight = 22;
 
     private String id;
-    private String pw;
 
     Timer timer;
     boolean isFallingFinished = false;

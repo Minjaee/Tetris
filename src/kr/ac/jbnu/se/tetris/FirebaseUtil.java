@@ -32,10 +32,6 @@ public class FirebaseUtil {
         }
     }
 
-    public static Firestore getDb() {
-        return db;
-    }
-
     public static void addUser(User user) throws ExecutionException, InterruptedException {
         Map<String, Object> userMap = new HashMap<>();
         userMap.put("id", user.getId());

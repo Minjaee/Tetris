@@ -18,12 +18,6 @@ public class SoundManager {
         }
     }
 
-    public void play() {
-        if (clip != null) {
-            clip.start();
-        }
-    }
-
     public void stop() {
         if (clip != null) {
             clip.stop();
@@ -36,11 +30,6 @@ public class SoundManager {
         }
     }
 
-    public void close() {
-        if (clip != null) {
-            clip.close();
-        }
-    }
     public void setVolume(float volume) {
         if (clip != null) {
             FloatControl gainControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);

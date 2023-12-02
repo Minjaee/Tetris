@@ -118,10 +118,7 @@ public class Board extends JPanel implements ActionListener {
 		}
 		repaint();
 	}
-	// 미리보기 패널에 라우팅
-	public Shape getNextPiece() {
-		return nextPiece;
-	}
+
 	// 도형 미리보기 시각화
 	public void drawPreview(Graphics g, int offsetX, int offsetY) {
 		if (nextPiece.getShape() == Tetrominoes.NoShape) {
@@ -442,7 +439,7 @@ public class Board extends JPanel implements ActionListener {
 
 		}
 	}
-	public void setId(String id) {this.id = id;}
+
 	public void updateScore() {
 		try {
 			if (id != null && score > FirebaseUtil.getUserScore(id)) {

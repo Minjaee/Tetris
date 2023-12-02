@@ -14,23 +14,23 @@ java:S1948$"+Make "nextPiece" transient or serializable.(¼”•¿ÿÿÿÿÿ8ì ò£Á1
 H
 java:S1948*"+Make "holdPiece" transient or serializable.(µÔœ¨8ì ò£Á1
 p
-java:S3776‘"RRefactor this method to reduce its Cognitive Complexity from 25 to the 15 allowed.(¶øÂÁ8õ ò£Á1
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 25 to the 15 allowed.(¶øÂÁ8õ ò£Á1
 X
-java:S1161‘":Add the "@Override" annotation above this method signature(¶øÂÁ8ö ò£Á1
+java:S1161":Add the "@Override" annotation above this method signature(¶øÂÁ8ö ò£Á1
 M
-java:S1197Ò"*Move the array designators [] to the type.(¼òÊùÿÿÿÿ8ù ò£Á1
+java:S1197Ï"*Move the array designators [] to the type.(¼òÊùÿÿÿÿ8ù ò£Á1
 u
-java:S3776Ğ"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(İşä¬ıÿÿÿÿ8¡ò£Á1
+java:S3776Í"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(İşä¬ıÿÿÿÿ8¡ò£Á1
 M
-java:S1197õ"*Move the array designators [] to the type.(á“õÙüÿÿÿÿ8„¡ò£Á1
+java:S1197ò"*Move the array designators [] to the type.(á“õÙüÿÿÿÿ8„¡ò£Á1
 W
-java:S1161Œ":Add the "@Override" annotation above this method signature(İ¼õA8†¡ò£Á1
-?	java:S131œ""Add a default case to this switch.(ÖÅ«Á8‡¡ò£Á1
+java:S1161‰":Add the "@Override" annotation above this method signature(İ¼õA8†¡ò£Á1
+?	java:S131™""Add a default case to this switch.(ÖÅ«Á8‡¡ò£Á1
 |
-java:S2142Ã"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(æ¹Áä8‰¡ò£Á1
+java:S2142À"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(æ¹Áä8‰¡ò£Á1
 Q
 java:S1128"4Remove this unused import 'java.util.logging.Level'.(…µÛ¶8èŒ‹¥Á1
-D
-java:S3398İ"!Move this method into "TAdapter".(“¹ü÷ûÿÿÿÿ8Š¡ò£Á1
 C
 java:S3398k"!Move this method into "TAdapter".(¦ñ“üÿÿÿÿ8Š¡ò£Á1
+D
+java:S3398Ú"!Move this method into "TAdapter".(“¹ü÷ûÿÿÿÿ8Š¡ò£Á1

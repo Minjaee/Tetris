@@ -8,8 +8,6 @@ import java.awt.event.ActionListener;
 public class MainMenu extends JFrame implements ActionListener {
 
     private SoundManager backgroundMusic;
-    AboutFrame aboutFrame;
-    SettingsFrame settingsFrame;
     JPanel buttonsPanel, aboutPanel, settingsPanel;
     JButton singlePlayerButton;
     JButton multiPlayerButton;
