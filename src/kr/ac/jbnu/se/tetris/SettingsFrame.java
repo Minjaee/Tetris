@@ -13,8 +13,10 @@ public class SettingsFrame extends JFrame implements ActionListener {
     private SoundManager backgroundMusic;
     private JSlider volumeSlider; // 볼륨 조절 슬라이더 추가
     private String id;
+    private SoundManager buttonClickSound; // 버튼 클릭시 효과음을 위한 인스턴스
 
     public SettingsFrame(String id){
+        buttonClickSound = new SoundManager("src/sounds/button_click.wav"); // 버튼 클릭 초기화
         this.id = id;
         //frame setup
         this.setTitle("Settings");
@@ -67,6 +69,7 @@ public class SettingsFrame extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        buttonClickSound.play(); // 효과음 재생
 
         // goes back to MainMenu when button back is pressed
         if (e.getSource() == backButton){

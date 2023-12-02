@@ -18,19 +18,26 @@ public class SoundManager {
         }
     }
 
-    public void stop() {
+    public synchronized void play() {
+        if (clip != null) {
+            clip.setFramePosition(0); // 재생 위치를 처음으로 설정
+            clip.start();
+        }
+    }
+
+    public synchronized void stop() {
         if (clip != null) {
             clip.stop();
         }
     }
 
-    public void loop() {
+    public synchronized void loop() {
         if (clip != null) {
             clip.loop(Clip.LOOP_CONTINUOUSLY);
         }
     }
 
-    public void setVolume(float volume) {
+    public synchronized void setVolume(float volume) {
         if (clip != null) {
             FloatControl gainControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
             float min = gainControl.getMinimum();

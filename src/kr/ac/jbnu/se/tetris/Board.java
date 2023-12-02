@@ -13,6 +13,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 import java.awt.Font;
+import java.util.logging.Level;
 import javax.swing.JOptionPane; // 게임 종료 시 재시작 혹은 메뉴로 돌아갈 것인지 물어보게 하기 위한 모듈
 public class Board extends JPanel implements ActionListener {
 //test
@@ -39,6 +40,11 @@ public class Board extends JPanel implements ActionListener {
 	private PreviewBoard previewBoard;
 	private Tetris tetrisParent; // Board 클래스가 Tetris 클래스에 접근할 수 있도록 멤버 변수 생성
 	private Shape holdPiece; // HOLD 기능
+	private SoundManager lineClearSound; // 줄 완성 효과음을 위한 SoundManager 인스턴스
+	private SoundManager blockDropSound; // 블록 쌓일 때 효과음을 위한 인스턴스
+	private SoundManager buttonClickSound; // 버튼 클릭시 효과음을 위한 인스턴스
+	private SoundManager gameOverSound; // 게임 오버시 효과음을 위한 인스턴스
+
 	public void setPreviewBoard(PreviewBoard previewBoard) {
 		this.previewBoard = previewBoard;
 	} ///
@@ -87,6 +93,10 @@ public class Board extends JPanel implements ActionListener {
 		if (isPaused)
 			return;
 
+		lineClearSound = new SoundManager("src/sounds/line_clear.wav"); // 줄 제거 초기화
+		blockDropSound = new SoundManager("src/sounds/block_stack.wav"); // 블럭 쌓기 초기화
+		buttonClickSound = new SoundManager("src/sounds/button_click.wav"); // 버튼 클릭 초기화
+		gameOverSound = new SoundManager("src/sounds/game_over.wav"); // 게임 오버 사운드 초기화
 		nextPiece = new Shape();
 		nextPiece.setRandomShape();
 
@@ -127,10 +137,10 @@ public class Board extends JPanel implements ActionListener {
 		g.setFont(newFont);
 
 		g.setColor(new Color(128, 0, 128));  // 글자색 변경
-		g.drawString(" ", offsetX - 165, offsetY + 30);  // 텍스트 위치 지정
+		g.drawString(" ", offsetX + -165, offsetY + 30);  // 텍스트 위치 지정
 
-		g.drawString(String.valueOf(score), offsetX, offsetY +280);  // 텍스트 위치 지정
-		g.drawString(String.valueOf(level), offsetX, offsetY +380);  // 텍스트 위치 지정
+		g.drawString(String.valueOf(score), offsetX + 0, offsetY +280);  // 텍스트 위치 지정
+		g.drawString(String.valueOf(level), offsetX + 0, offsetY +380);  // 텍스트 위치 지정
 
 		for (int i = 0; i < 4; ++i) {
 			int x = offsetX + nextPiece.x(i) * squareWidth();
@@ -150,9 +160,9 @@ public class Board extends JPanel implements ActionListener {
 				Tetrominoes shape = shapeAt(j, BoardHeight - i - 1);
 				if (shape != Tetrominoes.NoShape){
 					if (isGameOver) { // isGameOver 가 true일 때, 색상이 변경되도록 함수 수정
-						drawSquare(g, j * squareWidth(), boardTop + i * squareHeight(), Tetrominoes.GrayShape);
+						drawSquare(g, 0 + j * squareWidth(), boardTop + i * squareHeight(), Tetrominoes.GrayShape);
 					} else {
-						drawSquare(g, j * squareWidth(), boardTop + i * squareHeight(), shape);
+						drawSquare(g, 0 + j * squareWidth(), boardTop + i * squareHeight(), shape);
 					}
 				}
 			}
@@ -162,7 +172,7 @@ public class Board extends JPanel implements ActionListener {
 			for (int i = 0; i < 4; ++i) {
 				int x = curX + curPiece.x(i);
 				int y = curY - curPiece.y(i);
-				drawSquare(g, x * squareWidth(), boardTop + (BoardHeight - y - 1) * squareHeight(),
+				drawSquare(g, 0 + x * squareWidth(), boardTop + (BoardHeight - y - 1) * squareHeight(),
 						curPiece.getShape());
 			}
 		}
@@ -179,7 +189,7 @@ public class Board extends JPanel implements ActionListener {
 			for (int i = 0; i < 4; ++i) {
 				int x = curX + curPiece.x(i);
 				int y = ghostY - curPiece.y(i);
-				drawGhostSquare(g, x * squareWidth(),
+				drawGhostSquare(g, 0 + x * squareWidth(),
 						boardTop + (BoardHeight - y - 1) * squareHeight(),
 						curPiece.getShape());
 			}
@@ -203,7 +213,7 @@ public class Board extends JPanel implements ActionListener {
 
 	// 고스트 블록을 그리기 위한 메서드
 	private void drawGhostSquare(Graphics g, int x, int y, Tetrominoes shape) {
-		Color[] colors = { new Color(0, 0, 0), new Color(204, 102, 102, 255),
+		Color colors[] = { new Color(0, 0, 0), new Color(204, 102, 102, 255),
 				new Color(102, 204, 102, 255), new Color(102, 102, 204, 255),
 				new Color(204, 204, 102, 255), new Color(204, 102, 204, 255),
 				new Color(102, 204, 204, 255), new Color(218, 170, 0, 255),
@@ -245,6 +255,8 @@ public class Board extends JPanel implements ActionListener {
 
 		if (!isFallingFinished)
 			newPiece();
+
+		blockDropSound.play();
 	}
 
 	private void newPiece() {
@@ -271,8 +283,10 @@ public class Board extends JPanel implements ActionListener {
 		isGameOver = true; // 게임 오버 시 isGameOver변수를 false에서 true로 변경
 		statusbar.setText("game over");
 		repaint(); // gameover시 회색으로 변경
+		gameOverSound.play(); //게임 오버시 효과음 재생
 		updateScore();
 		gameOverAction();  // 게임 오버 액션 추가
+
 	}
 
 	// 게임오버 상황에서의 액션
@@ -281,8 +295,10 @@ public class Board extends JPanel implements ActionListener {
 				JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, new String[]{"다시 시작", "메인 메뉴"}, "default");
 		if (option == JOptionPane.YES_OPTION) {
 			start();  // 게임 재시작
+			buttonClickSound.play(); // 효과음 재생
 		} else {
 			openMainFrame();// 메인 메뉴로 돌아가게 하는 메서드.
+			buttonClickSound.play(); // 효과음 재생
 		}
 	}
 
@@ -358,6 +374,8 @@ public class Board extends JPanel implements ActionListener {
 			curPiece.setShape(Tetrominoes.NoShape);
 			repaint();
 			score++;  // 라인 한줄 제거당 1점 획득
+			lineClearSound.play(); // 줄 제거 효과음 실행
+
 
 			level = (score / 3) + 1;  // Increase level every 3 points
 			delay = 400 - (level * 60);  // Decrease delay with level
@@ -366,7 +384,7 @@ public class Board extends JPanel implements ActionListener {
 	}
 
 	void drawSquare(Graphics g, int x, int y, Tetrominoes shape) {
-		Color[] colors = {new Color(0, 0, 0), new Color(204, 102, 102), new Color(102, 204, 102),
+		Color colors[] = {new Color(0, 0, 0), new Color(204, 102, 102), new Color(102, 204, 102),
 				new Color(102, 102, 204), new Color(204, 204, 102), new Color(204, 102, 204), new Color(102, 204, 204),
 				new Color(218, 170, 0), new Color(128, 128, 128)}; //gray색 추가
 
@@ -438,6 +456,7 @@ public class Board extends JPanel implements ActionListener {
 
 		}
 	}
+
 	public void updateScore() {
 		try {
 			if (id != null && score > FirebaseUtil.getUserScore(id)) {

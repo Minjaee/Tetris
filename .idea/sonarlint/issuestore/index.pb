@@ -204,3 +204,5 @@ Z
 *src/kr/ac/jbnu/se/tetris/FirebaseUtil.java,3\1\31f57ca19734e4608130aefa9ebae14c2950b25a
 X
 (src/kr/ac/jbnu/se/tetris/AboutFrame.java,e\4\e4b83e4e9431d181e753918042802e77d793afe3
+W
+'src/kr/ac/jbnu/se/tetris/TwoPlayer.java,5\8\5808179f1d312458c265dd581375e8a65283fe00

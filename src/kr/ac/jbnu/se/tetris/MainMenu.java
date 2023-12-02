@@ -8,6 +8,8 @@ import java.awt.event.ActionListener;
 public class MainMenu extends JFrame implements ActionListener {
 
     private SoundManager backgroundMusic;
+    private SoundManager buttonClickSound; // 버튼 클릭시 효과음을 위한 인스턴스
+
     JPanel buttonsPanel, aboutPanel, settingsPanel;
     JButton singlePlayerButton;
     JButton multiPlayerButton;
@@ -18,6 +20,8 @@ public class MainMenu extends JFrame implements ActionListener {
         this.setTitle("Tetris");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(900, 700);
+        buttonClickSound = new SoundManager("src/sounds/button_click.wav"); // 버튼 클릭 초기화
+
 
         //배경음악 setup
         backgroundMusic = new SoundManager("src/sounds/background.wav");
@@ -110,32 +114,39 @@ public class MainMenu extends JFrame implements ActionListener {
         this.setVisible(true);
 
         singlePlayerButton.addActionListener(new ActionListener() {
-        @Override
-                public void actionPerformed(ActionEvent e) {
-            Gamestart(id);
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                buttonClickSound.play(); // 효과음 재생
+                Gamestart(id);
         }
         });
 
         scoreboardButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                buttonClickSound.play(); // 효과음 재생
                 scoreboardOpen(id);
             }
         });
 
         aboutButton.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {aboutFrameOpen(id);}
+            public void actionPerformed(ActionEvent e) {
+                buttonClickSound.play(); // 효과음 재생
+                aboutFrameOpen(id);}
         });
 
         settingsButton.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {settingsOpen(id);}
+            public void actionPerformed(ActionEvent e) {
+                buttonClickSound.play(); // 효과음 재생
+                settingsOpen(id);}
         });
 
     }
     @Override
     public void actionPerformed(ActionEvent e) {
+        buttonClickSound.play(); // 효과음 재생
 
         //open 2P game mode
         if(e.getSource() == multiPlayerButton) {

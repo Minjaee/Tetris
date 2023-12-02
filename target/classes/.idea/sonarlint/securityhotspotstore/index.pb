@@ -202,3 +202,7 @@ Z
 *src/kr/ac/jbnu/se/tetris/SoundManager.java,f\8\f8d4e0f99eb1c1aa8949dbc4b20b88430f2e0fe6
 X
 (src/kr/ac/jbnu/se/tetris/AboutFrame.java,e\4\e4b83e4e9431d181e753918042802e77d793afe3
+Y
+)src/kr/ac/jbnu/se/tetris/Tetrominoes.java,f\c\fc0837765e23f195ef8580cdfea973baee12b1b5
+W
+'src/kr/ac/jbnu/se/tetris/TwoPlayer.java,5\8\5808179f1d312458c265dd581375e8a65283fe00

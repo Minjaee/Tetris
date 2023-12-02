@@ -14,15 +14,20 @@ public class ScorePanel extends JFrame implements ActionListener {
     JButton backButton;
     MainMenu mainMenu;
     private String id;
+    private JLabel userIdLabel;
     private JLabel scoreLabel;
     private JTextField userIdField;
     private int userScore;
+    private JTable scoreTable;
     private ArrayList<User> topScores = new ArrayList<>(); // 초기화된 ArrayList
+    private SoundManager buttonClickSound; // 버튼 클릭시 효과음을 위한 인스턴스
 
     private Image backgroundImage; // 이미지를 저장할 변수 추가
 
 
     ScorePanel(String id){
+        buttonClickSound = new SoundManager("src/sounds/button_click.wav"); // 버튼 클릭 초기화
+
 
         try {
             // 이미지 파일 경로 설정
@@ -57,7 +62,7 @@ public class ScorePanel extends JFrame implements ActionListener {
         this.setIconImage(logo.getImage());
 
         // 사용자 ID 레이블
-        JLabel userIdLabel = new JLabel("사용자 ID:");
+        userIdLabel = new JLabel("사용자 ID:");
         userIdLabel.setBounds(100, 200, 100, 30);
         userIdLabel.setForeground(Color.WHITE); // 텍스트 색상을 흰색으로 설정
         this.add(userIdLabel);
@@ -81,6 +86,7 @@ public class ScorePanel extends JFrame implements ActionListener {
         loadScoreButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                buttonClickSound.play(); // 효과음 재생
                 fetchUserScore(); // 사용자 스코어 불러오기
                 updateScoreLabel(); // 스코어 레이블 업데이트
             }
@@ -122,7 +128,7 @@ public class ScorePanel extends JFrame implements ActionListener {
             data[i][2] = topScores.get(i).getScore(); // 스코어
         }
 
-        JTable scoreTable = new JTable(data, columnNames);
+        scoreTable = new JTable(data, columnNames);
         scoreTable.setBounds(450, 200, 400, 180);
 
         // JScrollPane로 JTable 래핑
@@ -159,6 +165,7 @@ public class ScorePanel extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        buttonClickSound.play(); // 효과음 재생
         //go back to main-menu if backButton pressed
         if(e.getSource() == backButton){
             mainMenu = new MainMenu(id);

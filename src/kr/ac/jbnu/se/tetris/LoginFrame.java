@@ -14,12 +14,13 @@ public class LoginFrame extends JFrame {
 
     private JTextField idField;
     private JPasswordField pwField;
+    private SoundManager buttonClickSound; // 버튼 클릭시 효과음을 위한 인스턴스
 
     public LoginFrame() {
         setSize(500, 500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
-
+        buttonClickSound = new SoundManager("src/sounds/button_click.wav"); // 버튼 클릭 초기화
 
         JPanel idPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));//로그인
         JLabel idLabel = new JLabel("ID: ");
@@ -64,6 +65,7 @@ public class LoginFrame extends JFrame {
         loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                buttonClickSound.play(); // 효과음 재생
                 String id = idField.getText();
                 String pw = String.valueOf(pwField.getPassword());
 
@@ -83,6 +85,7 @@ public class LoginFrame extends JFrame {
         registerButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                buttonClickSound.play(); // 효과음 재생
                 openRegisterFrame();
             }
         });

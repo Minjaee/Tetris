@@ -1,5 +1,8 @@
 package src.kr.ac.jbnu.se.tetris;
 
+import com.google.api.core.ApiFuture;
+import com.google.cloud.firestore.WriteResult;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -7,13 +10,19 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
 public class RegisterFrame extends JFrame {
+    private LoginFrame loginFrame;
     private JTextField idField;
     private JPasswordField pwField;
+    private SoundManager buttonClickSound; // 버튼 클릭시 효과음을 위한 인스턴스
 
     public RegisterFrame(LoginFrame loginFrame) {
+        buttonClickSound = new SoundManager("src/sounds/button_click.wav"); // 버튼 클릭 초기화
+        this.loginFrame = loginFrame;
 
         setSize(500, 500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -63,6 +72,7 @@ public class RegisterFrame extends JFrame {
         registerButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                buttonClickSound.play(); // 효과음 재생
                 String id = idField.getText();
                 String pw = String.valueOf(pwField.getPassword());
                 int score = 0;
@@ -88,6 +98,7 @@ public class RegisterFrame extends JFrame {
         cancelButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                buttonClickSound.play(); // 효과음 재생
                 loginFrame.setVisible(true);
                 dispose();
             }

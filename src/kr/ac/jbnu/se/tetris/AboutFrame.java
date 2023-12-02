@@ -10,8 +10,12 @@ public class AboutFrame extends JFrame implements ActionListener {
     JButton backButton;
     MainMenu mainMenu;
     private String id;
+    private SoundManager buttonClickSound; // 버튼 클릭시 효과음을 위한 인스턴스
+
 
     AboutFrame(String id){
+        buttonClickSound = new SoundManager("src/sounds/button_click.wav"); // 버튼 클릭 초기화
+
         this.id = id;
 
         // frame setup
@@ -57,6 +61,7 @@ public class AboutFrame extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        buttonClickSound.play(); // 효과음 재생
         //go back to main-menu if backButton pressed
         if(e.getSource() == backButton){
             mainMenu = new MainMenu(id);
