@@ -1,10 +1,10 @@
 
 h
-java:S1192'"FDefine a constant instead of duplicating this literal "score" 4 times.(¶Ìõèúÿÿÿÿ8ÆöéÈÂ1
+java:S1192'"FDefine a constant instead of duplicating this literal "score" 4 times.(ùÖéÓøÿÿÿÿ8ÆöéÈÂ1
 _
-java:S1192&"IDefine a constant instead of duplicating this literal "password" 3 times.(ı™»ü
-c
-java:S1192)"FDefine a constant instead of duplicating this literal "users" 6 times.(í¢û8ÇöéÈÂ1
+java:S1192&"IDefine a constant instead of duplicating this literal "password" 3 times.(·€ó‘
+h
+java:S1192)"FDefine a constant instead of duplicating this literal "users" 6 times.(êĞ¡†üÿÿÿÿ8ÇöéÈÂ1
 
 java:S1319S"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Òë Ô8ÈöéÈÂ1
 

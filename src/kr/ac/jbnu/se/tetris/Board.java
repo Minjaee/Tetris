@@ -148,22 +148,30 @@ public class Board extends JPanel implements ActionListener {
 			drawSquare(g, x, y, nextPiece.getShape());
 		}
 	}
+
+	// paint 메서드 간소화
 	public void paint(Graphics g) {
 		super.paint(g);
 
 		Dimension size = getSize();
 		int boardTop = (int) size.getHeight() - BoardHeight * squareHeight();
 
+		// 보드 내부를 채우는 모양 그리기
+		drawBoardShapes(g, boardTop);
 
-		for (int i = 0; i < BoardHeight; ++i) {
-			for (int j = 0; j < BoardWidth; ++j) {
+		// 고스트 블록 그리기
+		drawGhostBlock(g, boardTop);
+
+		// 격자 무늬 그리기
+		drawGrid(g, boardTop);
+	}
+
+	private void drawBoardShapes(Graphics g, int boardTop) {
+		for (int i = 0; i < BoardHeight; i++) {
+			for (int j = 0; j < BoardWidth; j++) {
 				Tetrominoes shape = shapeAt(j, BoardHeight - i - 1);
-				if (shape != Tetrominoes.NoShape){
-					if (isGameOver) { // isGameOver 가 true일 때, 색상이 변경되도록 함수 수정
-						drawSquare(g, j * squareWidth(), boardTop + i * squareHeight(), Tetrominoes.GrayShape);
-					} else {
-						drawSquare(g, j * squareWidth(), boardTop + i * squareHeight(), shape);
-					}
+				if (shape != Tetrominoes.NoShape) {
+					drawSquare(g, j * squareWidth(), boardTop + i * squareHeight(), shape);
 				}
 			}
 		}
@@ -176,8 +184,9 @@ public class Board extends JPanel implements ActionListener {
 						curPiece.getShape());
 			}
 		}
+	}
 
-		// 고스트 블록 그리기
+	private void drawGhostBlock(Graphics g, int boardTop) {
 		if (isStarted && !isPaused) {
 			int ghostY = curY;
 			while (ghostY > 0) {
@@ -194,26 +203,23 @@ public class Board extends JPanel implements ActionListener {
 						curPiece.getShape());
 			}
 		}
+	}
 
-		// 격자 무늬 그리기
-		g.setColor(Color.GRAY);  // 격자 선의 색상 설정
-
+	private void drawGrid(Graphics g, int boardTop) {
+		g.setColor(Color.GRAY);
 		// 가로선 그리기
 		for (int i = 0; i < BoardHeight; i++) {
-			g.drawLine(0, boardTop + i * squareHeight(),
-					BoardWidth * squareWidth(), boardTop + i * squareHeight());
+			g.drawLine(0, boardTop + i * squareHeight(), BoardWidth * squareWidth(), boardTop + i * squareHeight());
 		}
 
 		// 세로선 그리기
 		for (int j = 0; j < BoardWidth; j++) {
-			g.drawLine(j * squareWidth(), boardTop,
-					j * squareWidth(), boardTop + BoardHeight * squareHeight());
+			g.drawLine(j * squareWidth(), boardTop, j * squareWidth(), boardTop + BoardHeight * squareHeight());
 		}
 	}
 
-	// 고스트 블록을 그리기 위한 메서드
 	private void drawGhostSquare(Graphics g, int x, int y, Tetrominoes shape) {
-		Color[] colors = { new Color(0, 0, 0), new Color(204, 102, 102, 255),
+		Color[] colors = {new Color(0, 0, 0), new Color(204, 102, 102, 255),
 				new Color(102, 204, 102, 255), new Color(102, 102, 204, 255),
 				new Color(204, 204, 102, 255), new Color(204, 102, 204, 255),
 				new Color(102, 204, 204, 255), new Color(218, 170, 0, 255),
@@ -222,6 +228,7 @@ public class Board extends JPanel implements ActionListener {
 		g.setColor(color);
 		g.drawRect(x + 1, y + 1, squareWidth() - 2, squareHeight() - 2);
 	}
+
 
 
 	private void dropDown() {
