@@ -403,8 +403,8 @@ public class Board extends JPanel implements ActionListener {
 		score += numFullLines;  // Increase score based on lines cleared
 		lineClearSound.play(); // Play line clearing sound
 
-		level = (score / 3) + 1;  // Increase level every 3 points
-		delay = 400 - (level * 60);  // Adjust delay based on level
+		level = (score / 5) + 1;  // Increase level every 5 points
+		delay = 400 - (level * 30);  // Adjust delay based on level
 		timer.setDelay(delay); // Update timer delay
 	}
 

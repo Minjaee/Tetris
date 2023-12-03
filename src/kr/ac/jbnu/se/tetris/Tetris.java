@@ -48,5 +48,6 @@ public class Tetris extends JFrame {
         FirebaseUtil.initialize();
         LoginFrame loginFrame = new LoginFrame();
         loginFrame.setVisible(true);
+
 	}
 }

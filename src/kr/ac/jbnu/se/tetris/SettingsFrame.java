@@ -1,74 +1,113 @@
 package src.kr.ac.jbnu.se.tetris;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 import java.util.Objects;
 
 public class SettingsFrame extends JFrame implements ActionListener {
-    final JButton backButton;
-    MainMenu mainMenu;
+    private static final String BACKGROUND_SOUND_PATH = "src/sounds/background.wav";
+    private static final String BUTTON_CLICK_SOUND_PATH = "src/sounds/button_click.wav";
+    private static final String LOGO_PATH = "src/images/logo.png";
+
+    private final JButton backButton;
+    private MainMenu mainMenu;
     private final SoundManager backgroundMusic;
-    private final JSlider volumeSlider; // 볼륨 조절 슬라이더 추가
+    private final JSlider volumeSlider;
     private final String id;
-    private final SoundManager buttonClickSound; // 버튼 클릭시 효과음을 위한 인스턴스
+    private final SoundManager buttonClickSound;
 
-    public SettingsFrame(String id){
-        buttonClickSound = new SoundManager("src/sounds/button_click.wav"); // 버튼 클릭 초기화
+    public SettingsFrame(String id) {
+
+        try {
+            // 이미지 파일 경로에 맞게 수정
+            Image backgroundImage = ImageIO.read(new File("src/images/Settingbackground6.png"));
+
+            setContentPane(new JPanel() {
+                @Override
+                protected void paintComponent(Graphics g) {
+                    super.paintComponent(g);
+                    g.drawImage(backgroundImage, 0, 0, getWidth(), getHeight(), this);
+                }
+            });
+        } catch (IOException e) {
+            e.printStackTrace();
+            // 이미지를 불러오지 못했을 때 대체할 기본 설정
+            getContentPane().setBackground(Color.LIGHT_GRAY);
+        }
+
+
         this.id = id;
-        //frame setup
-        this.setTitle("Settings");
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(900, 700);// window dimensions
-        this.getContentPane().setBackground(Color.white);
-
-        //배경음악 setup
-        backgroundMusic = new SoundManager("src/sounds/background.wav");
+        buttonClickSound = initializeSoundManager(BUTTON_CLICK_SOUND_PATH);
+        this.setUpFrame();
+        backgroundMusic = initializeSoundManager(BACKGROUND_SOUND_PATH);
         backgroundMusic.loop();
 
-        // logo setup
-        ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getClassLoader().getResource("src/images/logo.png")));
-        this.setIconImage(logo.getImage());
+        backButton = createButton("Back to Main-Menu", 370, 580, 150, 50);
 
-        JLabel text = new JLabel();
-        text.setText("Volume Setting");
-        text.setForeground(Color.black);
-        text.setFont(new Font ("MV Boli", Font.PLAIN, 40));
-        text.setBounds(300, 100, 900, 100);
+        volumeSlider = initializeVolumeSlider(345, 280, 200, 50);
 
-        //backButton setup
-        backButton = new JButton("Back to Main-Menu");
-        backButton.setFocusable(false);
-        backButton.setBounds(370, 580, 150, 50);
-        backButton.addActionListener(this);
-
-        // 볼륨 조절 슬라이더 초기화
-        volumeSlider = new JSlider(JSlider.HORIZONTAL, 0, 100, 100); // 볼륨 범위 설정
-        volumeSlider.setBounds(345, 280, 200, 50);
-
-        this.add(backButton);
-        this.add(volumeSlider);
-        this.add(text);
+        this.addComponents(backButton, volumeSlider);
         this.setLayout(null);
         this.setVisible(true);
-
-        volumeSlider.addChangeListener(e -> {
-            int sliderValue = volumeSlider.getValue(); // 1부터 10까지의 값
-            float volume = (float) sliderValue / 100.0f; // 슬라이더 값을 0.1부터 1.0까지의 범위로 변환
-            backgroundMusic.setVolume(volume);
-        });
-
     }
 
+    private SoundManager initializeSoundManager(String path) {
+        return new SoundManager(path);
+    }
 
+    private void setUpFrame() {
+        this.setTitle("Settings");
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setSize(900, 700);
+        this.getContentPane().setBackground(Color.white);
+        ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getClassLoader().getResource(LOGO_PATH)));
+        this.setIconImage(logo.getImage());
+    }
+
+    private JLabel createLabel(String text, Font font, int x, int y, int width, int height) {
+        JLabel label = new JLabel();
+        label.setText(text);
+        label.setForeground(Color.black);
+        label.setFont(font);
+        label.setBounds(x, y, width, height);
+        return label;
+    }
+
+    private JButton createButton(String text, int x, int y, int width, int height) {
+        JButton button = new JButton(text);
+        button.setFocusable(false);
+        button.setBounds(x, y, width, height);
+        button.addActionListener(this);
+        return button;
+    }
+
+    private JSlider initializeVolumeSlider(int x, int y, int width, int height) {
+        JSlider slider = new JSlider(JSlider.HORIZONTAL, 0, 100, 100);
+        slider.setBounds(x, y, width, height);
+        slider.addChangeListener(e -> {
+            int sliderValue = slider.getValue();
+            float volume = (float) sliderValue / 100.0f;
+            backgroundMusic.setVolume(volume);
+        });
+        return slider;
+    }
+
+    private void addComponents(JComponent... components) {
+        for (JComponent component : components) {
+            this.add(component);
+        }
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        buttonClickSound.play(); // 효과음 재생
+        buttonClickSound.play();
 
-        // goes back to MainMenu when button back is pressed
-        if (e.getSource() == backButton){
+        if (e.getSource() == backButton) {
             mainMenu = new MainMenu(id);
             this.setVisible(false);
             mainMenu.setVisible(true);
