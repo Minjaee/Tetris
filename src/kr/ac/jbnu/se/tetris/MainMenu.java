@@ -1,181 +1,140 @@
 package src.kr.ac.jbnu.se.tetris;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 import java.util.Objects;
 
 public class MainMenu extends JFrame implements ActionListener {
 
+    private final String id;
     private final SoundManager backgroundMusic;
-    private final SoundManager buttonClickSound; // 버튼 클릭시 효과음을 위한 인스턴스
+    private final SoundManager buttonClickSound;
 
-    final JPanel buttonsPanel;
-    final JPanel aboutPanel;
-    final JPanel settingsPanel;
-    final JButton singlePlayerButton;
-    final JButton multiPlayerButton;
-    final JButton scoreboardButton;
-    final JButton aboutButton;
-    final JButton settingsButton;
+    private final JButton singlePlayerButton;
+    private final JButton multiPlayerButton;
+    private final JButton scoreboardButton;
+    private final JButton aboutButton;
+    private final JButton settingsButton;
 
     public MainMenu(String id) {
-        this.setTitle("Tetris");
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(900, 700);
-        buttonClickSound = new SoundManager("src/sounds/button_click.wav"); // 버튼 클릭 초기화
+        try {
+            // 이미지 파일 경로에 맞게 수정
+            Image backgroundImage = ImageIO.read(new File("src/images/background.png"));
 
+            setContentPane(new JPanel() {
+                @Override
+                protected void paintComponent(Graphics g) {
+                    super.paintComponent(g);
+                    g.drawImage(backgroundImage, 0, 0, getWidth(), getHeight(), this);
+                }
+            });
+        } catch (IOException e) {
+            e.printStackTrace();
+            // 이미지를 불러오지 못했을 때 대체할 기본 설정
+            getContentPane().setBackground(Color.LIGHT_GRAY);
+        }
 
-        //배경음악 setup
+        this.id = id;
+        buttonClickSound = new SoundManager("src/sounds/button_click.wav");
+        setUpFrame();
+
         backgroundMusic = new SoundManager("src/sounds/background.wav");
         backgroundMusic.loop();
 
-        //logo setup
-        ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getClassLoader().getResource("src/images/logo.png")));
-        this.setIconImage(logo.getImage());
+        singlePlayerButton = createButton("Single-Player", new Font("MV Boli", Font.BOLD, 21));
+        multiPlayerButton = createButton("Multi-Player", new Font("MV Boli", Font.BOLD, 21));
+        scoreboardButton = createButton("Score List", new Font("MV Boli", Font.BOLD, 21));
+        aboutButton = createButtonWithIcon("src/images/about.png");
+        settingsButton = createButtonWithIcon("src/images/settings.png");
 
-        // background image setup
-        ImageIcon image = new ImageIcon(Objects.requireNonNull(getClass().getClassLoader().getResource("src/images/Background.png")));
-
-        // settings image setup
-        ImageIcon settings = new ImageIcon(Objects.requireNonNull(getClass().getClassLoader().getResource("src/images/settings.png")));
-
-        // about image setup
-        ImageIcon about = new ImageIcon(Objects.requireNonNull(getClass().getClassLoader().getResource("src/images/about.png")));
-
-        JLabel background_image = new JLabel(image);
-        background_image.setBounds(0, 0, 900, 700);
-
-        // set panel for single-, multiplayer and scoreboard buttons
-        buttonsPanel = new JPanel();
-        buttonsPanel.setBackground(Color.black);
-        buttonsPanel.setLayout(new GridLayout(3, 1));
-        buttonsPanel.setBounds(325, 480, 250, 150);
-
-        //set another panel for the about button
-        aboutPanel = new JPanel();
-        aboutPanel.setBackground(Color.black);
-        aboutPanel.setLayout(new GridLayout(1, 1));
-        aboutPanel.setBounds(70, 550, 50, 50);
-
-        //set another panel for the settings button
-        settingsPanel = new JPanel();
-        settingsPanel.setBackground(Color.black);
-        settingsPanel.setLayout(new GridLayout(1, 1));
-        settingsPanel.setBounds(780, 550, 50, 50);
-
-        //main menu header setup
-
-        //buttons
-        singlePlayerButton = new JButton("Single-Player");
-        singlePlayerButton.setFont(new Font("MV Boli", Font.BOLD, 21));
-        multiPlayerButton = new JButton("Multi-Player");
-        multiPlayerButton.setFont(new Font("MV Boli", Font.BOLD, 21));
-        scoreboardButton = new JButton("Score List");
-        scoreboardButton.setFont(new Font("MV Boli", Font.BOLD, 21));
-        aboutButton = new JButton(about);
-        settingsButton = new JButton(settings);
-
-        //button action setup
-        singlePlayerButton.addActionListener(this);
-        singlePlayerButton.setFocusable(false);
-
-        multiPlayerButton.addActionListener(this);
-        multiPlayerButton.setFocusable(false);
-
-        scoreboardButton.addActionListener(this);
-        scoreboardButton.setFocusable(false);
-
+        JPanel buttonsPanel = createPanel(new GridLayout(3, 1), 325, 480, 250, 150, Color.black);
         buttonsPanel.add(singlePlayerButton);
         buttonsPanel.add(multiPlayerButton);
         buttonsPanel.add(scoreboardButton);
 
-        // about button setup
-        aboutButton.addActionListener(this);
-        aboutButton.setFocusable(false);
+        JPanel aboutPanel = createPanel(new GridLayout(1, 1), 70, 550, 50, 50, Color.black);
         aboutPanel.add(aboutButton);
 
-        // setting button setup
-        settingsButton.addActionListener(this);
-        settingsButton.setFocusable(false);
+        JPanel settingsPanel = createPanel(new GridLayout(1, 1), 780, 550, 50, 50, Color.black);
         settingsPanel.add(settingsButton);
 
-        //adding elements to the frame
-        // this.add(header); 이거 제목 쓸때 주석 빼셈
-        this.add(aboutPanel);
-        this.add(buttonsPanel);
-        this.add(settingsPanel);
-        this.add(background_image);
+        this.addComponents(buttonsPanel, aboutPanel, settingsPanel);
         this.setLayout(null);
-        this.setLocationRelativeTo(null);
         this.setVisible(true);
 
-        singlePlayerButton.addActionListener(e -> {
-            buttonClickSound.play(); // 효과음 재생
-            Gamestart(id);
-    });
-
-        scoreboardButton.addActionListener(e -> {
-            buttonClickSound.play(); // 효과음 재생
-            scoreboardOpen(id);
-        });
-
-        aboutButton.addActionListener(e -> {
-            buttonClickSound.play(); // 효과음 재생
-            aboutFrameOpen(id);});
-
-        settingsButton.addActionListener(e -> {
-            buttonClickSound.play(); // 효과음 재생
-            settingsOpen(id);});
-
     }
+
+    private JButton createButton(String text, Font font) {
+        JButton button = new JButton(text);
+        button.setFont(font);
+        button.addActionListener(this);
+        button.setFocusable(false);
+        return button;
+    }
+
+    private JButton createButtonWithIcon(String iconPath) {
+        ImageIcon icon = new ImageIcon(Objects.requireNonNull(getClass().getClassLoader().getResource(iconPath)));
+        JButton button = new JButton(icon);
+        button.addActionListener(this);
+        button.setFocusable(false);
+        return button;
+    }
+
+    private JPanel createPanel(LayoutManager layout, int x, int y, int width, int height, Color color) {
+        JPanel panel = new JPanel();
+        panel.setLayout(layout);
+        panel.setBounds(x, y, width, height);
+        panel.setBackground(color);
+        return panel;
+    }
+
+    private void setUpFrame() {
+        this.setTitle("Tetris");
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setSize(900, 700);
+
+        ImageIcon logo = new ImageIcon(Objects.requireNonNull(getClass().getClassLoader().getResource("src/images/logo.png")));
+        this.setIconImage(logo.getImage());
+        this.setLocationRelativeTo(null);
+    }
+
+    private void addComponents(JComponent... components) {
+        for (JComponent component : components) {
+            this.add(component);
+        }
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
-        buttonClickSound.play(); // 효과음 재생
+        buttonClickSound.play();
 
-        //open 2P game mode
-        if(e.getSource() == multiPlayerButton) {
+        if (e.getSource() == singlePlayerButton) {
+            openFrame(new Tetris(id));
+        } else if (e.getSource() == scoreboardButton) {
+            openFrame(new ScorePanel(id));
+        } else if (e.getSource() == aboutButton) {
+            openFrame(new AboutFrame(id));
+        } else if (e.getSource() == settingsButton) {
+            openFrame(new SettingsFrame(id));
+        } else if (e.getSource() == multiPlayerButton) {
+            this.setVisible(false);
+            backgroundMusic.stop();
             SwingUtilities.invokeLater(() -> {
                 TwoPlayer twoPlayer = new TwoPlayer();
                 twoPlayer.setVisible(true);
             });
-            this.setVisible(false);
-            backgroundMusic.stop();
         }
-        //open setting window if settingsButton is pressed
-
-
     }
 
-    public void Gamestart(String id){
-        Tetris game = new Tetris(id);
+    private void openFrame(JFrame frame) {
         this.setVisible(false);
-        game.setLocationRelativeTo(null);
-        game.setVisible(true);
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
         backgroundMusic.stop();
     }
-
-    public void scoreboardOpen(String id){
-        ScorePanel ScorePanel = new ScorePanel(id);
-        this.setVisible(false);
-        ScorePanel.setLocationRelativeTo(null);
-        ScorePanel.setVisible(true);
-        backgroundMusic.stop();
-    }
-    public void aboutFrameOpen(String id){
-        AboutFrame AboutFrame = new AboutFrame(id);
-        this.setVisible(false);
-        AboutFrame.setLocationRelativeTo(null);
-        AboutFrame.setVisible(true);
-        backgroundMusic.stop();
-    }
-    public void settingsOpen(String id){
-        SettingsFrame settingsFrame = new SettingsFrame(id);
-        this.setVisible(false);
-        settingsFrame.setLocationRelativeTo(null);
-        settingsFrame.setVisible(true);
-        backgroundMusic.stop();
-    }
-
 }

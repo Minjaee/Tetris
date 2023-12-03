@@ -1,13 +1,9 @@
 
+j
+java:S11921"HDefine a constant instead of duplicating this literal "MV Boli" 3 times.(³éµ‘üÿÿÿÿ8ç¬²Ã1
+N
+java:S1948"1Make "backgroundMusic" transient or serializable.(¢¬ÎŠ8ó¬²Ã1
+O
+java:S1948"2Make "buttonClickSound" transient or serializable.(„ôí…8ô¬²Ã1
 e
-java:S1192H"HDefine a constant instead of duplicating this literal "MV Boli" 3 times.(¿¨‹§8Ë¥êØÂ1
-m	java:S117/"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ã¡¹Å8Ğ¥êØÂ1
-l	java:S117 "QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ûÿƒüÿÿÿÿ
-l	java:S117§"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(§ûôıÿÿÿÿ
-G
-java:S1948"1Make "backgroundMusic" transient or serializable.(¢¬ÎŠ
-T
-java:S1948"2Make "buttonClickSound" transient or serializable.(—´©úÿÿÿÿ8¬¦êØÂ1
-e
-java:S3252"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(ºÀœx8¹¦êØÂ1
-i	java:S100—"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½ŠÆµÿÿÿÿÿ
+java:S3252b"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(ºÀœx8ü¬²Ã1
