@@ -2,17 +2,17 @@
 \
 java:S1192U"FDefine a constant instead of duplicating this literal "Arial" 3 times.(Ä¯‹Ş
 `
-java:S1301u"KReplace this "switch" statement by "if" statements to increase readability.(°Âò8
+java:S1301r"KReplace this "switch" statement by "if" statements to increase readability.(°Âò8
 a
-java:S1301†"KReplace this "switch" statement by "if" statements to increase readability.(°Âò8
+java:S1301ƒ"KReplace this "switch" statement by "if" statements to increase readability.(°Âò8
 a
-java:S1301"KReplace this "switch" statement by "if" statements to increase readability.(°Âò8
+java:S1301›"KReplace this "switch" statement by "if" statements to increase readability.(°Âò8
 a
-java:S1301´"KReplace this "switch" statement by "if" statements to increase readability.(°Âò8
+java:S1301±"KReplace this "switch" statement by "if" statements to increase readability.(°Âò8
 a
-java:S1301Ò"KReplace this "switch" statement by "if" statements to increase readability.(°Âò8
+java:S1301Ï"KReplace this "switch" statement by "if" statements to increase readability.(°Âò8
 a
-java:S1301š"KReplace this "switch" statement by "if" statements to increase readability.(°Âò8
+java:S1301—"KReplace this "switch" statement by "if" statements to increase readability.(°Âò8
 j	java:S116"URename this field "BoardWidth" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(š¬×Æ
 p	java:S116"VRename this field "BoardHeight" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼ñ¡òøÿÿÿÿ
 7
@@ -30,40 +30,40 @@ java:S1481^"2Remove this unused "linesCleared2" local variable.(˜´Á„8®ë÷ÉÂ1
 O
 java:S6213i":Rename this variable to not match a restricted identifier.(Ùıì!
 O
-java:S6213s":Rename this variable to not match a restricted identifier.(÷ˆ“
-6	java:S131u""Add a default case to this switch.(°Âò8
+java:S6213p":Rename this variable to not match a restricted identifier.(÷ˆ“
+6	java:S131r""Add a default case to this switch.(°Âò8
 i
-java:S3776¢"RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(¶øÂÁ
+java:S3776Ÿ"RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(¶øÂÁ
 Q
-java:S1161¢":Add the "@Override" annotation above this method signature(¶øÂÁ
+java:S1161Ÿ":Add the "@Override" annotation above this method signature(¶øÂÁ
 Q
-java:S6213ƒ":Rename this variable to not match a restricted identifier.(Üìâñ
-7	java:S131†""Add a default case to this switch.(°Âò8
+java:S6213€":Rename this variable to not match a restricted identifier.(Üìâñ
+7	java:S131ƒ""Add a default case to this switch.(°Âò8
 V
-java:S6213":Rename this variable to not match a restricted identifier.(Ó˜ëõşÿÿÿÿ
-7	java:S131""Add a default case to this switch.(°Âò8
+java:S6213š":Rename this variable to not match a restricted identifier.(Ó˜ëõşÿÿÿÿ
+7	java:S131›""Add a default case to this switch.(°Âò8
 V
-java:S6213²":Rename this variable to not match a restricted identifier.(½ÔÌ§ıÿÿÿÿ
-7	java:S131´""Add a default case to this switch.(°Âò8
+java:S6213¯":Rename this variable to not match a restricted identifier.(½ÔÌ§ıÿÿÿÿ
+7	java:S131±""Add a default case to this switch.(°Âò8
 Q
-java:S6213Ñ":Rename this variable to not match a restricted identifier.(ˆüÅŠ
-7	java:S131Ò""Add a default case to this switch.(°Âò8
+java:S6213Î":Rename this variable to not match a restricted identifier.(ˆüÅŠ
+7	java:S131Ï""Add a default case to this switch.(°Âò8
 n
-java:S3776ñ"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(Æçúèşÿÿÿÿ
+java:S3776î"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(Æçúèşÿÿÿÿ
 V
-java:S6213ñ":Rename this variable to not match a restricted identifier.(Æçúèşÿÿÿÿ
+java:S6213î":Rename this variable to not match a restricted identifier.(Æçúèşÿÿÿÿ
 i
-java:S3776—"RRefactor this method to reduce its Cognitive Complexity from 47 to the 15 allowed.(Ô™Ş²
+java:S3776”"RRefactor this method to reduce its Cognitive Complexity from 47 to the 15 allowed.(Ô™Ş²
 Q
-java:S6213—":Rename this variable to not match a restricted identifier.(Ô™Ş²
-g	java:S128œ"LEnd this switch case with an unconditional break, return or throw statement.(ªëÅŞúÿÿÿÿ
-7	java:S131š""Add a default case to this switch.(°Âò8
+java:S6213”":Rename this variable to not match a restricted identifier.(Ô™Ş²
+g	java:S128™"LEnd this switch case with an unconditional break, return or throw statement.(ªëÅŞúÿÿÿÿ
+7	java:S131—""Add a default case to this switch.(°Âò8
 P
-java:S1161ì":Add the "@Override" annotation above this method signature(İ¼õA
-8	java:S131ü""Add a default case to this switch.(ÖÅ«Á
-8
-java:S3398ƒ"!Move this method into "TAdapter".(Üìâñ
+java:S1161é":Add the "@Override" annotation above this method signature(İ¼õA
+8	java:S131ù""Add a default case to this switch.(ÖÅ«Á
 =
-java:S3398“"!Move this method into "TAdapter".(¦ñ“üÿÿÿÿ
+java:S3398"!Move this method into "TAdapter".(¦ñ“üÿÿÿÿ
+8
+java:S3398€"!Move this method into "TAdapter".(Üìâñ
 D
 java:S1068".Remove this unused "isGameOver" private field.(¾á¬£

@@ -103,13 +103,10 @@ public class TwoPlayerBoard extends JPanel implements ActionListener {
     }
 
     Tetrominoes shapeAt(int x, int y, int var) {
-        switch (var) {
-            case 1:
-                return board[(y * BoardWidth) + x];
-            case 2:
-                return board2[(y * BoardWidth) + x];
-            default: return board[(y * BoardWidth) + x];
-        }
+        return switch (var) {
+            case 2 -> board2[(y * BoardWidth) + x];
+            default -> board[(y * BoardWidth) + x];
+        };
     }
 
     public void start(int var) {
@@ -521,10 +518,7 @@ public class TwoPlayerBoard extends JPanel implements ActionListener {
                 case KeyEvent.VK_F:
                     dropDown(1);
                     break;
-                case 'C':
-                    oneLineDown(1);
-                    break;
-                case 'c':
+                case KeyEvent.VK_C:
                     oneLineDown(1);
                     break;
                 case KeyEvent.VK_LEFT:
