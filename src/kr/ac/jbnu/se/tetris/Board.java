@@ -352,42 +352,60 @@ public class Board extends JPanel implements ActionListener {
 		}
 		return true;
 	}
-	public void removeFullLines() {
+	private void removeFullLines() {
+		int numFullLines = countFullLines();
+
+		if (numFullLines > 0) {
+			removeLines(numFullLines);
+			updateScoreAndLevel(numFullLines);
+		}
+	}
+
+	private int countFullLines() {
 		int numFullLines = 0;
 
 		for (int i = BoardHeight - 1; i >= 0; --i) {
-			boolean lineIsFull = true;
-
-			for (int j = 0; j < BoardWidth; ++j) {
-				if (shapeAt(j, i) == Tetrominoes.NoShape) {
-					lineIsFull = false;
-					break;
-				}
-			}
-
-			if (lineIsFull) {
+			if (isLineFull(i)) {
 				++numFullLines;
-				for (int k = i; k < BoardHeight - 1; ++k) {
-					for (int j = 0; j < BoardWidth; ++j)
-						board[(k * BoardWidth) + j] = shapeAt(j, k + 1);
-				}
 			}
 		}
 
-		if (numFullLines > 0) {
-			numLinesRemoved += numFullLines;
-			statusbar.setText(String.valueOf(numLinesRemoved));
-			isFallingFinished = true;
-			curPiece.setShape(Tetrominoes.NoShape);
-			repaint();
-			score++;  // 라인 한줄 제거당 1점 획득
-			lineClearSound.play(); // 줄 제거 효과음 실행
+		return numFullLines;
+	}
 
-
-			level = (score / 3) + 1;  // Increase level every 3 points
-			delay = 400 - (level * 60);  // Decrease delay with level
-			timer.setDelay(delay); // Update the timer delay
+	private boolean isLineFull(int line) {
+		for (int j = 0; j < BoardWidth; ++j) {
+			if (shapeAt(j, line) == Tetrominoes.NoShape) {
+				return false;
+			}
 		}
+		return true;
+	}
+
+	private void removeLines(int numFullLines) {
+		for (int i = BoardHeight - 1; i >= 0; --i) {
+			if (isLineFull(i)) {
+				for (int k = i; k < BoardHeight - 1; ++k) {
+					for (int j = 0; j < BoardWidth; ++j) {
+						board[(k * BoardWidth) + j] = shapeAt(j, k + 1);
+					}
+				}
+			}
+		}
+	}
+
+	private void updateScoreAndLevel(int numFullLines) {
+		numLinesRemoved += numFullLines;
+		statusbar.setText(String.valueOf(numLinesRemoved));
+		isFallingFinished = true;
+		curPiece.setShape(Tetrominoes.NoShape);
+		repaint();
+		score += numFullLines;  // Increase score based on lines cleared
+		lineClearSound.play(); // Play line clearing sound
+
+		level = (score / 3) + 1;  // Increase level every 3 points
+		delay = 400 - (level * 60);  // Adjust delay based on level
+		timer.setDelay(delay); // Update timer delay
 	}
 
 	void drawSquare(Graphics g, int x, int y, Tetrominoes shape) {
