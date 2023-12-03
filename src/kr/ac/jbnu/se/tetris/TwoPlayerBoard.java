@@ -8,6 +8,7 @@ import java.awt.event.KeyEvent;
 
 import javax.swing.*;
 
+
 public class TwoPlayerBoard extends JPanel implements ActionListener {
 
     private boolean isGameOver = false; // 게임오버상태인지 아닌지 확인할 변수 추가
@@ -36,6 +37,8 @@ public class TwoPlayerBoard extends JPanel implements ActionListener {
     final Tetrominoes[] board2;
 
     public TwoPlayerBoard(TwoPlayer parent) {
+
+
 
         setFocusable(true);
         curPiece = new Shape();
@@ -84,6 +87,7 @@ public class TwoPlayerBoard extends JPanel implements ActionListener {
 
         statusbar.setFont(new Font("Arial", Font.BOLD, 48)); // 폰트 크기를 48로 변경
         statusbar.setHorizontalAlignment(SwingConstants.CENTER); // 중앙 정렬
+
     }
     private void initializeGame() {
                 score = 0;
@@ -248,6 +252,8 @@ public class TwoPlayerBoard extends JPanel implements ActionListener {
     }
 
     private void openMainFrame() {
+        this.setVisible(false); // Tetris 닫아버리기
+
         MainMenu mainMenu = new MainMenu(id);  // 메인 메뉴 인스턴스 생성
         mainMenu.setLocationRelativeTo(null);
         mainMenu.setVisible(true);

@@ -38,6 +38,7 @@ public class Board extends JPanel implements ActionListener {
 	private boolean isGameOver = false; // 게임오버상태인지 아닌지 확인할 변수 추가
 	private PreviewBoard previewBoard;
 	private final Tetris tetrisParent; // Board 클래스가 Tetris 클래스에 접근할 수 있도록 멤버 변수 생성
+
 	private Shape holdPiece; // HOLD 기능
 	private SoundManager lineClearSound; // 줄 완성 효과음을 위한 SoundManager 인스턴스
 	private SoundManager blockDropSound; // 블록 쌓일 때 효과음을 위한 인스턴스

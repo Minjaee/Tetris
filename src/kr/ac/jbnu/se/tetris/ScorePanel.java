@@ -170,7 +170,7 @@ public class ScorePanel extends JFrame implements ActionListener {
         //go back to main-menu if backButton pressed
         if(e.getSource() == backButton){
             mainMenu = new MainMenu(id);
-            this.dispose();
+            this.setVisible(false); // sound 겹침 오류 해결
             mainMenu.setVisible(true);
         }
     }
